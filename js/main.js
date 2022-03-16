@@ -1,3 +1,9 @@
+$(document).ready(function() {
+	$("#phone").mask("+7 (999) 999-99-99");
+});
+
+
+
 const scrollButton = document.querySelector(".scroll__button");
 window.addEventListener("scroll", function(e) {
 	let scrollPos = window.scrollY;
@@ -154,3 +160,4 @@ tabsBtn.forEach(function (item) {
 		} 
 	});
 });
+
