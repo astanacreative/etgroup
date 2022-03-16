@@ -25,42 +25,42 @@ newList.forEach((elem) => {
 	});
 });
 
-$(document).ready(function () {
-	$('.slider').slick({
-		dots: true,
-		adaptiveHeight: true,
-		slidesToShow: 1,
-		slidesToScroll: 1,
-		speed: 800,
-		initialSlide: 0,
-		autoplay: false,
-		autoplaySpeed: 800,
-		rows: 1,
-		responsive: [
-			{
-				breakpoint: 1200,
-				settings: {
-					slidesToShow: 1,
-					slidesToScroll: 1,
-				}
-			}, {
-				breakpoint: 1000,
-				settings: {
-					slidesToShow: 1,
-					slidesToScroll: 1,
-				}
-			}, {
-				breakpoint: 768,
-				settings: {
-					arrows: false,
-					slidesToShow: 1,
-					slidesToScroll: 1,
-					dots: true,
-				}
-			}
-		]
-	});
-});
+// $(document).ready(function () {
+// 	$('.slider').slick({
+// 		dots: true,
+// 		adaptiveHeight: true,
+// 		slidesToShow: 1,
+// 		slidesToScroll: 1,
+// 		speed: 800,
+// 		initialSlide: 0,
+// 		autoplay: false,
+// 		autoplaySpeed: 800,
+// 		rows: 1,
+// 		responsive: [
+// 			{
+// 				breakpoint: 1200,
+// 				settings: {
+// 					slidesToShow: 1,
+// 					slidesToScroll: 1,
+// 				}
+// 			}, {
+// 				breakpoint: 1000,
+// 				settings: {
+// 					slidesToShow: 1,
+// 					slidesToScroll: 1,
+// 				}
+// 			}, {
+// 				breakpoint: 768,
+// 				settings: {
+// 					arrows: false,
+// 					slidesToShow: 1,
+// 					slidesToScroll: 1,
+// 					dots: true,
+// 				}
+// 			}
+// 		]
+// 	});
+// });
 
 
 const mouseCatalog = document.querySelectorAll('.main-catalog__item');
@@ -106,15 +106,6 @@ tabBody.forEach((elem) => {
 	});
 });
 
-const slider = document.querySelector('#carouselExampleIndicators');
-
-slider.addEventListener('mouseenter', function () {
-	this.classList.add('active');
-});
-slider.addEventListener('mouseleave', function () {
-	this.classList.remove('active');
-});
-
 const menuItemButton = document.querySelector('.sidebar-item_active');
 
 menuItemButton.addEventListener('mouseenter', function () {
@@ -124,6 +115,15 @@ menuItemButton.addEventListener('mouseleave', function () {
 	this.classList.remove('active');
 });
 
+
+const slider = document.querySelector('#carouselExampleIndicators');
+
+slider.addEventListener('mouseenter', function () {
+	this.classList.add('active');
+});
+slider.addEventListener('mouseleave', function () {
+	this.classList.remove('active');
+});
 
 const tabsBtn = document.querySelectorAll('.tabs-btn');
 const tabItems = document.querySelectorAll('.tabs__row');
