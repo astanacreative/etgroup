@@ -1416,10 +1416,12 @@ a:hover {
 .order-block__main span {
 	color: #b6b5b5;
 	font-size: 12px;
+	line-height: 20px;
 }
 .order-block__link {
 	color: #b6b5b5;
 	font-size: 12px;
+
 }
 .order-block__body {
 }
