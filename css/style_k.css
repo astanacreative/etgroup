@@ -226,3 +226,195 @@ input[type="text"], input[type="password"], input[type="email"], select, textare
 .form_body {
     margin-bottom: 20px;
 }
+
+.prod_content{
+    margin: 20px 0 30px;
+    padding: 0;
+    border: 1px solid #eaebec;
+    position: relative;
+}
+
+/*PRODUCT IN */
+/* STARS */
+.rating-area {
+	overflow: hidden;
+}
+.rating-area:not(:checked) > input {
+	display: none;
+}
+.rating-area:not(:checked) > label {
+	float: right;
+	width: 22px;
+	padding: 0;
+	cursor: pointer;
+	font-size: 23px;
+	line-height: 23px;
+	color: lightgrey;
+	text-shadow: 1px 1px #bbb;
+}
+.rating-area:not(:checked) > label:before {
+	content: '★';
+}
+.rating-area > input:checked ~ label {
+	color: gold;
+	text-shadow: 1px 1px #c60;
+}
+.rating-area:not(:checked) > label:hover,
+.rating-area:not(:checked) > label:hover ~ label {
+	color: gold;
+}
+.rating-area > input:checked + label:hover,
+.rating-area > input:checked + label:hover ~ label,
+.rating-area > input:checked ~ label:hover,
+.rating-area > input:checked ~ label:hover ~ label,
+.rating-area > label:hover ~ input:checked ~ label {
+	color: gold;
+	text-shadow: 1px 1px goldenrod;
+}
+.rate-area > label:active {
+	position: relative;
+}
+
+.prod-in-block{
+    margin-left: 20px;
+    width: 100%;
+}
+.prod_in_top_info_content{
+    padding: 14px 0px 19px;
+    border-bottom: 1px solid #F2F2F2;
+}
+.prod_in_top_info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.prod_in_article{
+    font-size: 13px;
+    color: #666;
+    line-height: 18px;
+    width: 50%;
+}
+.prod_in_top_info_text{
+    font-size: 13px;
+    padding-top: 26px;
+    padding-bottom: 10px;
+    color: #333333;
+    max-height: 45px;
+}
+.prod_in_top_info_detial a{
+    color: #c50026;
+    cursor: pointer;
+    font-size: 13px;
+}
+.prod_in_top_info_detial a:hover{
+    color: #000;
+}
+.prod_content .row{
+    padding-top: 20px;
+}
+.prod_in_mid{
+    padding: 24px 0px 3px;
+}
+.prod_in_mid .price{ 
+    padding: 0px 0px 22px 0px;
+    font-size: 26px;
+    line-height: 20px;
+    font-weight: 600;
+}
+.counter_block {
+    text-align: center;
+    margin-bottom: 10px;
+}
+.counter_wrapp >div {
+    margin-bottom: 22px !important;
+}
+.counter_block.big_basket > span {
+    height: 34px;
+    width: 30px;
+    display: inline-block;
+    font-size: 25px;
+    opacity: 0.7;
+    cursor: pointer;
+}
+.counter_block.big_basket input[type="text"] {
+    font-size: 13px;
+    height: 34px;
+    width: 65px;
+    border: 0px;
+    border-left: 1px solid #e5e5e5;
+    border-right: 1px solid #e5e5e5;
+    background: #f7f7f7;
+    color: #666666;
+    font-size: 13px;
+    border-radius: 0px;
+    text-align: center;
+    line-height: 13px;
+}
+.counter_block.big_basket {
+    min-width: 140px;
+    text-align: center;
+    height: auto;
+    border: 1px solid #e5e5e5;
+}
+.prod_in_buy {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.prod_in_send_btn a, .prod_in_send_btn button{
+    height: 38px;
+    width: 100%;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.prod_in_send_btn{
+    width: 30%;
+    margin-left: 12px;
+}
+.counter_block{
+    margin-right: 12px;
+}
+.text.button {
+    font-size: 13px;
+    border-color: #888;
+    border: 1px solid;
+    text-transform: none;
+    padding: 7px 10px 8px 32px;
+    position: relative;
+    color: #888;
+    line-height: 15px;
+}
+.text.button:before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 12px;
+    height: 14px;
+    background: url(../img/share.png) no-repeat;
+    background-size: contain;
+    left: 13px;
+    top: 8px;
+    opacity: 0.7;
+}
+.price_txt {
+    width: 90%;
+    padding-left: 50px;
+    color: #b3b3b3;
+    font-size: 12px;
+}
+.prod_in_share{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+.forms .text_block {
+    width: 29%;
+    font-size: 13px;
+    padding: 0px 60px 0px 0px;
+    color: #b3b3b3;
+    font: 13px/20px Ubuntu, Arial, Helvetica, sans-serif;
+}
+.question_block{
+    display: flex;
+}
