@@ -435,8 +435,6 @@ a:hover {
 .new-menu__title {
 	color: #FFF;
 }
-.new-menu__burger {
-}
 .new-menu__active {
 	position: absolute;
 	top: 100%;
@@ -621,7 +619,7 @@ a:hover {
 	width: 30px;
 	height: 30px;
 	position: relative;
-	z-index: 20;
+	z-index: 5;
 	cursor: pointer;
 }
 .new-menu__burger span,
@@ -1576,14 +1574,11 @@ a:hover {
 
 /*------------------catalog------------------------------------*/
 .main.catalog {
-	margin-top: 20px;
 	margin-bottom: 50px;
-}
-.main.catalog-main .sidebar-item.active .menu-item {
-	display: block;
 }
 .main-block.catalog-block {
 	margin-left: 20px;
+	margin-top: 20px;
 }
 .catalog-block__row {
 	display: flex;
