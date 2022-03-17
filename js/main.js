@@ -124,12 +124,6 @@ menuItemButton.addEventListener('mouseleave', function () {
 
 const slider = document.querySelector('#carouselExampleIndicators');
 
-slider.addEventListener('mouseenter', function () {
-	this.classList.add('active');
-});
-slider.addEventListener('mouseleave', function () {
-	this.classList.remove('active');
-});
 
 const tabsBtn = document.querySelectorAll('.tabs-btn');
 const tabItems = document.querySelectorAll('.tabs__row');
@@ -159,5 +153,55 @@ tabsBtn.forEach(function (item) {
 			});
 		} 
 	});
+});
+
+const rangeSlider = document.getElementById('range-slider');
+if (rangeSlider) {
+	noUiSlider.create(rangeSlider, {
+		start: [0, 94700],
+		connect: true,
+		step: 1,
+		limit: 94700,
+		pips: {
+			mode: 'values',
+			values: [0, 94700],
+			density: 0,
+			stepped: false
+	  	},
+		range: {
+			'min': 0,
+			'max': 94700
+		},
+	});
+	const input0 = document.getElementById('range_1');
+	const input1 = document.getElementById('range_2');
+	const inputs = [input0, input1];
+
+	rangeSlider.noUiSlider.on('update', function(values, handle){
+		inputs[handle].value = Math.round(values[handle]);
+	});
+
+	const setRangeSlider = (i, value) => {
+		let arr = [null, null];
+		arr[i] = value;
+
+		console.log(arr);
+
+		rangeSlider.noUiSlider.set(arr);
+	};
+
+	inputs.forEach((el, index) => {
+		el.addEventListener('change', (e) => {
+			console.log(index);
+			setRangeSlider(index, e.currentTarget.value);
+		});
+	});
+}
+
+slider.addEventListener('mouseenter', function () {
+	this.classList.add('active');
+});
+slider.addEventListener('mouseleave', function () {
+	this.classList.remove('active');
 });
 
