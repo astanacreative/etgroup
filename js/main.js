@@ -164,13 +164,13 @@ if (rangeSlider) {
 		limit: 94700,
 		pips: {
 			mode: 'values',
-			values: [0, 94700],
+			values: [30000, 95000],
 			density: 0,
 			stepped: false
-	  	},
+		},
 		range: {
-			'min': 0,
-			'max': 94700
+			'min': 30000,
+			'max': 95000
 		},
 	});
 	const input0 = document.getElementById('range_1');
@@ -197,6 +197,56 @@ if (rangeSlider) {
 		});
 	});
 }
+
+
+const inputButton = document.querySelectorAll('.catalog-inputs__button');
+inputButton.forEach((elem) => {
+	elem.addEventListener('click', function() {
+		if(!elem.parentElement.classList.contains('active')) {
+			elem.parentElement.classList.add('active');
+		} else {
+			elem.parentElement.classList.remove('active');
+		}
+	})
+});
+
+// const btnMinus = document.querySelector('.catalog-section__minus');
+// const btnPlus = document.querySelector('.catalog-section__plus');
+// const btnInput = document.querySelector('.catalog-section__value')
+// btnMinus.addEventListener('click', function () {
+// 	let btnValue = btnInput.value;
+// 	btnInput.value = parseInt(btnValue) - 1;
+// });
+// btnPlus.addEventListener('click', function () {
+// 	let btnValue = btnInput.value;
+// 	btnInput.value = parseInt(btnValue) + 1;
+// });
+
+let calculate = document.getElementById("calculation");
+let count = document.getElementById("buttonCountNumber");
+
+document.getElementById("buttonCountPlus").onclick = function() {
+let countPlus = count.innerHTML;
+if(+countPlus <= 20){
+   count.value++;
+   let countPlus = count.innerHTML;
+   calculate.innerHTML = calculations(countPlus) ;
+	}
+}
+
+document.getElementById("buttonCountMinus").onclick = function() {
+let countMinus = count.value;
+if(+countMinus >= 2){
+   count.value--;
+   let countMinus = count.value;
+   	calculate.innerHTML = calculations(countMinus) ;
+	}
+}
+
+calculations = (count) => {
+	return count ;
+}
+
 
 slider.addEventListener('mouseenter', function () {
 	this.classList.add('active');
