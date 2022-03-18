@@ -328,12 +328,13 @@ input[type="text"], input[type="password"], input[type="email"], select, textare
 .counter_wrapp >div {
     margin-bottom: 22px !important;
 }
-.counter_block.big_basket > span {
+.counter_block.big_basket > input {
     height: 34px;
-    width: 30px;
+    width: 35px;
     display: inline-block;
     font-size: 25px;
     opacity: 0.7;
+    background-color: #fff;
     cursor: pointer;
 }
 .counter_block.big_basket input[type="text"] {
@@ -351,6 +352,9 @@ input[type="text"], input[type="password"], input[type="email"], select, textare
     line-height: 13px;
 }
 .counter_block.big_basket {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     min-width: 140px;
     text-align: center;
     height: auto;
@@ -368,9 +372,13 @@ input[type="text"], input[type="password"], input[type="email"], select, textare
     font-weight: 600;
     margin-bottom: 10px;
 }
-.prod_in_send_btn{
+.prod_in_send_btn:not(:last-child){
     width: 30%;
     margin-left: 12px;
+    margin-right: 12px;
+}
+.prod_in_send_btn:last-child{
+    width: 30%;
 }
 .counter_block{
     margin-right: 12px;
@@ -417,4 +425,159 @@ input[type="text"], input[type="password"], input[type="email"], select, textare
 }
 .question_block{
     display: flex;
+}
+.first_link {
+    background-color: #bf0025;
+    color: #fff;
+}
+.nav-link-sidebar-menu{
+    margin-top: -20px;
+}
+.tabs-head li button{
+    margin: 0 4px -1px 0;
+    padding-left: 20px;
+    background: #fff;
+    display: inline-block;
+    cursor: pointer;
+    vertical-align: top;
+    font-size: 14px;
+    color: #333;
+    opacity: 1;
+    font-weight: 600;
+    padding: 11px 18px 14px;
+    border: 1px solid #e5e5e5;
+
+}
+.tabs-head .nav-link.active {
+    border-top: 3px solid #d9002a;
+}
+
+.tabs-head .nav-link {
+    background: #f9f9f9;
+    border: 1px solid #e5e5e5;
+    border-radius: 0px;
+}
+.tabs-head .nav-link:hover {
+    color: #000;
+    background: #fff;
+}
+ul li::before {
+    color: #cf0036;
+}
+.tab-section{
+    width: 100%;
+    padding: 34px 0 50px;
+    color: #555;
+    font-size: 13px;
+    line-height: 20px;
+}
+.tab_text:not(:last-child){
+    margin-bottom: 10px;
+}
+.review-btn{
+    color: #FFF;
+    background: #d9002a;
+    opacity: 1;
+    font-weight: 400;
+    cursor: pointer;
+    font-size: 13px;
+    line-height: 16px;
+    text-transform: none;
+    border-radius: 0;
+    border-color: #d9002a;
+    position: relative;
+    padding: 10px 20px 10px 30px;
+}
+.review-btn:hover{
+    color: #FFF;
+    background: #d9002a;
+    opacity: 0.7;
+    border-color: #d9002a;
+}
+.review-btn:focus{
+    color: #FFF;
+    background: #d9002a;
+    border-color: #d9002a;
+    box-shadow: none;
+}
+.btn-check:active+.btn-primary:focus, .btn-check:checked+.btn-primary:focus, .btn-primary.active:focus, .btn-primary:active:focus, .show>.btn-primary.dropdown-toggle:focus {
+    box-shadow: none;
+}
+.review-content{
+    border: none;
+}
+.review-btn:before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 12px;
+    height: 14px;
+    background: url(../img/chat-ico.svg) no-repeat;
+    color: #fff;
+    background-size: contain;
+    left: 13px;
+    top: 13px;
+    opacity: 0.7;
+}
+.card-body{
+    padding-left: 0;
+}
+#collapseExample .contact-block__textarea {
+    width: 100%;
+    padding-right: 0px;
+}
+textarea{
+    resize: none;
+}
+.review-btn-content{
+    margin-top: 20px;
+}
+.review-btn-content button, .review-btn-content a{
+    height: 33px;
+}
+.prod_icon{
+    visibility: visible;
+    opacity: 1;
+    right: 0;
+}
+.prod_icon .tab-item__like::before, .prod_icon .tab-item__graf::before{
+    background-size: 15px 15px;
+}
+.prod_in_image{
+    position: relative;
+}
+.prod_in_image img{
+    width: 100%;
+    height: 340px;
+}
+.single-prod-slider{
+    max-width: 300px;
+    margin: auto;
+}
+.single-prod-slider .slick-prev:before {
+    content: '<';
+    opacity: 1;
+    font-family: 'Ubuntu';
+    font-size: 20px;
+    line-height: 10px;
+}
+.single-prod-slider .slick-next:before {
+    content: '>';
+    opacity: 1;
+    font-family: 'Ubuntu';
+    font-size: 20px;
+    line-height: 10px;
+}
+.single-prod-slider .slick-prev,.single-prod-slider .slick-next{
+    color: #fff;
+    background-color: #d9002a;
+    border-radius: 50%;
+}
+.single-prod-slider .slick-prev:hover,.single-prod-slider .slick-next:hover{
+    color: #fff;
+    background-color: #d9002a;
+}
+.single-prod-slider .slick-prev:focus,.single-prod-slider .slick-next:focus{
+    color: #fff;
+    background-color: #d9002a;
 }
