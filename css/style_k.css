@@ -277,6 +277,7 @@ input[type="text"], input[type="password"], input[type="email"], select, textare
 
 .prod-in-block{
     margin-left: 20px;
+    margin-top: 20px;
     width: 100%;
 }
 .prod_in_top_info_content{
