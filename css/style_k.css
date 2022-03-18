@@ -588,3 +588,18 @@ textarea{
 .single-prod-slider .slick-right {
     right: -20px;
 }
+.sticker_new{
+    background-color: #4fad00;
+    width: auto;
+    height: 24px;
+    margin: 0px 0px 2px;
+    position: relative;
+    display: inline-block;
+    color: #fff;
+    font-size: 12px;
+    line-height: 12px;
+    padding: 6px 10px 0px;
+    box-sizing: border-box;
+    position: absolute;
+    z-index: 1;
+}
