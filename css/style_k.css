@@ -277,6 +277,7 @@ input[type="text"], input[type="password"], input[type="email"], select, textare
 
 .prod-in-block{
     margin-left: 20px;
+    margin-top: 20px;
     width: 100%;
 }
 .prod_in_top_info_content{
@@ -430,8 +431,11 @@ input[type="text"], input[type="password"], input[type="email"], select, textare
     background-color: #bf0025;
     color: #fff;
 }
+.first_link::before{
+    background: none;
+}
 .nav-link-sidebar-menu{
-    margin-top: -20px;
+    margin-top: 0px;
 }
 .tabs-head li button{
     margin: 0 4px -1px 0;
@@ -580,4 +584,40 @@ textarea{
 .single-prod-slider .slick-prev:focus,.single-prod-slider .slick-next:focus{
     color: #fff;
     background-color: #d9002a;
+}
+.single-prod-slider .slick-prev {
+    left: -20px;
+}
+.single-prod-slider .slick-right {
+    right: -20px;
+}
+.sticker_new{
+    background-color: #4fad00;
+    width: auto;
+    height: 24px;
+    margin: 0px 0px 2px;
+    position: relative;
+    display: inline-block;
+    color: #fff;
+    font-size: 12px;
+    line-height: 12px;
+    padding: 6px 10px 0px;
+    box-sizing: border-box;
+    position: absolute;
+    z-index: 2;
+}
+.sticker_new::before{
+    content: ''; 
+    position: absolute;
+    width: 0;
+    height: 0;
+    bottom: 0;
+    top: 0;
+    left: 70%;
+    z-index: -1;
+    border: 2px solid transparent;
+    border-top: 12px solid #4fad00;
+    border-bottom: 12px solid #4fad00;
+    border-right: 15px solid transparent;
+    border-left: 20px solid #4fad00;
 }
