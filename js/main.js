@@ -230,7 +230,7 @@ let countPlus = count.innerHTML;
 if(+countPlus <= 20){
    count.value++;
    let countPlus = count.innerHTML;
-   calculate.innerHTML = calculations(countPlus) ;
+   	calculate.innerHTML = calculations(countPlus) ;
 	}
 }
 
@@ -243,9 +243,7 @@ if(+countMinus >= 2){
 	}
 }
 
-calculations = (count) => {
-	return count ;
-}
+
 
 
 slider.addEventListener('mouseenter', function () {
