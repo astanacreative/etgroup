@@ -581,3 +581,9 @@ textarea{
     color: #fff;
     background-color: #d9002a;
 }
+.single-prod-slider .slick-prev {
+    left: -20px;
+}
+.single-prod-slider .slick-right {
+    right: -20px;
+}
