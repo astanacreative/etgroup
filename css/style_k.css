@@ -228,8 +228,9 @@ input[type="text"], input[type="password"], input[type="email"], select, textare
 }
 
 .prod_content{
-    margin: 20px 0 30px;
+    margin: 20px 0 20px;
     padding: 0;
+    padding-bottom: 29px;
     border: 1px solid #eaebec;
     position: relative;
 }
@@ -620,4 +621,9 @@ textarea{
     border-bottom: 12px solid #4fad00;
     border-right: 15px solid transparent;
     border-left: 20px solid #4fad00;
+}
+.tab-item__block_rec{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
 }
