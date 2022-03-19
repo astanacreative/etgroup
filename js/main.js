@@ -31,42 +31,50 @@ newList.forEach((elem) => {
 	});
 });
 
-// $(document).ready(function () {
-// 	$('.slider').slick({
-// 		dots: true,
-// 		adaptiveHeight: true,
-// 		slidesToShow: 1,
-// 		slidesToScroll: 1,
-// 		speed: 800,
-// 		initialSlide: 0,
-// 		autoplay: false,
-// 		autoplaySpeed: 800,
-// 		rows: 1,
-// 		responsive: [
-// 			{
-// 				breakpoint: 1200,
-// 				settings: {
-// 					slidesToShow: 1,
-// 					slidesToScroll: 1,
-// 				}
-// 			}, {
-// 				breakpoint: 1000,
-// 				settings: {
-// 					slidesToShow: 1,
-// 					slidesToScroll: 1,
-// 				}
-// 			}, {
-// 				breakpoint: 768,
-// 				settings: {
-// 					arrows: false,
-// 					slidesToShow: 1,
-// 					slidesToScroll: 1,
-// 					dots: true,
-// 				}
-// 			}
-// 		]
-// 	});
-// });
+$(document).ready(function () {
+	$('.slider').slick({
+		dots: false,
+		arrows: false,
+		adaptiveHeight: true,
+		slidesToShow: 8,
+		slidesToScroll: 2,
+		speed: 800,
+		autoplay: false,
+		autoplaySpeed: 800,
+		rows: 1,
+		responsive: [
+			{
+				breakpoint: 1200,
+				settings: {
+					slidesToShow: 6,
+				}
+			}, {
+				breakpoint: 1000,
+				settings: {
+					slidesToShow: 5,
+				}
+			}, {
+				breakpoint: 768,
+				settings: {
+					arrows: true,
+					slidesToShow: 4,
+				}
+			}, {
+				breakpoint: 568,
+				settings: {
+					arrows: true,
+					slidesToShow: 3,
+				}
+			}, {
+				breakpoint: 400,
+				settings: {
+					arrows: true,
+					slidesToShow: 2,
+				}
+			}
+		]
+	});
+});
 
 
 const mouseCatalog = document.querySelectorAll('.main-catalog__item');
