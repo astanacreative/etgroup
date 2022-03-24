@@ -163,6 +163,7 @@ tabsBtn.forEach(function (item) {
 	});
 });
 
+
 const rangeSlider = document.getElementById('range-slider');
 if (rangeSlider) {
 	noUiSlider.create(rangeSlider, {
@@ -206,6 +207,48 @@ if (rangeSlider) {
 	});
 }
 
+const rangeSliderTwo = document.getElementById('range-slider_two');
+if (rangeSliderTwo) {
+	noUiSlider.create(rangeSliderTwo, {
+		start: [0, 94700],
+		connect: true,
+		step: 1,
+		limit: 94700,
+		pips: {
+			mode: 'values',
+			values: [30000, 95000],
+			density: 0,
+			stepped: false
+		},
+		range: {
+			'min': 30000,
+			'max': 95000
+		},
+	});
+	const input0 = document.getElementById('rangetwo_1');
+	const input1 = document.getElementById('rangetwo_2');
+	const inputs = [input0, input1];
+
+	rangeSliderTwo.noUiSlider.on('update', function(values, handle){
+		inputs[handle].value = Math.round(values[handle]);
+	});
+
+	const setRangeSliderTwo = (i, value) => {
+		let arr = [null, null];
+		arr[i] = value;
+
+		console.log(arr);
+
+		rangeSliderTwo.noUiSlider.set(arr);
+	};
+
+	inputs.forEach((el, index) => {
+		el.addEventListener('change', (e) => {
+			console.log(index);
+			setRangeSliderTwo(index, e.currentTarget.value);
+		});
+	});
+}
 
 const inputButton = document.querySelectorAll('.catalog-inputs__button');
 inputButton.forEach((elem) => {
@@ -215,12 +258,16 @@ inputButton.forEach((elem) => {
 		} else {
 			elem.parentElement.classList.remove('active');
 		}
-	})
+	});
+});
+const filterBtn = document.querySelector('.catalog-menu__inputs');
+filterBtn.addEventListener('click', function() {
+	filterBtn.parentElement.classList.toggle('active');
 });
 
-// const btnMinus = document.querySelector('.catalog-section__minus');
-// const btnPlus = document.querySelector('.catalog-section__plus');
-// const btnInput = document.querySelector('.catalog-section__value')
+// const btnMinus = document.getElementById('buttonCountMinus');
+// const btnPlus = document.getElementById('buttonCountPlus');
+// const btnInput = document.getElementById('buttonCountNumber')
 // btnMinus.addEventListener('click', function () {
 // 	let btnValue = btnInput.value;
 // 	btnInput.value = parseInt(btnValue) - 1;
@@ -229,30 +276,19 @@ inputButton.forEach((elem) => {
 // 	let btnValue = btnInput.value;
 // 	btnInput.value = parseInt(btnValue) + 1;
 // });
-
-let calculate = document.getElementById("calculation");
-let count = document.getElementById("buttonCountNumber");
-
+const count = document.getElementById("buttonCountNumber");
 document.getElementById("buttonCountPlus").onclick = function() {
-let countPlus = count.innerHTML;
-if(+countPlus <= 20){
-   count.value++;
-   let countPlus = count.innerHTML;
-   	calculate.innerHTML = calculations(countPlus) ;
+	let countPlus = count.innerHTML;
+	if(+countPlus <= 20){
+		count.value++;
 	}
-}
-
+};
 document.getElementById("buttonCountMinus").onclick = function() {
-let countMinus = count.value;
-if(+countMinus >= 2){
-   count.value--;
-   let countMinus = count.value;
-   	calculate.innerHTML = calculations(countMinus) ;
+	let countMinus = count.value;
+	if(+countMinus >= 2){
+		count.value--;
 	}
-}
-
-
-
+};
 
 slider.addEventListener('mouseenter', function () {
 	this.classList.add('active');
