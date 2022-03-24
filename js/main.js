@@ -290,10 +290,14 @@ document.getElementById("buttonCountMinus").onclick = function() {
 	}
 };
 
+
+
 slider.addEventListener('mouseenter', function () {
 	this.classList.add('active');
 });
 slider.addEventListener('mouseleave', function () {
 	this.classList.remove('active');
 });
+
+
 
