@@ -163,6 +163,26 @@ tabsBtn.forEach(function (item) {
 	});
 });
 
+const count = document.querySelectorAll(".buttonCountNumber");
+count.forEach((elem) => {
+	document.querySelectorAll(".buttonCountPlus").forEach((link) => {
+		link.addEventListener('click', function () {
+			let countPlus = elem.innerHTML;
+			if(countPlus <= 20){
+				elem.value++;
+			}
+		});
+	});
+	document.querySelectorAll(".buttonCountMinus").forEach((link) => {
+		link.addEventListener('click', function () {
+			let countMinus = elem.value;
+			if(countMinus >= 2){
+				elem.value--;
+			}
+		});
+	});
+});
+
 
 const rangeSlider = document.getElementById('range-slider');
 if (rangeSlider) {
@@ -276,19 +296,6 @@ filterBtn.addEventListener('click', function() {
 // 	let btnValue = btnInput.value;
 // 	btnInput.value = parseInt(btnValue) + 1;
 // });
-const count = document.getElementById("buttonCountNumber");
-document.getElementById("buttonCountPlus").onclick = function() {
-	let countPlus = count.innerHTML;
-	if(+countPlus <= 20){
-		count.value++;
-	}
-};
-document.getElementById("buttonCountMinus").onclick = function() {
-	let countMinus = count.value;
-	if(+countMinus >= 2){
-		count.value--;
-	}
-};
 
 
 
