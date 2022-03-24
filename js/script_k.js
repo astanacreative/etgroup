@@ -23,6 +23,12 @@ tabBody.forEach((elem) => {
 	});
 });
 
+const prodShare = document.querySelector('.prod-share');
+prodShare.addEventListener('click', function () {
+  prodShare.parentElement.classList.toggle('active');
+});
+
+
 $('.single-prod-slider').slick();
 
 
@@ -30,6 +36,7 @@ $('.recomend-slider-block').slick({
   infinite: true,
   slidesToShow: 4,
   slidesToScroll: 4,
+  mobileFirst:true,
   responsive: [
     {
       breakpoint: 1024,
@@ -49,6 +56,13 @@ $('.recomend-slider-block').slick({
     },
     {
       breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    },
+    {
+      breakpoint: 380,
       settings: {
         slidesToShow: 1,
         slidesToScroll: 1
