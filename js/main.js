@@ -335,7 +335,30 @@ filterBtn.addEventListener('click', function() {
 	filterBtn.parentElement.classList.toggle('active');
 });
 
+function openbox(id) {
+	var all = document.querySelectorAll(".ship-block");
+	for (var i = 0; i < all.length; i++) {
+		if (all[i].id == id) {
+			all[i].style.display ='block' ;         
+			
+		} else {
+			all[i].style.display = 'none';
+		}
+	}
+}
+function openboxBank(id){
+	var sb = document.querySelectorAll(".bank-block");
+	for (var i = 0; i < sb.length; i++) {
+		if (sb[i].id == id) {
+			sb[i].style.display ='block' ;         
+			
+		} else {
+			sb[i].style.display = 'none';
+		}
+	}
+}
 
+  
 
 // const btnMinus = document.getElementById('buttonCountMinus');
 // const btnPlus = document.getElementById('buttonCountPlus');
