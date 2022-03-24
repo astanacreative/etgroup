@@ -75,6 +75,51 @@ $(document).ready(function () {
 		]
 	});
 });
+$('.single-prod-slider').slick();
+
+$('.recomend-slider-block').slick({
+	infinite: true,
+	slidesToShow: 4,
+	slidesToScroll: 4,
+	mobileFirst:true,
+	responsive: [
+	  {
+		breakpoint: 1024,
+		settings: {
+		  slidesToShow: 3,
+		  slidesToScroll: 3,
+		  infinite: true,
+		  dots: true
+		}
+	  },
+	  {
+		breakpoint: 600,
+		settings: {
+		  slidesToShow: 2,
+		  slidesToScroll: 2
+		}
+	  },
+	  {
+		breakpoint: 480,
+		settings: {
+		  slidesToShow: 1,
+		  slidesToScroll: 1
+		}
+	  },
+	  {
+		breakpoint: 380,
+		settings: {
+		  slidesToShow: 1,
+		  slidesToScroll: 1
+		}
+	  }
+	  // You can unslick at a given breakpoint now by adding:
+	  // settings: "unslick"
+	  // instead of a settings object
+	]
+  });
+
+
 
 
 const mouseCatalog = document.querySelectorAll('.main-catalog__item');
@@ -225,7 +270,7 @@ if (rangeSlider) {
 			setRangeSlider(index, e.currentTarget.value);
 		});
 	});
-}
+};
 
 const rangeSliderTwo = document.getElementById('range-slider_two');
 if (rangeSliderTwo) {
@@ -268,7 +313,12 @@ if (rangeSliderTwo) {
 			setRangeSliderTwo(index, e.currentTarget.value);
 		});
 	});
-}
+};
+
+const prodShare = document.querySelector('.prod-share');
+prodShare.addEventListener('click', function () {
+	this.parentElement.classList.toggle('active');
+});
 
 const inputButton = document.querySelectorAll('.catalog-inputs__button');
 inputButton.forEach((elem) => {
@@ -285,6 +335,8 @@ filterBtn.addEventListener('click', function() {
 	filterBtn.parentElement.classList.toggle('active');
 });
 
+
+
 // const btnMinus = document.getElementById('buttonCountMinus');
 // const btnPlus = document.getElementById('buttonCountPlus');
 // const btnInput = document.getElementById('buttonCountNumber')
@@ -299,12 +351,15 @@ filterBtn.addEventListener('click', function() {
 
 
 
+/* SLIDER MAIN MENU */
 slider.addEventListener('mouseenter', function () {
 	this.classList.add('active');
 });
 slider.addEventListener('mouseleave', function () {
 	this.classList.remove('active');
 });
+
+
 
 
 
