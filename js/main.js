@@ -269,6 +269,13 @@ if (rangeSliderTwo) {
 		});
 	});
 }
+const sectionBtn = document.querySelectorAll('.section__button');
+const section = document.querySelector('.section');
+sectionBtn.forEach((elem) => {
+	elem.addEventListener('click', function () {
+		section.classList.toggle('active');
+	});
+});
 
 const inputButton = document.querySelectorAll('.catalog-inputs__button');
 inputButton.forEach((elem) => {
