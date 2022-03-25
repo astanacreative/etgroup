@@ -3085,7 +3085,7 @@ a:hover {
 	border-bottom: 1px solid #cf0036;
 }
 .modal-body {
-	padding: 34px;
+	padding: 20px 34px;
 }
 .form-group label{
 	font-weight: 400;
@@ -3093,7 +3093,7 @@ a:hover {
 	color: #888;
 	margin-bottom: 5px;
 }
-.form-group {
+.form-group:not(:last-child) {
 	margin-bottom: 20px;
 }
 .form-group label span {
