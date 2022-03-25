@@ -53,7 +53,7 @@
 							</div>
 						</div>
 						<div class="header__link">
-							<a href="">Заказать звонок</a>
+							<a href="javascript:;" data-bs-toggle="modal" data-bs-target="#exampleModal">Заказать звонок</a>
 						</div>
 						<div class="scroll__button">
 							<a href="#header">
@@ -131,22 +131,22 @@
 									</div>
 									<div class="section-bottom__two">
 										<div class="section-bottom__text">Розничная цена</div>
-										<div class="section-bottom__title">4 000 тг.</div>
+										<div class="section-bottom__title one-price">4 000</div>
 									</div>
 									<div class="section-bottom__three">
 										<div class="section-bottom__range">
 											<form action="">
 												<div class="counter_block big_basket" >
-													<input type="button" id="buttonCountMinus" value="-" class="buttonCountMinus">
-													<input value="1" type="text" id="buttonCountNumber" class="buttonCountNumber">
-													<input type="button" id="buttonCountPlus" value="+" class="buttonCountPlus" >
+													<input type="button"  value="-" data-direction="minus" class="counter__btn">
+													<input value="1" type="text" class="counter__value">
+													<input type="button" value="+" data-direction="plus" class="counter__btn">
 												</div>
 											</form>
 										</div>
 										<div class="section-bottom__text">Данного количества нет на складе</div>
 									</div>
 									<div class="section-bottom__four">
-										<div class="section-bottom__title">4 000 тг.</div>
+										<div class="section-bottom__title all-price">4 000</div>
 									</div>
 									<div class="section-bottom__five">
 										<div class="section-bottom__icon">
@@ -168,22 +168,22 @@
 									</div>
 									<div class="section-bottom__two">
 										<div class="section-bottom__text">Розничная цена</div>
-										<div class="section-bottom__title">4 000 тг.</div>
+										<div class="section-bottom__title one-price">4 000</div>
 									</div>
 									<div class="section-bottom__three">
 										<div class="section-bottom__range">
 											<form action="">
 												<div class="counter_block big_basket" >
-													<input type="button" id="buttonCountMinus" value="-" class="buttonCountMinus">
-													<input value="1" type="text" id="buttonCountNumber" class="buttonCountNumber">
-													<input type="button" id="buttonCountPlus" value="+" class="buttonCountPlus" >
+													<input type="button"  value="-" data-direction="minus" class="counter__btn">
+													<input value="1" type="text" class="counter__value">
+													<input type="button" value="+" data-direction="plus" class="counter__btn">
 												</div>
 											</form>
 										</div>
 										<div class="section-bottom__text">Данного количества нет на складе</div>
 									</div>
 									<div class="section-bottom__four">
-										<div class="section-bottom__title">4 000 тг.</div>
+										<div class="section-bottom__title all-price">4 000 </div>
 									</div>
 									<div class="section-bottom__five">
 										<div class="section-bottom__icon">
@@ -200,7 +200,7 @@
 									Итого:
 								</div>
 								<div class="section-summa__title">
-									30 000 тг.
+									<span id="total-price"></span> тг.
 								</div>
 							</div>
 							<div class="section-bottom__buttons">
@@ -2462,7 +2462,7 @@
 								</div>
 							</div>
 							<div class="footer-block__call">
-								<a href="">ЗАКАЗАТЬ ЗВОНОК</a>
+								<a href="javascript:;" data-bs-toggle="modal" data-bs-target="#exampleModal">ЗАКАЗАТЬ ЗВОНОК</a>
 							</div>
 							<div class="footer-block__meta">
 								<div class="footer-block__title">Мы в социальных сетях:</div>
@@ -2476,6 +2476,32 @@
 					</div>
 				</footer>
 			<!-- 	</footer> -->
+			<div class="modal fade show" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" style="display: none;" aria-modal="true" role="dialog">
+				<div class="modal-dialog modal-dialog-centered">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="exampleModalLabel">Заказать звонок</h5>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<form action="/r.php" method="POST">
+						<div class="modal-body">
+							<div class="form-group">
+								<label>Ваше имя<span>*</span></label>
+								<input type="text" class="form-control item">
+							</div>
+							<div class="form-group">
+								<label>Телефон<span>*</span></label>
+								<input type="text" class="form-control item" id="phone">
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="submit" class="button-one">Отправить</button>
+							<button type="button" class="button-two" data-bs-dismiss="modal" aria-label="Close">Закрыть</button>
+						</div>
+						</form>
+					</div>
+				</div>
+			</div>
 			</div>
 		</div>
 

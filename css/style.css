@@ -124,6 +124,10 @@ a:hover {
 /*.body ._lock {
 	overflow: hidden;
 }*/
+:active, :hover, :focus {
+	outline: 0;
+	outline-offset: 0;
+}
 
 /*------------------------------wrapper---------------------------*/
 
@@ -315,7 +319,7 @@ a:hover {
 	display: none;
 	position: absolute;
 	left: 0;
-	width: 110%;
+	width: 100%;
 	top: 50px;
 	background: #f9f9f9;
 	z-index: 4;
@@ -2262,9 +2266,10 @@ a:hover {
 	height: 25px;
 	width: 25px;
 	display: inline-block;
-	font-size: 16px;
+	font-size: 14px;
 	opacity: 0.7;
 	cursor: pointer;
+	text-align: center;
 }
 .catalog-section__button {
 	display: flex;
@@ -2291,7 +2296,7 @@ a:hover {
 .counter_block.big_basket {
 	display: flex;
 	align-items: center;
-	width: 80px;
+	width: 75px;
 	height: 25px;
 	text-align: center;
 	height: auto;
@@ -3053,6 +3058,91 @@ a:hover {
 	line-height: 15px;
 }
 
+
+/*------------------modal------------------------------------*/
+.modal-content {
+	height: 100%;
+	width: 100%;
+	outline: none;
+	background: #FFF;
+	border-radius: 0;
+}
+.modal.show .modal-dialog {
+	width: 420px;
+}
+.modal-header .modal-title {
+	color: #383838;
+   line-height: 20px;
+	font-size: 24px;
+   font-weight: 500;
+}
+.modal-header .btn-close {
+	width: 14px;
+	height: 14px;
+}
+.modal-header {
+	padding: 34px;
+	border-bottom: 1px solid #cf0036;
+}
+.modal-body {
+	padding: 34px;
+}
+.form-group label{
+	font-weight: 400;
+	font-size:14px;
+	color: #888;
+	margin-bottom: 5px;
+}
+.form-group {
+	margin-bottom: 20px;
+}
+.form-group label span {
+	color: #cf0036;
+}
+.form-control {
+	font-size: 14px;
+	background: #f7f7f7;
+   border: 1px solid #eaebec;
+   box-shadow: none;
+	border-radius: 0;
+   color: #383838;
+	padding: 8px 13px 7px;
+}
+.modal-footer {
+	border-top: 0;
+	padding: 0 34px 34px 34px;
+	justify-content: flex-start;
+}
+.button-one {
+	color: #FFF;
+   background: #d9002a;
+	width: 100px;
+	height: 40px;
+	font-size: 14px;
+}
+.button-one:hover {
+	background: #c50026;
+}
+.button-two {
+	color: #c50026;
+	border: 1px solid #d9002a;
+	background-color: #FFF;
+	width: 100px;
+	height: 40px;
+	font-size: 14px;
+}
+.button-one:hover {
+	background: #c50026;
+	color: #FFF;
+}
+.form-control:focus {
+	background: #f7f7f7;
+   border: 1px solid #eaebec;
+	box-shadow: none;
+}
+.btn-close:focus {
+	box-shadow: none;
+}
 /*------------------adaptive------------------------------------*/
 
 @media (max-width: 1399.98px) {
