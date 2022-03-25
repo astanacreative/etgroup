@@ -2808,8 +2808,8 @@ a:hover {
 	display: flex;
 }
 .section__body {
-	width: 700px;
-	display: block;
+	width: 0;
+	display: none;
 	background: #FFF;
 }
 .section.active .section-body {
