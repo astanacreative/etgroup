@@ -323,10 +323,10 @@ sectionBtn.forEach((elem) => {
 	});
 });
 
-// const prodShare = document.querySelector('.prod-share');
-// prodShare.addEventListener('click', function () {
-// 	this.parentElement.classList.toggle('active');
-// });
+const prodShare = document.querySelector('.prod-share');
+prodShare.addEventListener('click', function () {
+	this.parentElement.classList.toggle('active');
+});
 
 const inputButton = document.querySelectorAll('.catalog-inputs__button');
 inputButton.forEach((elem) => {
