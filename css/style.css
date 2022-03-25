@@ -2808,8 +2808,8 @@ a:hover {
 	display: flex;
 }
 .section__body {
-	display: none;
 	width: 0;
+	display: none;
 	background: #FFF;
 }
 .section.active .section-body {
@@ -2819,22 +2819,63 @@ a:hover {
 .section-body {
 }
 .section-body__top {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 25px 15px 20px 15px;
 }
 .section-body__title {
+	font-size: 26px;
+	font-weight: 600;
 }
 .section-body__row {
+	margin-left: -150px;
 }
 .section-body__tab {
+	padding-bottom: 5px;
+	font-size: 16px;
+   line-height: 20px;
+   font-weight: 500;
+	border-bottom: 2px solid #cf0028;
 }
 .section-body__button {
+	width: 99px;
+	height: 30px;
+	display: flex;
+	align-items: center;
+}
+.section-body__button a {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #6d6d6d;
+	border: 1px solid #e5e5e5;
+	padding-left: 10px;
+	position: relative;
+}
+.section-body__button a::before {
+	content: '';
+	width: 10px;
+	height: 10px;
+	background-image: url(../img/x-icon.svg);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	position: absolute;
+	top: 10px;
+	left: 5px;
 }
 .section-body__item {
+
 }
 .section-item {
 }
 .section-item__top {
 }
 .section-top {
+	padding: 10px 0;
 }
 .section-top__one {
 }
