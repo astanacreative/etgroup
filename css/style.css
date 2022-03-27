@@ -279,7 +279,7 @@ a:hover {
 	flex-direction: column;
 	background: rgb(66, 79, 96);
 	border-radius: 4px 0 0 4px;
-	height: 240px;
+	height: 180px;
 }
 .section__button:first-child {
 	display: flex;
@@ -3309,6 +3309,9 @@ a:hover {
 	}
 }
 @media (max-width: 767.98px) {
+	.section-body {
+		display: none;
+	}
 	.section.active .section-body {
 		display: none;
 	}
@@ -3540,17 +3543,17 @@ a:hover {
 		top: 0;
 	}
 	.section__button {
-		width: 25%;
+		width: 33.333%;
 		height: 50px;
 		cursor: pointer;
 	}
 	.section__block {
 		flex-direction: row;
+		border-radius: 0;
+		width: 100%;
+		height: auto;
 	}
 	.section__button:first-child {
-		border-radius: 0;
-	}
-	.section__block {
 		border-radius: 0;
 	}
 	.section__link img {

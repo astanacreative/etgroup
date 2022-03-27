@@ -2,7 +2,6 @@ $(document).ready(function() {
 	$("#phone").mask("+7 (999) 999-99-99");
 });
 
-
 const scrollButton = document.querySelector(".scroll__button");
 window.addEventListener("scroll", function(e) {
 	let scrollPos = window.scrollY;
@@ -207,26 +206,6 @@ tabsBtn.forEach(function (item) {
 	});
 });
 
-const counter = function () {
-	const btns = document.querySelectorAll('.counter__btn');
-	btns.forEach(btn => {
-		btn.addEventListener('click', function () {
-		const direction = this.dataset.direction;
-		const inp = this.parentElement.querySelector('.counter__value');
-		const currentValue = +inp.value;
-		let newValue;
-		if (direction === 'plus') {
-			newValue = currentValue + 1;
-		} else {
-			newValue = currentValue - 1 > 0 ? currentValue - 1 : 1;
-		}
-			inp.value = newValue;
-		})
-	}); 
-}
-counter();
-
-
 const rangeSlider = document.getElementById('range-slider');
 if (rangeSlider) {
 	noUiSlider.create(rangeSlider, {
@@ -322,9 +301,11 @@ sectionBtn.forEach((elem) => {
 });
 
 const prodShare = document.querySelector('.prod-share');
-prodShare.addEventListener('click', function () {
-	this.parentElement.classList.toggle('active');
-});
+if(prodShare) {
+	prodShare.addEventListener('click', function () {
+		this.parentElement.classList.toggle('active');
+	});
+}
 
 const inputButton = document.querySelectorAll('.catalog-inputs__button');
 inputButton.forEach((elem) => {
@@ -337,9 +318,11 @@ inputButton.forEach((elem) => {
 	});
 });
 const filterBtn = document.querySelector('.catalog-menu__inputs');
-filterBtn.addEventListener('click', function() {
-	filterBtn.parentElement.classList.toggle('active');
-});
+if (filterBtn) {
+	filterBtn.addEventListener('click', function() {
+		filterBtn.parentElement.classList.toggle('active');
+	});
+}
 
 function openbox(id) {
 	var all = document.querySelectorAll(".ship-block");
@@ -364,16 +347,87 @@ function openboxBank(id){
 	}
 }
 
+// const formatNumber = (x) => x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, '');
+const totalPriceWrapper = document.getElementById('total-price');
+
+const getSubTotalPrice = (input) => Number(input.value) * Number(input.dataset.price);
+
+const ACTION = {
+	MINUS: 'minus',
+	PLUS: 'plus',
+}
+
+const allprice = () => {
+	let totalCost = 0;
+	[...document.querySelectorAll('.section-bottom')].forEach((basketItem) => {
+		totalCost += getSubTotalPrice(basketItem.querySelector('.counter__value'));
+	});
+	totalPriceWrapper.textContent = totalCost;
+	totalPriceWrapper.dataset.value = totalCost;
+}
+const calculateSeparateItem = (basketItem, action) => {
+	const input = basketItem.querySelector('.counter__value');
+	switch (action) {
+		case ACTION.PLUS:
+			input.value++;
+			totalPriceWrapper.textContent = Number(totalPriceWrapper.dataset.value) + Number(input.dataset.price);
+			totalPriceWrapper.dataset.value = Number(totalPriceWrapper.dataset.value) + Number(input.dataset.price);
+			break;
+		case ACTION.MINUS:
+			input.value--;
+			totalPriceWrapper.textContent = Number(totalPriceWrapper.dataset.value) - Number(input.dataset.price);
+			totalPriceWrapper.dataset.value = Number(totalPriceWrapper.dataset.value) - Number(input.dataset.price);
+			break;
+	}
+	basketItem.querySelector('.all-price').textContent = `${getSubTotalPrice(input)} тг`;
+};
+
+document.getElementById('basket').addEventListener('click', (event) => {
+	if(event.target.classList.contains('btn-minus')) {
+		console.log('minus');
+		calculateSeparateItem(
+			event.target.closest('.section-bottom'),
+			ACTION.MINUS
+		);
+	}
+	if(event.target.classList.contains('btn-plus')) {
+		console.log('plus');
+		calculateSeparateItem(
+			event.target.closest('.section-bottom'),
+			ACTION.PLUS
+		);
+	}
+});
+
+allprice();
+
+
+
+// const counter = function () {
+// 	const btns = document.querySelectorAll('.counter__btn');
+// 	btns.forEach(btn => {
+// 		btn.addEventListener('click', function () {
+// 		const direction = this.dataset.direction;
+// 		const inp = this.parentElement.querySelector('.counter__value');
+// 		const currentValue = +inp.value;
+// 		let newValue;
+// 		if (direction === 'plus') {
+
+// 			newValue = currentValue + 1;
+// 		} else {
+// 			newValue = currentValue - 1 > 0 ? currentValue - 1 : 1;
+// 		}
+// 			inp.value = newValue;
+// 		})
+// 	}); 
+// }
+// counter();
+
+
 
 // const totalPriceWrapper = document.getElementById('total-price');
 // const getItemSubTotalPrice = (input) => Number(input.value) 
-// const allprice = () => {
-// 	let totalCost = 0;
-// 	document.querySelectorAll('.section-bottom').forEach((basketItem) => {
-// 		totalCost += Number(basketItem.querySelector('.counter__value').value) * Number(basketItem.querySelector('.one-price').innerHTML);
-// 	});
-// 	document.getElementById('total-price').textContent = totalCost;
-// }
+
 
 // const btnMinus = document.getElementById('buttonCountMinus');
 // const btnPlus = document.getElementById('buttonCountPlus');
