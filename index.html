@@ -53,7 +53,7 @@
 							</div>
 						</div>
 						<div class="header__link">
-							<a href="">Заказать звонок</a>
+							<a href="javascript:;" data-bs-toggle="modal" data-bs-target="#exampleModal">Заказать звонок</a>
 						</div>
 						<div class="scroll__button">
 							<a href="#header">
@@ -77,11 +77,11 @@
 								<img src="img/section-2.png" alt="">
 							</a>
 						</div>	
-						<div class="section__button">
+						<!-- <div class="section__button">
 							<a class="section__link">
 								<img src="img/section-3.png" alt="">
 							</a>
-						</div>	
+						</div>	 -->
 						<div class="section__button">
 							<a class="section__link">
 								<img src="img/section-4.png" alt="">
@@ -102,74 +102,125 @@
 								<a href="">Очистить</a>
 							</div>
 						</div>
-						<div class="section-body__item section-item">
-							<div class="section-item__top section-top">
-								<div class="section-top__one">
-									Наименование
+						<div class="section-body__item section-item" id="basket">
+							<div class="section-bottom__block">
+								<div class="section-item__top section-top">
+									<div class="section-top__one">
+										Наименование
+									</div>
+									<div class="section-top__two">
+										Цена
+									</div>
+									<div class="section-top__three">
+										Количество
+									</div>
+									<div class="section-top__four">
+										Сумма
+									</div>
+									<div class="section-top__five">
+									</div>
 								</div>
-								<div class="section-top__two">
-									Цена
+								<div class="section-item__bottom section-bottom">
+									<div class="section-bottom__one">
+										<div class="section-bottom__image">
+											<img src="" alt="">
+										</div>
+										<div class="section-bottom__link">
+											<a href="">Кафельная плитка 300*750 мм, артикул 7506 С (светлый) А (тёмный)</a>
+										</div>
+									</div>
+									<div class="section-bottom__two">
+										<div class="section-bottom__text">Розничная цена</div>
+										<div class="section-bottom__title price">4 000 тг</div>
+									</div>
+									<div class="section-bottom__three">
+										<div class="section-bottom__range">
+											<form action="">
+												<div class="counter_block big_basket" >
+													<input type="button"  value="-" data-direction="minus" class="counter__btn btn-minus">
+													<input value="1" type="text" data-price="4000" class="counter__value">
+													<input type="button" value="+" data-direction="plus" class="counter__btn btn-plus">
+												</div>
+											</form>
+										</div>
+										<div class="section-bottom__text">Данного количества нет на складе</div>
+									</div>
+									<div class="section-bottom__four">
+										<div class="section-bottom__title all-price">4 000 тг</div>
+									</div>
+									<div class="section-bottom__five">
+										<div class="section-bottom__icon">
+											<a href=""><img src="img/like-icon.png" alt=""></a>
+										</div>
+									</div>
+									<div class="section-bottom__remove">
+										<a href=""></a>
+									</div>
 								</div>
-								<div class="section-top__three">
-									Количество
-								</div>
-								<div class="section-top__four">
-									Сумма
-								</div>
-								<div class="section-top__five">
+								<div class="section-item__bottom section-bottom">
+									<div class="section-bottom__one">
+										<div class="section-bottom__image">
+											<img src="" alt="">
+										</div>
+										<div class="section-bottom__link">
+											<a href="">Кафельная плитка 300*750 мм, артикул 7506 С (светлый) А (тёмный)</a>
+										</div>
+									</div>
+									<div class="section-bottom__two">
+										<div class="section-bottom__text">Розничная цена</div>
+										<div class="section-bottom__title price">4 000 тг</div>
+									</div>
+									<div class="section-bottom__three">
+										<div class="section-bottom__range">
+											<form action="">
+												<div class="counter_block big_basket" >
+													<input type="button"  value="-" data-direction="minus" class="counter__btn btn-minus">
+													<input value="1" type="text" data-price="4000" class="counter__value">
+													<input type="button" value="+" data-direction="plus" class="counter__btn btn-plus">
+												</div>
+											</form>
+										</div>
+										<div class="section-bottom__text">Данного количества нет на складе</div>
+									</div>
+									<div class="section-bottom__four">
+										<div class="section-bottom__title all-price">4 000 тг</div>
+									</div>
+									<div class="section-bottom__five">
+										<div class="section-bottom__icon">
+											<a href=""><img src="img/like-icon.png" alt=""></a>
+										</div>
+									</div>
+									<div class="section-bottom__remove">
+										<a href=""></a>
+									</div>
 								</div>
 							</div>
-							<div class="section-item__bottom section-bottom">
-								<div class="section-bottom__one">
-									<div class="section-bottom__image">
-										<img src="" alt="">
-									</div>
-									<div class="section-bottom__link">
-										<a href="">Кафельная плитка 300*750 мм, артикул 7506 С (светлый) А (тёмный)</a>
-									</div>
+							<div class="section-bottom__summa section-summa">
+								<div class="section-summa__text">
+									Итого:
 								</div>
-								<div class="section-bottom__two">
-									<div class="section-bottom__tex">Розничная цена</div>
-									<div class="section-bottom__title">4 000 тг.</div>
-								</div>
-								<div class="section-bottom__three">
-									<div class="section-bottom__range">
-										<form action="">
-											<div class="counter_block big_basket" >
-												<input type="button" id="buttonCountMinus" value="-" class="buttonCountMinus">
-												<input value="1" type="text" id="buttonCountNumber" class="buttonCountNumber">
-												<input type="button" id="buttonCountPlus" value="+" class="buttonCountPlus" >
-											</div>
-										</form>
-									</div>
-									<div class="section-bottom__tex">Данного количества нет на складе</div>
-								</div>
-								<div class="section-bottom__four">
-									<div class="section-bottom__title">4 000 тг.</div>
-								</div>
-								<div class="section-bottom__six">
-									<div class="section-bottom__icon">
-										<a href=""><img src="img/like-icon.png" alt=""></a>
-									</div>
+								<div class="section-summa__title">
+									<span id="total-price"></span> тг.
 								</div>
 							</div>
 							<div class="section-bottom__buttons">
-								<div class="section-bottom__link">
-									<a href="">Продолжить</a>
+								<div class="section-bottom__click one-click">
+									<a href="">Продолжить покупки</a>
 									<div class="section-bottom__text">Вернуться к выбору товаров</div>
 								</div>
-								<div class="section-bottom__link">
+								<div class="section-bottom__click two-click">
 									<a href="">Перейти в корзину</a>
 									<div class="section-bottom__text">Полноценное оформление заказа</div>
 								</div>
-								<div class="section-bottom__link">
-									<a href="">Быстрый</a>
+								<div class="section-bottom__click three-click">
+									<a href="">Быстрый заказ</a>
 									<div class="section-bottom__text">Вам потребуется указать только имя и номер</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</section>
+
 			<!-- 	</section> -->
 				<section class="new__menu main">
 					<div class="new-menu__container">
@@ -1198,7 +1249,7 @@
 															<div class="tabs-item__text">
 																<p>Унитаз подвесной с сиденьем для унитаза, GROHE Bau Ceramic, альпин-белый,<br>(39351000)</p>
 															</div>
-															<div class="tab-item__main">
+															<!-- <div class="tab-item__main">
 																<ul class="tab-item__menu">
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
@@ -1206,7 +1257,7 @@
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																</ul>
-															</div>
+															</div> -->
 															<div class="tab-item__price">
 																91 500 тг./шт
 															</div>
@@ -1229,7 +1280,7 @@
 															<div class="tabs-item__text">
 																<p>Унитаз напольный для комбинации с бачком наружного монтажа, GROHE Bau Ceramic, альпин-белый,<br>(39349000)</p>
 															</div>
-															<div class="tab-item__main">
+															<!-- <div class="tab-item__main">
 																<ul class="tab-item__menu">
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
@@ -1237,7 +1288,7 @@
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																</ul>
-															</div>
+															</div> -->
 															<div class="tab-item__price">
 																68 500 тг./шт
 															</div>
@@ -1260,7 +1311,7 @@
 															<div class="tabs-item__text">
 																<p>Унитаз напольный для комбинации с бачком наружного монтажа, GROHE Euro Ceramic, <br> 39338000</p>
 															</div>
-															<div class="tab-item__main">
+															<!-- <div class="tab-item__main">
 																<ul class="tab-item__menu">
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
@@ -1268,7 +1319,7 @@
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																</ul>
-															</div>
+															</div> -->
 															<div class="tab-item__price">
 																110 000 тг./шт
 															</div>
@@ -1291,7 +1342,7 @@
 															<div class="tabs-item__text">
 																<p>Смеситель однорычажный для мойки GROHE BauCurve, артикул <br> 31231001</p>
 															</div>
-															<div class="tab-item__main">
+															<!-- <div class="tab-item__main">
 																<ul class="tab-item__menu">
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
@@ -1299,7 +1350,7 @@
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																</ul>
-															</div>
+															</div> -->
 															<div class="tab-item__price">
 																62 000 тг./шт
 															</div>
@@ -1322,7 +1373,7 @@
 															<div class="tabs-item__text">
 																<p>Душевой гарнитур с 1 режимом струи, GROHE Tempesta New артикул <br> 27853001</p>
 															</div>
-															<div class="tab-item__main">
+															<!-- <div class="tab-item__main">
 																<ul class="tab-item__menu">
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
@@ -1330,7 +1381,7 @@
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																</ul>
-															</div>
+															</div> -->
 															<div class="tab-item__price">
 																23 500 тг./шт
 															</div>
@@ -1353,7 +1404,7 @@
 															<div class="tabs-item__text">
 																<p>Душевой набор GROHE New Tempesta 100 с ручным душем и подключением для душевого шланга, артикул <br> 26406001</p>
 															</div>
-															<div class="tab-item__main">
+															<!-- <div class="tab-item__main">
 																<ul class="tab-item__menu">
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
@@ -1361,7 +1412,7 @@
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																</ul>
-															</div>
+															</div> -->
 															<div class="tab-item__price">
 																25 000 тг./шт
 															</div>
@@ -1384,7 +1435,7 @@
 															<div class="tabs-item__text">
 																<p>BauLoop Смеситель однорычажный для раковины, артикул <br> 23917001</p>
 															</div>
-															<div class="tab-item__main">
+															<!-- <div class="tab-item__main">
 																<ul class="tab-item__menu">
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
@@ -1392,7 +1443,7 @@
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																</ul>
-															</div>
+															</div> -->
 															<div class="tab-item__price">
 																41 000 тг./шт
 															</div>
@@ -1415,7 +1466,7 @@
 															<div class="tabs-item__text">
 																<p>Глянцевый керамогранит (600*600 мм) артикул <br> IMB1688</p>
 															</div>
-															<div class="tab-item__main">
+															<!-- <div class="tab-item__main">
 																<ul class="tab-item__menu">
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
@@ -1423,7 +1474,7 @@
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																</ul>
-															</div>
+															</div> -->
 															<div class="tab-item__price">
 																7 400 тг./м2
 															</div>
@@ -1450,7 +1501,7 @@
 															<div class="tabs-item__text">
 																<p>Унитаз подвесной с сиденьем для унитаза, GROHE Bau Ceramic, альпин-белый,<br>(39351000)</p>
 															</div>
-															<div class="tab-item__main">
+															<!-- <div class="tab-item__main">
 																<ul class="tab-item__menu">
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
@@ -1458,7 +1509,7 @@
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																</ul>
-															</div>
+															</div> -->
 															<div class="tab-item__price">
 																91 500 тг./шт
 															</div>
@@ -1481,7 +1532,7 @@
 															<div class="tabs-item__text">
 																<p>У39339000 Унитаз напольный приставной безободковый GROHE Euro Ceramic (без сиденья)</p>
 															</div>
-															<div class="tab-item__main">
+															<!-- <div class="tab-item__main">
 																<ul class="tab-item__menu">
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
@@ -1489,7 +1540,7 @@
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																</ul>
-															</div>
+															</div> -->
 															<div class="tab-item__price">
 																109 500 тг./шт
 															</div>
@@ -1512,7 +1563,7 @@
 															<div class="tabs-item__text">
 																<p>39332000 Смывной бачок для унитаза, GROHE Euro Ceramic, альпин-белый</p>
 															</div>
-															<div class="tab-item__main">
+															<!-- <div class="tab-item__main">
 																<ul class="tab-item__menu">
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
@@ -1520,7 +1571,7 @@
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																</ul>
-															</div>
+															</div> -->
 															<div class="tab-item__price">
 																102 500 тг./шт
 															</div>
@@ -1543,7 +1594,7 @@
 															<div class="tabs-item__text">
 																<p>39330001 Сиденье для унитаза с микролифтом, GROHE Euro Ceramic, альпин-белый</p>
 															</div>
-															<div class="tab-item__main">
+															<!-- <div class="tab-item__main">
 																<ul class="tab-item__menu">
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
@@ -1551,7 +1602,7 @@
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																</ul>
-															</div>
+															</div> -->
 															<div class="tab-item__price">
 																51 500 тг./шт
 															</div>
@@ -1574,7 +1625,7 @@
 															<div class="tabs-item__text">
 																<p>Глянцевый керамогранит (600*600 мм) артикул <br> IMB1688</p>
 															</div>
-															<div class="tab-item__main">
+															<!-- <div class="tab-item__main">
 																<ul class="tab-item__menu">
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
@@ -1582,7 +1633,7 @@
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																</ul>
-															</div>
+															</div> -->
 															<div class="tab-item__price">
 																7 400 тг./м2
 															</div>
@@ -1605,7 +1656,7 @@
 															<div class="tabs-item__text">
 																<p>Смеситель для душа GROHE BauCurve (хром), артикул <br> 23631000</p>
 															</div>
-															<div class="tab-item__main">
+															<!-- <div class="tab-item__main">
 																<ul class="tab-item__menu">
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
@@ -1613,7 +1664,7 @@
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																</ul>
-															</div>
+															</div> -->
 															<div class="tab-item__price">
 																45 000 тг./шт
 															</div>
@@ -1636,7 +1687,7 @@
 															<div class="tabs-item__text">
 																<p>BauClassic Набор для гиг/душа со смесителем, артикул <br> 124434</p>
 															</div>
-															<div class="tab-item__main">
+															<!-- <div class="tab-item__main">
 																<ul class="tab-item__menu">
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
@@ -1644,7 +1695,7 @@
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																</ul>
-															</div>
+															</div> -->
 															<div class="tab-item__price">
 																87 500 тг./шт
 															</div>
@@ -1667,7 +1718,7 @@
 															<div class="tabs-item__text">
 																<p>Полуматовый керамогранит 1200*600 мм FMB10036RPQ</p>
 															</div>
-															<div class="tab-item__main">
+															<!-- <div class="tab-item__main">
 																<ul class="tab-item__menu">
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
@@ -1675,7 +1726,7 @@
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																</ul>
-															</div>
+															</div> -->
 															<div class="tab-item__price">
 																13 900 тг./м2
 															</div>
@@ -1702,7 +1753,7 @@
 															<div class="tabs-item__text">
 																<p>Гигиенический душ GROHE, белый <br>(28020L00)</p>
 															</div>
-															<div class="tab-item__main">
+															<!-- <div class="tab-item__main">
 																<ul class="tab-item__menu">
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
@@ -1710,7 +1761,7 @@
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																</ul>
-															</div>
+															</div> -->
 															<div class="tab-item__price">
 																9 500 тг./шт
 															</div>
@@ -1733,7 +1784,7 @@
 															<div class="tabs-item__text">
 																<p>Гигиенический душ GROHE с держателем и шлангом (черный) артикул <br> 27826000</p>
 															</div>
-															<div class="tab-item__main">
+															<!-- <div class="tab-item__main">
 																<ul class="tab-item__menu">
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
@@ -1741,7 +1792,7 @@
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																</ul>
-															</div>
+															</div> -->
 															<div class="tab-item__price">
 																17 000 тг./шт
 															</div>
@@ -1764,7 +1815,7 @@
 															<div class="tabs-item__text">
 																<p>Полированный керамогранит 1200*600 мм артикул <br> FMB0026PCM</p>
 															</div>
-															<div class="tab-item__main">
+															<!-- <div class="tab-item__main">
 																<ul class="tab-item__menu">
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
@@ -1772,7 +1823,7 @@
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																</ul>
-															</div>
+															</div> -->
 															<div class="tab-item__price">
 																13 900 тг./м2
 															</div>
@@ -1795,7 +1846,7 @@
 															<div class="tabs-item__text">
 																<p>Полуматовый керамогранит 1200*600 мм <br> FMB10036RPQ</p>
 															</div>
-															<div class="tab-item__main">
+															<!-- <div class="tab-item__main">
 																<ul class="tab-item__menu">
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
@@ -1803,7 +1854,7 @@
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																</ul>
-															</div>
+															</div> -->
 															<div class="tab-item__price">
 																13 900 тг./м2
 															</div>
@@ -1826,7 +1877,7 @@
 															<div class="tabs-item__text">
 																<p>Матовый керамогранит 1200*600 мм артикул <br> FMC10603Q</p>
 															</div>
-															<div class="tab-item__main">
+															<!-- <div class="tab-item__main">
 																<ul class="tab-item__menu">
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
@@ -1834,7 +1885,7 @@
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																</ul>
-															</div>
+															</div> -->
 															<div class="tab-item__price">
 																13 900 тг./м2
 															</div>
@@ -1857,7 +1908,7 @@
 															<div class="tabs-item__text">
 																<p>Матовый керамогранит 1200*600 мм артикул <br> FMC10003M</p>
 															</div>
-															<div class="tab-item__main">
+															<!-- <div class="tab-item__main">
 																<ul class="tab-item__menu">
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
@@ -1865,7 +1916,7 @@
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																</ul>
-															</div>
+															</div> -->
 															<div class="tab-item__price">
 																13 900 тг./м2
 															</div>
@@ -1888,7 +1939,7 @@
 															<div class="tabs-item__text">
 																<p>Полуматовый керамогранит 1200*600 мм <br> FMB0027RPM</p>
 															</div>
-															<div class="tab-item__main">
+															<!-- <div class="tab-item__main">
 																<ul class="tab-item__menu">
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
@@ -1896,7 +1947,7 @@
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																</ul>
-															</div>
+															</div> -->
 															<div class="tab-item__price">
 																13 900 тг./м2
 															</div>
@@ -1919,7 +1970,7 @@
 															<div class="tabs-item__text">
 																<p>Полированный керамогранит 1200*600 мм артикул <br> FMB8037PCQ</p>
 															</div>
-															<div class="tab-item__main">
+															<!-- <div class="tab-item__main">
 																<ul class="tab-item__menu">
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
@@ -1927,7 +1978,7 @@
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																</ul>
-															</div>
+															</div> -->
 															<div class="tab-item__price">
 																13 900 тг./м2
 															</div>
@@ -1954,7 +2005,7 @@
 															<div class="tabs-item__text">
 																<p>Матовая керамическая плитка 600*600 мм, артикул 211</p>
 															</div>
-															<div class="tab-item__main">
+															<!-- <div class="tab-item__main">
 																<ul class="tab-item__menu">
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
@@ -1962,7 +2013,7 @@
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																</ul>
-															</div>
+															</div> -->
 															<div class="tab-item__price">
 																4 500 тг./м2
 															</div>
@@ -1985,7 +2036,7 @@
 															<div class="tabs-item__text">
 																<p>Матовая керамическая плитка 600*600 мм, артикул 217</p>
 															</div>
-															<div class="tab-item__main">
+															<!-- <div class="tab-item__main">
 																<ul class="tab-item__menu">
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
@@ -1993,7 +2044,7 @@
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																</ul>
-															</div>
+															</div> -->
 															<div class="tab-item__price">
 																4 500 тг./м2
 															</div>
@@ -2016,7 +2067,7 @@
 															<div class="tabs-item__text">
 																<p>Матовая керамическая плитка 600*600 мм, артикул 6041</p>
 															</div>
-															<div class="tab-item__main">
+															<!-- <div class="tab-item__main">
 																<ul class="tab-item__menu">
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
@@ -2024,7 +2075,7 @@
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																</ul>
-															</div>
+															</div> -->
 															<div class="tab-item__price">
 																4 500 тг./м2
 															</div>
@@ -2047,7 +2098,7 @@
 															<div class="tabs-item__text">
 																<p>Матовая керамическая плитка 600*600 мм, артикул 6043</p>
 															</div>
-															<div class="tab-item__main">
+															<!-- <div class="tab-item__main">
 																<ul class="tab-item__menu">
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
@@ -2055,7 +2106,7 @@
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																</ul>
-															</div>
+															</div> -->
 															<div class="tab-item__price">
 																4 500 тг./м2
 															</div>
@@ -2078,7 +2129,7 @@
 															<div class="tabs-item__text">
 																<p>Матовая керамическая плитка 600*600 мм, артикул 6040</p>
 															</div>
-															<div class="tab-item__main">
+															<!-- <div class="tab-item__main">
 																<ul class="tab-item__menu">
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
@@ -2086,7 +2137,7 @@
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																</ul>
-															</div>
+															</div> -->
 															<div class="tab-item__price">
 																4 500 тг./м2
 															</div>
@@ -2109,7 +2160,7 @@
 															<div class="tabs-item__text">
 																<p>Матовая керамическая плитка 600*600 мм, артикул 6055</p>
 															</div>
-															<div class="tab-item__main">
+															<!-- <div class="tab-item__main">
 																<ul class="tab-item__menu">
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
@@ -2117,7 +2168,7 @@
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																</ul>
-															</div>
+															</div> -->
 															<div class="tab-item__price">
 																4 500 тг./м2
 															</div>
@@ -2140,7 +2191,7 @@
 															<div class="tabs-item__text">
 																<p>Матовая керамическая плитка 600*600 мм, артикул 7702</p>
 															</div>
-															<div class="tab-item__main">
+															<!-- <div class="tab-item__main">
 																<ul class="tab-item__menu">
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
@@ -2148,7 +2199,7 @@
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																</ul>
-															</div>
+															</div> -->
 															<div class="tab-item__price">
 																4 500 тг./м2
 															</div>
@@ -2171,7 +2222,7 @@
 															<div class="tabs-item__text">
 																<p>Квадратное зеркало Искушение (белое золото)</p>
 															</div>
-															<div class="tab-item__main">
+															<!-- <div class="tab-item__main">
 																<ul class="tab-item__menu">
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
@@ -2179,7 +2230,7 @@
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																	<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
 																</ul>
-															</div>
+															</div> -->
 															<div class="tab-item__price">
 																69 000 тг./шт
 															</div>
@@ -2412,7 +2463,7 @@
 								</div>
 							</div>
 							<div class="footer-block__call">
-								<a href="">ЗАКАЗАТЬ ЗВОНОК</a>
+								<a href="javascript:;" data-bs-toggle="modal" data-bs-target="#exampleModal">ЗАКАЗАТЬ ЗВОНОК</a>
 							</div>
 							<div class="footer-block__meta">
 								<div class="footer-block__title">Мы в социальных сетях:</div>
@@ -2426,6 +2477,32 @@
 					</div>
 				</footer>
 			<!-- 	</footer> -->
+			<div class="modal fade show" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" style="display: none;" aria-modal="true" role="dialog">
+				<div class="modal-dialog modal-dialog-centered">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="exampleModalLabel">Заказать звонок</h5>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<form action="/r.php" method="POST">
+						<div class="modal-body">
+							<div class="form-group">
+								<label>Ваше имя<span>*</span></label>
+								<input type="text" class="form-control item">
+							</div>
+							<div class="form-group">
+								<label>Телефон<span>*</span></label>
+								<input type="text" class="form-control item" id="phone">
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="submit" class="button-one">Отправить</button>
+							<button type="button" class="button-two" data-bs-dismiss="modal" aria-label="Close">Закрыть</button>
+						</div>
+						</form>
+					</div>
+				</div>
+			</div>
 			</div>
 		</div>
 
