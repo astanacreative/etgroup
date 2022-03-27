@@ -508,7 +508,7 @@ ul li::before {
     color: #cf0036;
 }
 .tab-section{
-    max-width: 500px;
+    max-width: 904px;
     padding: 34px 0 50px;
     color: #555;
     font-size: 13px;
@@ -751,11 +751,15 @@ textarea{
 .order-buy-title-content .kassa::before{
     background-position: 0 -30px
 }
+
+
 .order-buy-title-content{
     padding: 29px 19px 29px 79px;
     border: 1px solid #f3f3f3;
     border-bottom: none;
     background: #fbfbfb;
+    display: flex;
+    justify-content: space-between;
 }
 .order-buy-content{
     padding: 25px 29px 25px 79px;
@@ -892,6 +896,9 @@ textarea{
     line-height: 15px;
     color: #333333;
 }
+.order-buy-blocks {
+    width: 100%;
+}
 .order-promo-code {
     display: flex;
     align-items: center;
@@ -969,9 +976,37 @@ textarea{
 .order-buy-section {
     display: flex;
 }
-.order-buy-rdy{
+.order-buy-rdy, .order-change-btn{
     display: none;
 }
+
+
+.order-buy-block.active .order-buy-rdy{
+    display: block;
+    padding: 25px 29px 25px 79px;
+    font-size: 15px;
+    margin-bottom: 15px;
+    line-height: 20px;
+    color: #333333;
+}
+.order-buy-block.active .order-buy-content,.order-buy-block.active .order-next-btn,.order-buy-block.active .order-promo-code,.order-buy-block.active .custumer-btns {
+    display: none;
+}
+.order-buy-block.active .order-buy-title-content .good::before{
+    background-color: #52c200;
+    background-position: -30px -30px;
+}
+.order-buy-block.active .order-change-btn{
+    display: inline-block;
+    margin: 1px 0 0;
+    font-size: 14px;
+    line-height: 20px;
+    text-decoration: none;
+    color: #c50026;
+}
+
+
+
 
 @media (max-width: 1399.98px) {
     .recomend-slider-block{
