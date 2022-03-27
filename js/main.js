@@ -2,8 +2,6 @@ $(document).ready(function() {
 	$("#phone").mask("+7 (999) 999-99-99");
 });
 
-
-
 const scrollButton = document.querySelector(".scroll__button");
 window.addEventListener("scroll", function(e) {
 	let scrollPos = window.scrollY;
@@ -249,10 +247,6 @@ tabsBtn.forEach(function (item) {
 	});
 });
 
-const count = document.querySelectorAll(".buttonCountNumber");
-	document.querySelectorAll(".buttonCountPlus").forEach((link) => {
-			let countPlus = elem.innerHTML;
-		});
 const rangeSlider = document.getElementById('range-slider');
 if (rangeSlider) {
 	noUiSlider.create(rangeSlider, {
