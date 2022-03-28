@@ -2821,7 +2821,7 @@ a:hover {
 	transition: ease-out 0.2s;
 }
 .section.active .section-body {
-	width: 700px;
+	width: 750px;
 	opacity: 1;
 	transition: ease-out 0.2s;
 	visibility: visible;
@@ -2897,7 +2897,7 @@ a:hover {
 	padding-left: 30px;
 }
 .section-top__two {
-	width: 15%;
+	width: 10%;
 }
 .section-top__three {
 	width: 15%;
@@ -2906,6 +2906,9 @@ a:hover {
 	width: 15%;
 }
 .section-top__five {
+	width: 15%;
+}
+.section-top__six {
 	width: 5%;
 }
 .section-bottom {
@@ -2947,7 +2950,7 @@ a:hover {
 	color: #000;
 }
 .section-bottom__two {
-	width: 15%;
+	width: 10%;
 }
 .section-bottom__text {
 	font-size: 12px;
@@ -2966,6 +2969,9 @@ a:hover {
 	width: 15%;
 }
 .section-bottom__five {
+	width: 15%;
+}
+.section-bottom__six {
 	width: 5%;
 }
 .section-bottom__icon img {
@@ -3144,6 +3150,83 @@ a:hover {
 .btn-close:focus {
 	box-shadow: none;
 }
+/*------------------articles------------------------------------*/
+.main.articles {
+	margin-top: 20px;
+	margin-bottom: 50px;
+}
+.main.articles-main .sidebar-item.active .menu-item {
+	display: block;
+}
+.main-block.articles-block {
+	margin-left: 20px;
+	width: 100%;
+}
+.articles-block__border {
+	border: 1px solid #E5E5E5;
+	display: flex;
+	width: 100%;
+	padding: 15px;
+	margin-bottom: 30px;
+}
+.articles-block__border p {
+	color: #383838;
+	font-size: 14px;
+	font-weight: 600;
+	margin-right: 20px;
+}
+.articles-block__border a {
+	color: #c50026;
+	font-size: 14px;
+	font-weight: 500;
+}
+.articles-block__border a:hover {
+	color: #000;
+}
+.articles-block__row {
+	display: flex;
+	flex-wrap: wrap;
+}
+.articles-block__item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex: 0 0 25%;
+}
+.articles-item__body {
+	padding: 0 20px;
+}
+.articles-item__image img {
+	height: 190px;
+	width: 200px;
+}
+.articles-item__image {
+	margin-bottom: 14px;
+}
+.articles-item__subtitle {
+	margin-bottom: 5px;
+	color: #1d2029;
+	font-size: 12px;
+   line-height: 12px;
+}
+.articles-item__title {
+	margin-bottom: 5px;
+}
+.articles-item__title a{
+	font-size: 14px;
+	color: #c50026;
+}
+.articles-item__title a:hover{
+	color: #000;
+}
+.articles-item__text {
+	font-size: 14px;
+	color: #888888;
+}
+
+
+
+
 /*------------------adaptive------------------------------------*/
 
 @media (max-width: 1399.98px) {

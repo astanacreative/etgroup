@@ -384,10 +384,19 @@ function openboxBank(id){
 	}
 }
 
+
+const sectionBtn = document.querySelectorAll('.section__button');
+const section = document.querySelector('.section');
+sectionBtn.forEach((elem) => {
+	elem.addEventListener('click', function () {
+		section.classList.toggle('active');
+	});
+});
+
 const formatNumber = (x) => x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 
 const totalPriceWrapper = document.getElementById('total-price');
-const subPriceWrapper = document.getElementById('sub-price');
+// const subPriceWrapper = document.getElementById('sub-price');
 
 const getSubTotalPrice = (input) => Number(input.value) * Number(input.dataset.price);
 
@@ -397,14 +406,15 @@ const ACTION = {
 }
 
 const allprice = () => {
+	const discountProduct = document.querySelector('.discount')
 	let totalCost = 0;
 	[...document.querySelectorAll('.item-price')].forEach((basketItem) => {
 		totalCost += getSubTotalPrice(basketItem.querySelector('.input'));
 	});
 	totalPriceWrapper.textContent = formatNumber(totalCost);
 	totalPriceWrapper.dataset.value = totalCost;
-	subPriceWrapper.textContent = formatNumber(totalCost);
-	subPriceWrapper.dataset.value = totalCost;
+	// subPriceWrapper.textContent = formatNumber(totalCost);
+	// subPriceWrapper.dataset.value = totalCost;
 }
 const calculateSeparateItem = (basketItem, action) => {
 	const input = basketItem.querySelector('.input');
@@ -419,7 +429,7 @@ const calculateSeparateItem = (basketItem, action) => {
 		case ACTION.MINUS:
 			// input.value = input.value - 1 > 0 ? input.value - 1 : 1
 			if (input.value - 1 > 0) {
-				input.value--
+				input.value--;
 				totalPriceWrapper.textContent = formatNumber(Number(totalPriceWrapper.dataset.value) - Number(input.dataset.price));
 				totalPriceWrapper.dataset.value = Number(totalPriceWrapper.dataset.value) - Number(input.dataset.price);
 			} 
