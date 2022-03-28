@@ -2572,6 +2572,7 @@ a:hover {
 	display: flex;
 	align-items: flex-start;
 	padding: 40px 0;
+	border-bottom: 1px solid #f3f3f3;
 }
 .product-bottom__one {
 	padding: 0 10px;
