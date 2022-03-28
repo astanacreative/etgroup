@@ -81,42 +81,54 @@ $('.recomend-slider-block').slick({
 	slidesToScroll: 4,
 	mobileFirst:true,
 	responsive: [
-		{
-			breakpoint: 1024,
-			settings: {
-			slidesToShow: 3,
-			slidesToScroll: 3,
-			infinite: true,
-			dots: true
-			}
-		},
-		{
-			breakpoint: 600,
-			settings: {
-			slidesToShow: 2,
-			slidesToScroll: 2
-			}
-		},
-		{
-			breakpoint: 480,
-			settings: {
-			slidesToShow: 1,
-			slidesToScroll: 1
-			}
-		},
-		{
-			breakpoint: 380,
-			settings: {
-			slidesToShow: 1,
-			slidesToScroll: 1
-			}
+	  {
+		breakpoint: 1024,
+		settings: {
+		  slidesToShow: 3,
+		  slidesToScroll: 3,
+		  infinite: true,
+		  dots: true
 		}
-		// You can unslick at a given breakpoint now by adding:
-		// settings: "unslick"
-		// instead of a settings object
-		]
-	});
+	  },
+	  {
+		breakpoint: 600,
+		settings: {
+		  slidesToShow: 2,
+		  slidesToScroll: 2
+		}
+	  },
+	  {
+		breakpoint: 480,
+		settings: {
+		  slidesToShow: 1,
+		  slidesToScroll: 1
+		}
+	  },
+	  {
+		breakpoint: 380,
+		settings: {
+		  slidesToShow: 1,
+		  slidesToScroll: 1
+		}
+	  }
+	  // You can unslick at a given breakpoint now by adding:
+	  // settings: "unslick"
+	  // instead of a settings object
+	]
+  });
 
+  $('.next-btn').on("click", function(e) {
+	const target = e.target
+	if (target.classList.contains('active')) {
+		$(target.childNodes[3]).slideUp();
+		target.classList.remove('active')
+	} else {
+		$('.accord__content').slideUp();
+		$(target.childNodes[3]).slideDown();
+		$('.accord__item').removeClass('active')
+		target.classList.add('active')
+	}
+});
 
 
 
@@ -162,6 +174,35 @@ tabBody.forEach((elem) => {
 		elem.parentElement.classList.remove('active');
 	});
 });
+
+
+const buyBtn = document.querySelectorAll('.next-btn');
+let hiddenAreaFace = document.querySelector('.order-buy-rdy span')
+buyBtn.forEach((elem) => {
+	elem.addEventListener('click', function () {
+		elem.parentElement.parentElement.classList.add('active');
+		hiddenAreaFace.textContent = elem.closest('.order-buy-block').querySelector('.js-input:checked').value;
+	});
+});
+let changeBtn=document.querySelectorAll('.order-change-btn');
+changeBtn.forEach((elem) => {
+	elem.addEventListener('click', function () {
+		elem.parentElement.parentElement.classList.remove('active');
+});
+});
+
+const buyJsBtn = document.querySelectorAll('.next-js-btn');
+let hiddenAreaIn = document.querySelector('.type-of-ship');
+let hiddenAreaPayment=document.querySelector('.type-of-payment')
+buyJsBtn.forEach((elem) => {
+	elem.addEventListener('click', function () {
+		elem.parentElement.parentElement.parentElement.classList.add('active');
+		hiddenAreaIn.textContent= elem.closest('.order-buy-block').querySelector('.js-input:checked').value;
+		hiddenAreaPayment.textContent= elem.closest('.order-buy-block').querySelector('.js-input:checked').value;
+	});
+});
+
+
 
 const menuItemButton = document.querySelector('.sidebar-item_active');
 
@@ -290,22 +331,16 @@ if (rangeSliderTwo) {
 			setRangeSliderTwo(index, e.currentTarget.value);
 		});
 	});
-}
-
-const sectionBtn = document.querySelectorAll('.section__button');
-const section = document.querySelector('.section');
-sectionBtn.forEach((elem) => {
-	elem.addEventListener('click', function () {
-		section.classList.toggle('active');
-	});
-});
+};
 
 const prodShare = document.querySelector('.prod-share');
-if(prodShare) {
-	prodShare.addEventListener('click', function () {
-		this.parentElement.classList.toggle('active');
-	});
+if (prodShare) {
+prodShare.addEventListener('click', function () {
+	this.parentElement.classList.toggle('active');
+});
 }
+
+
 
 const inputButton = document.querySelectorAll('.catalog-inputs__button');
 inputButton.forEach((elem) => {
@@ -317,11 +352,13 @@ inputButton.forEach((elem) => {
 		}
 	});
 });
+
+
 const filterBtn = document.querySelector('.catalog-menu__inputs');
 if (filterBtn) {
-	filterBtn.addEventListener('click', function() {
-		filterBtn.parentElement.classList.toggle('active');
-	});
+filterBtn.addEventListener('click', function() {
+	filterBtn.parentElement.classList.toggle('active');
+});
 }
 
 function openbox(id) {
@@ -460,10 +497,18 @@ removeButton.addEventListener('click', function () {
 // });
 
 
+
 /* SLIDER MAIN MENU */
-// slider.addEventListener('mouseenter', function () {
-// 	this.classList.add('active');
-// });
-// slider.addEventListener('mouseleave', function () {
-// 	this.classList.remove('active');
-// });
+if (slider){
+slider.addEventListener('mouseenter', function () {
+	this.classList.add('active');
+});
+slider.addEventListener('mouseleave', function () {
+	this.classList.remove('active');
+});
+}
+
+
+
+
+
