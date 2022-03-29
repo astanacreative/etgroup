@@ -969,6 +969,61 @@ textarea{
     line-height: 20px;
     color: #333;
 }
+.order-cart .order-change-btn{
+    display: inline-block;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: normal;
+    text-decoration: none;
+    color: #c50026;
+    margin-left: 40px;
+}
+.order-product-cost,.order-ship-cost{
+    font-size: 14px;
+    line-height: 20px;
+    color: #333333;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+.order-cart-cost{
+    margin-top: 40px;
+    padding: 0px 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eaebec;
+}
+.order-cart-total-cost{
+    padding: 0px 30px;
+    margin-top: 30px;
+}
+.order-cart-total-cost .order-product-cost{
+font-size: 16px;
+font-weight: 500;
+}
+.order-cart-total-cost .order-product-cost span{
+    font-size: 18px;
+}
+
+.order-cart{
+    margin-left: 20px;
+    padding: 30px 0px 40px;
+    border: 1px solid #f3f3f3;
+    border-radius: 0;
+    background: #FFF;
+    height: 50%;
+}
+.change_basket{
+    display: flex;
+    font-size: 16px;
+    font-weight: 600;
+    position: relative;
+    color: #333;
+    border-bottom: 1px solid #eaebec;
+    padding: 2px 29px 33px;
+}
+.change_basket .text{
+    min-width: 100px;
+}
 
 .customers-type .form-control{
     margin: 0 0 30px;
