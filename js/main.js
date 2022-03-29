@@ -177,28 +177,53 @@ tabBody.forEach((elem) => {
 
 
 const buyBtn = document.querySelectorAll('.next-btn');
-let hiddenAreaFace = document.querySelector('.order-buy-rdy span')
+let hiddenAreaFace = document.querySelector('.order-buy-rdy span');
+let openElement=document.querySelectorAll('order-buy-block');
 buyBtn.forEach((elem) => {
 	elem.addEventListener('click', function () {
 		elem.parentElement.parentElement.classList.add('active');
+		elem.parentElement.parentElement.nextElementSibling.classList.add('open')
 		hiddenAreaFace.textContent = elem.closest('.order-buy-block').querySelector('.js-input:checked').value;
 	});
 });
+
 let changeBtn=document.querySelectorAll('.order-change-btn');
+
 changeBtn.forEach((elem) => {
 	elem.addEventListener('click', function () {
 		elem.parentElement.parentElement.classList.remove('active');
 });
 });
 
+let orBuyBlock= document.querySelectorAll('.order-buy-block');
 const buyJsBtn = document.querySelectorAll('.next-js-btn');
 let hiddenAreaIn = document.querySelector('.type-of-ship');
-let hiddenAreaPayment=document.querySelector('.type-of-payment')
+let hiddenAreaPayment=document.querySelector('.type-of-payment');
+let hiddenSNP=document.querySelector('.type-of-snp');
+let hiddenEmail=document.querySelector('.type-of-email');
+let hiddenPhone=document.querySelector('.type-of-phone');
+let hiddenCity=document.querySelector('.type-of-city');
+let hiddenAdress=document.querySelector('.type-of-adress');
+let snpInf= document.getElementById('snp').value;
+console.log(snpInf);
 buyJsBtn.forEach((elem) => {
 	elem.addEventListener('click', function () {
-		elem.parentElement.parentElement.parentElement.classList.add('active');
+		elem.parentElement.parentElement.parentElement.parentElement.classList.add('active');
+		elem.parentElement.parentElement.parentElement.parentElement.nextElementSibling.classList.add('open')
 		hiddenAreaIn.textContent= elem.closest('.order-buy-block').querySelector('.js-input:checked').value;
 		hiddenAreaPayment.textContent= elem.closest('.order-buy-block').querySelector('.js-input:checked').value;
+		hiddenSNP.textContent= document.getElementById('snp').value;
+		// hiddenEmail.textContent= elem.closest('.order-buy-block').getElementById('email').value;
+		// hiddenPhone.textContent= elem.closest('.order-buy-block').getElementById('phone').value;
+		// hiddenCity.textContent= elem.closest('.order-buy-block').getElementById('city').value;
+		// hiddenAdress.textContent= elem.closest('.order-buy-block').getElementById('ship-adress').value;
+	});
+});
+const backBtnJs = document.querySelectorAll('.order-back-btn-a');
+backBtnJs.forEach((elem) => {
+	elem.addEventListener('click', function () {
+		elem.parentElement.parentElement.parentElement.parentElement.classList.remove('open');
+		elem.parentElement.parentElement.parentElement.parentElement.previousElementSibling.classList.remove('active')	
 	});
 });
 
