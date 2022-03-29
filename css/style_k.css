@@ -980,6 +980,19 @@ textarea{
     display: none;
 }
 
+.order-buy-main-content{
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+}
+.order-buy-block.open .order-buy-main-content{
+    height: auto;
+    opacity: 1;
+    visibility: visible;
+    transition: ease-in-out 1s;
+    
+}
+
 
 .order-buy-block.active .order-buy-rdy{
     display: block;
