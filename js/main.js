@@ -414,6 +414,18 @@ function openboxBank(id){
 	}
 }
 
+const articlesBtn = document.querySelector('.articles-two__button');
+const articlesBottom = document.querySelector('.articles-two__bottom');
+articlesBtn.addEventListener('click', function () {
+	articlesBottom.classList.toggle('active');
+});
+const articlesColumnBtn = document.querySelectorAll('.articles-column__block');
+articlesColumnBtn.forEach((elem) => {
+	elem.addEventListener('click', function() {
+		elem.parentElement.classList.toggle('active');
+	});
+});
+
 
 const sectionBtn = document.querySelectorAll('.section__button');
 const section = document.querySelector('.section');
@@ -547,6 +559,7 @@ slider.addEventListener('mouseleave', function () {
 	this.classList.remove('active');
 });
 }
+
 
 
 
