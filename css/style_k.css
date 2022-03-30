@@ -1005,12 +1005,13 @@ font-weight: 500;
 }
 
 .order-cart{
-    margin-left: 20px;
+    margin-left: 30px;
     padding: 30px 0px 40px;
     border: 1px solid #f3f3f3;
     border-radius: 0;
     background: #FFF;
-    height: 50%;
+    position: sticky;
+    top: 10px;
 }
 .change_basket{
     display: flex;
@@ -1030,6 +1031,7 @@ font-weight: 500;
 }
 .order-buy-section {
     display: flex;
+    align-items: flex-start;
 }
 .order-buy-rdy, .order-change-btn{
     display: none;
@@ -1047,7 +1049,82 @@ font-weight: 500;
     transition: ease-in-out 1s;
     
 }
-
+.order-product-row {
+    display: flex;
+    border-bottom: 1px solid #f3f3f3;
+    font-size: 13px;
+    line-height: 20px;
+    color: #999999;
+    text-align: left;
+}
+.order-product-column{
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 20px;
+    color: #333333;
+}
+.pr-p{
+    padding: 7px 10px 8px;
+}
+.pc-p{
+    padding: 39px 10px 25px
+}
+.order-buy-content:last-child{
+    padding: 0px;
+}
+.overflow-vis{
+    overflow: visible;
+}
+.product-row-name,.product-column-name {
+    width: 100%;
+    max-width: 343px;
+}
+.product-row-weight,.product-column-weight{
+    max-width: 48px;
+    width: 100%;
+}
+.product-row-cost,.product-column-cost{
+    width: 100%;
+    max-width: 100px;
+}
+.product-row-number, .product-column-number{
+    width: 100%;
+    max-width: 93px;
+}
+.product-column-name{
+    display: flex;
+    align-items: center;
+}
+.column-name-img{
+    max-width: 70px;
+    max-height: 70px;
+    margin-right: 10px;
+}
+.column-name-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.column-name-text a,.column-name-text a:hover{
+    color: #333333;
+    max-width: 100%;
+}
+.order-product-column{
+    display: flex;
+}
+.product-column-discount,.product-row-discount{
+    max-width: 84px;
+    width: 100%;
+}
+.product-column-cost{
+    font-size: 18px;
+    line-height: 16px;
+    color: #333;
+}
+.product-row-total {
+    max-width: 96px;
+    width: 100%;
+}
 
 .order-buy-block.active .order-buy-rdy{
     display: block;
@@ -1094,7 +1171,16 @@ font-weight: 500;
         max-width: 750px;
     }
     .order-buy-section {
-        flex-direction: column-reverse;
+        flex-direction: column;
+
+    }
+    .order-cart{
+        position:relative;
+        width: 100%;
+        margin: 0px;
+    }
+    .change_basket{
+        justify-content: space-between;
     }
 
 }
