@@ -81,43 +81,43 @@ $('.recomend-slider-block').slick({
 	slidesToScroll: 4,
 	mobileFirst:true,
 	responsive: [
-	  {
-		breakpoint: 1024,
-		settings: {
-		  slidesToShow: 3,
-		  slidesToScroll: 3,
-		  infinite: true,
-		  dots: true
+		{
+			breakpoint: 1024,
+			settings: {
+			slidesToShow: 3,
+			slidesToScroll: 3,
+			infinite: true,
+			dots: true
+			}
+		},
+		{
+			breakpoint: 600,
+			settings: {
+			slidesToShow: 2,
+			slidesToScroll: 2
+			}
+		},
+		{
+			breakpoint: 480,
+			settings: {
+			slidesToShow: 1,
+			slidesToScroll: 1
+			}
+		},
+		{
+			breakpoint: 380,
+			settings: {
+			slidesToShow: 1,
+			slidesToScroll: 1
+			}
 		}
-	  },
-	  {
-		breakpoint: 600,
-		settings: {
-		  slidesToShow: 2,
-		  slidesToScroll: 2
-		}
-	  },
-	  {
-		breakpoint: 480,
-		settings: {
-		  slidesToShow: 1,
-		  slidesToScroll: 1
-		}
-	  },
-	  {
-		breakpoint: 380,
-		settings: {
-		  slidesToShow: 1,
-		  slidesToScroll: 1
-		}
-	  }
-	  // You can unslick at a given breakpoint now by adding:
-	  // settings: "unslick"
-	  // instead of a settings object
+		// You can unslick at a given breakpoint now by adding:
+		// settings: "unslick"
+		// instead of a settings object
 	]
-  });
+});
 
-  $('.next-btn').on("click", function(e) {
+$('.next-btn').on("click", function(e) {
 	const target = e.target
 	if (target.classList.contains('active')) {
 		$(target.childNodes[3]).slideUp();
@@ -187,7 +187,7 @@ buyBtn.forEach((elem) => {
 	});
 });
 
-let changeBtn=document.querySelectorAll('.order-change-btn');
+let changeBtn = document.querySelectorAll('.order-change-btn');
 
 changeBtn.forEach((elem) => {
 	elem.addEventListener('click', function () {
@@ -416,15 +416,17 @@ function openboxBank(id){
 
 const articlesBtn = document.querySelector('.articles-two__button');
 const articlesBottom = document.querySelector('.articles-two__bottom');
-articlesBtn.addEventListener('click', function () {
-	articlesBottom.classList.toggle('active');
-});
-const articlesColumnBtn = document.querySelectorAll('.articles-column__block');
-articlesColumnBtn.forEach((elem) => {
-	elem.addEventListener('click', function() {
-		elem.parentElement.classList.toggle('active');
+if (articlesBtn) {
+	articlesBtn.addEventListener('click', function () {
+		articlesBottom.classList.toggle('active');
 	});
-});
+	const articlesColumnBtn = document.querySelectorAll('.articles-column__block');
+	articlesColumnBtn.forEach((elem) => {
+		elem.addEventListener('click', function() {
+			elem.parentElement.classList.toggle('active');
+		});
+	});
+}
 
 
 const sectionBtn = document.querySelectorAll('.section__button');
