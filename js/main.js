@@ -81,43 +81,43 @@ $('.recomend-slider-block').slick({
 	slidesToScroll: 4,
 	mobileFirst:true,
 	responsive: [
-	  {
-		breakpoint: 1024,
-		settings: {
-		  slidesToShow: 3,
-		  slidesToScroll: 3,
-		  infinite: true,
-		  dots: true
+		{
+			breakpoint: 1024,
+			settings: {
+			slidesToShow: 3,
+			slidesToScroll: 3,
+			infinite: true,
+			dots: true
+			}
+		},
+		{
+			breakpoint: 600,
+			settings: {
+			slidesToShow: 2,
+			slidesToScroll: 2
+			}
+		},
+		{
+			breakpoint: 480,
+			settings: {
+			slidesToShow: 1,
+			slidesToScroll: 1
+			}
+		},
+		{
+			breakpoint: 380,
+			settings: {
+			slidesToShow: 1,
+			slidesToScroll: 1
+			}
 		}
-	  },
-	  {
-		breakpoint: 600,
-		settings: {
-		  slidesToShow: 2,
-		  slidesToScroll: 2
-		}
-	  },
-	  {
-		breakpoint: 480,
-		settings: {
-		  slidesToShow: 1,
-		  slidesToScroll: 1
-		}
-	  },
-	  {
-		breakpoint: 380,
-		settings: {
-		  slidesToShow: 1,
-		  slidesToScroll: 1
-		}
-	  }
-	  // You can unslick at a given breakpoint now by adding:
-	  // settings: "unslick"
-	  // instead of a settings object
+		// You can unslick at a given breakpoint now by adding:
+		// settings: "unslick"
+		// instead of a settings object
 	]
-  });
+});
 
-  $('.next-btn').on("click", function(e) {
+$('.next-btn').on("click", function(e) {
 	const target = e.target
 	if (target.classList.contains('active')) {
 		$(target.childNodes[3]).slideUp();
@@ -187,7 +187,7 @@ buyBtn.forEach((elem) => {
 	});
 });
 
-let changeBtn=document.querySelectorAll('.order-change-btn');
+let changeBtn = document.querySelectorAll('.order-change-btn');
 
 changeBtn.forEach((elem) => {
 	elem.addEventListener('click', function () {
@@ -195,37 +195,37 @@ changeBtn.forEach((elem) => {
 });
 });
 
-let orBuyBlock= document.querySelectorAll('.order-buy-block');
-const buyJsBtn = document.querySelectorAll('.next-js-btn');
-let hiddenAreaIn = document.querySelector('.type-of-ship');
-let hiddenAreaPayment=document.querySelector('.type-of-payment');
-let hiddenSNP=document.querySelector('.type-of-snp');
-let hiddenEmail=document.querySelector('.type-of-email');
-let hiddenPhone=document.querySelector('.type-of-phone');
-let hiddenCity=document.querySelector('.type-of-city');
-let hiddenAdress=document.querySelector('.type-of-adress');
-let snpInf= document.getElementById('snp').value;
-console.log(snpInf);
-buyJsBtn.forEach((elem) => {
-	elem.addEventListener('click', function () {
-		elem.parentElement.parentElement.parentElement.parentElement.classList.add('active');
-		elem.parentElement.parentElement.parentElement.parentElement.nextElementSibling.classList.add('open')
-		hiddenAreaIn.textContent= elem.closest('.order-buy-block').querySelector('.js-input:checked').value;
-		hiddenAreaPayment.textContent= elem.closest('.order-buy-block').querySelector('.js-input:checked').value;
-		hiddenSNP.textContent= document.getElementById('snp').value;
-		// hiddenEmail.textContent= elem.closest('.order-buy-block').getElementById('email').value;
-		// hiddenPhone.textContent= elem.closest('.order-buy-block').getElementById('phone').value;
-		// hiddenCity.textContent= elem.closest('.order-buy-block').getElementById('city').value;
-		// hiddenAdress.textContent= elem.closest('.order-buy-block').getElementById('ship-adress').value;
-	});
-});
-const backBtnJs = document.querySelectorAll('.order-back-btn-a');
-backBtnJs.forEach((elem) => {
-	elem.addEventListener('click', function () {
-		elem.parentElement.parentElement.parentElement.parentElement.classList.remove('open');
-		elem.parentElement.parentElement.parentElement.parentElement.previousElementSibling.classList.remove('active')	
-	});
-});
+// let orBuyBlock= document.querySelectorAll('.order-buy-block');
+// const buyJsBtn = document.querySelectorAll('.next-js-btn');
+// let hiddenAreaIn = document.querySelector('.type-of-ship');
+// let hiddenAreaPayment=document.querySelector('.type-of-payment');
+// let hiddenSNP=document.querySelector('.type-of-snp');
+// let hiddenEmail=document.querySelector('.type-of-email');
+// let hiddenPhone=document.querySelector('.type-of-phone');
+// let hiddenCity=document.querySelector('.type-of-city');
+// let hiddenAdress=document.querySelector('.type-of-adress');
+// let snpInf= document.getElementById('snp').value;
+// console.log(snpInf);
+// buyJsBtn.forEach((elem) => {
+// 	elem.addEventListener('click', function () {
+// 		elem.parentElement.parentElement.parentElement.parentElement.classList.add('active');
+// 		elem.parentElement.parentElement.parentElement.parentElement.nextElementSibling.classList.add('open')
+// 		hiddenAreaIn.textContent= elem.closest('.order-buy-block').querySelector('.js-input:checked').value;
+// 		hiddenAreaPayment.textContent= elem.closest('.order-buy-block').querySelector('.js-input:checked').value;
+// 		hiddenSNP.textContent= document.getElementById('snp').value;
+// 		// hiddenEmail.textContent= elem.closest('.order-buy-block').getElementById('email').value;
+// 		// hiddenPhone.textContent= elem.closest('.order-buy-block').getElementById('phone').value;
+// 		// hiddenCity.textContent= elem.closest('.order-buy-block').getElementById('city').value;
+// 		// hiddenAdress.textContent= elem.closest('.order-buy-block').getElementById('ship-adress').value;
+// 	});
+// });
+// const backBtnJs = document.querySelectorAll('.order-back-btn-a');
+// backBtnJs.forEach((elem) => {
+// 	elem.addEventListener('click', function () {
+// 		elem.parentElement.parentElement.parentElement.parentElement.classList.remove('open');
+// 		elem.parentElement.parentElement.parentElement.parentElement.previousElementSibling.classList.remove('active')	
+// 	});
+// });
 
 
 
@@ -411,15 +411,17 @@ function openboxBank(id){
 
 const articlesBtn = document.querySelector('.articles-two__button');
 const articlesBottom = document.querySelector('.articles-two__bottom');
-articlesBtn.addEventListener('click', function () {
-	articlesBottom.classList.toggle('active');
-});
-const articlesColumnBtn = document.querySelectorAll('.articles-column__block');
-articlesColumnBtn.forEach((elem) => {
-	elem.addEventListener('click', function() {
-		elem.parentElement.classList.toggle('active');
+if (articlesBtn) {
+	articlesBtn.addEventListener('click', function () {
+		articlesBottom.classList.toggle('active');
 	});
-});
+	const articlesColumnBtn = document.querySelectorAll('.articles-column__block');
+	articlesColumnBtn.forEach((elem) => {
+		elem.addEventListener('click', function() {
+			elem.parentElement.classList.toggle('active');
+		});
+	});
+}
 
 
 const sectionBtn = document.querySelectorAll('.section__button');
