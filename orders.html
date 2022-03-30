@@ -700,17 +700,17 @@
 														<label><span>Ф.И.О.&nbsp;<span class="star">*</span></span></label>
 														<input type="text" class="inputtext" id="snp"  required="" name="form_text_12" aria-required="true"> </div>
 														<div class="form-control">
-															<label><span>E-mail</span></label>
-															<input type="email" placeholder="mail@domen.com" class="inputtext " id="email"  name="form_email_14" > </div>
+															<label><span>E-mail <span class="star">*</span></span></label>
+															<input type="email" placeholder="mail@domen.com" class="inputtext email" id="email"  name="form_email_14" > </div>
 															<div class="form-control">
 																<label><span>Телефон&nbsp;<span class="star">*</span></span></label>
 																<input type="text" class="phone" id="phone" required="" name="form_text_13"  aria-required="true"> </div>
 																<div class="form-control">
 																	<label><span>Город&nbsp;<span class="star">*</span></span></label>
-																	<input type="text" class="inputtext " id="city" required="" name="form_text_12"  aria-required="true" > </div>
+																	<input type="text" class="inputtext city " id="city" required="" name="form_text_12"  aria-required="true" > </div>
 															<div class="form-control">
 															<label><span>Адрес доставки&nbsp;<span class="star">*</span></span></label>
-															<textarea  required="" name="form_textarea_15" cols="40" rows="5" aria-required="true" id="ship-adress"></textarea> </div>
+															<textarea class="ship" required="" name="form_textarea_15" cols="40" rows="5" aria-required="true" id="ship-adress"></textarea> </div>
 														<div class="shop-block__map">
 															<iframe
 															src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2504.2768467437095!2d71.41989711582264!3d51.12180127957355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x42458424eb5f5a91%3A0xb7f6b32c369bb0cf!2z0KHRgtGA0L7QuNGC0LXQu9GM0L3Ri9C5INCi0KYgItCa0L7QvNGE0L7RgNGCIiAo0KLQntCeICJFdXJhc2lhbiB0cmFkaW5nIGdyb3VwIik!5e0!3m2!1sru!2skz!4v1647371345338!5m2!1sru!2skz"
@@ -732,18 +732,33 @@
 										</div>
 									</div>
 									<div class="order-buy-rdy">
-									Ваш заказ <span class="type-of-snp"></span>
-									Ваш заказ <span class="type-of-email"></span>
-									Ваш заказ <span class="type-of-phone"></span>
-									Ваш заказ <span class="type-of-city"></span>
-									Ваш заказ <span class="type-of-adress"></span>
+									<p><strong>	Ф.И.О.: </strong> <span class="type-of-snp"></span></p>
+									<p><strong>E-mail: </strong> <span class="type-of-email"></span></p>
+									<p><strong>Телефон: </strong><span class="type-of-phone"></span></p>
+									<p><strong>Город: </strong> <span class="type-of-city"></span></p>
+									<p><strong>Адрес доставки: </strong> <span class="type-of-adress"></span></p>
 								</div>
 								</div>
                                     </div>
 								</div>
 								<div class="order-cart">
-									Ваш заказ <span class=""></span>
-
+									<div class="change_basket">
+										<div class="text"> Ваш заказ </div>
+										<a href="#" class="order-change-btn">Изменить</a>
+									</div>
+									<div class="order-cart-cost">
+										<div class="order-product-cost">
+											Товаров на: <span>286 000 тг.</span>
+										</div>
+										<div class="order-ship-cost">
+											Доставка: <span>0 тг.</span>
+										</div>
+									</div>
+									<div class="order-cart-total-cost">
+										<div class="order-product-cost">
+											Итого: <span>286 000 тг.</span>
+										</div>
+									</div>
 								</div>
 							</div>
                                 </div>
