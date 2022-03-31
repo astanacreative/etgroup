@@ -195,7 +195,7 @@ changeBtn.forEach((elem) => {
 });
 });
 
-let orBuyBlock= document.querySelectorAll('.order-buy-block');
+let orBuyBlock= document.querySelectorAll('.order-buy-block:last-child');
 const buyJsBtn = document.querySelectorAll('.next-js-btn');
 let hiddenAreaIn = document.querySelector('.type-of-ship');
 let hiddenAreaPayment=document.querySelector('.type-of-payment');
@@ -204,6 +204,8 @@ let hiddenEmail=document.querySelector('.type-of-email');
 let hiddenPhone=document.querySelector('.type-of-phone');
 let hiddenCity=document.querySelector('.type-of-city');
 let hiddenAdress=document.querySelector('.type-of-adress');
+let OrderBtnSave=document.querySelector('.btn-order-save');
+let OrderBtnSavePrice=document.querySelector('.order-btn-save-block');
 buyJsBtn.forEach((elem) => {
 	elem.addEventListener('click', function () {
 		elem.parentElement.parentElement.parentElement.parentElement.classList.add('active');
@@ -221,7 +223,33 @@ buyJsBtn.forEach((elem) => {
 		hiddenPhone.textContent = document.querySelector('.phone').value;
 		hiddenCity.textContent = document.querySelector('.city').value;
 		hiddenAdress.textContent= document.querySelector('.ship').value;
+	}),
+	elem.addEventListener('click', function(){
+		if (orBuyBlock){
+		elem=OrderBtnSave;
+		elem.classList.add('open');
+		}
 	})
+	elem.addEventListener('click', function(){
+		if (orBuyBlock){
+		elem=OrderBtnSavePrice;
+		elem.classList.add('open');
+		}
+	})
+
+});
+
+const urFace= document.getElementById('ur-face');
+let formSNP=document.getElementById('form-snp');
+let urAdress=document.querySelector('.ur-adress');
+let CouPaym=document.getElementById('courer-payment')
+urFace.addEventListener('change', function(){
+	if (this.checked){
+		formSNP.innerHTML="Название компании";
+		urAdress.style.display="block";
+		CouPaym.style.display="none";
+	}
+
 });
 
 const backBtnJs = document.querySelectorAll('.order-back-btn-a');
