@@ -557,7 +557,7 @@
                                             <label class="customer-label">Тип плательщика</label>
                                             <div class="cust-types">
                                             <label class="customer-type">Физическое лицо    
-                                                <input class="js-input"  type="radio" checked="checked" name="radio" value="Физическое лицо">
+                                                <input class="js-input"  type="radio" checked="checked" name="radio" id="phys-face" value="Физическое лицо">
                                                 <span class="checkmark"></span>
                                               </label>
                                             <label class="customer-type">Юридическое лицо    
@@ -698,25 +698,25 @@
 											<div class="form_body">
 													<div class="form-control">
 														<label><span id="form-snp">Ф.И.О.&nbsp;</span><span class="star">*</span></label>
-														<input type="text" class="inputtext" id="snp"  required="" name="form_name" aria-required="true"> </div>
+														<input type="text" class="inputtext" id="snp"  required pattern="[a-zA-Z]*" name="form_name" aria-required="true" > </div>
 														<div class="form-control">
-															<div class="ur-adress">
+															<div class="ur-adresses">
 																<label><span>Юридический адрес&nbsp;<span class="star">*</span></span></label>
-															<textarea class="ur-adress" required="" name="ur-adress" cols="40" rows="5" aria-required="true"></textarea>
+															<textarea class="ur-adress mb-4" required name="ur-adress" cols="40" rows="5" aria-required="true"></textarea>
 															<label><span>ИНН/БИН&nbsp;</span><span class="star">*</span></label>
-														<input type="text" class="inputtext" required="" aria-required="true">
+														<input type="text" class="inputtext mb-4" required aria-required="true" name="iin-bin">
 															</div>
 															<label><span>E-mail <span class="star">*</span></span></label>
-															<input type="email" placeholder="mail@domen.com" class="inputtext email" id="email"  name="email" > </div>
+															<input type="email" placeholder="mail@domen.com" class="inputtext email " id="email"  name="email" > </div>
 															<div class="form-control">
 																<label><span>Телефон&nbsp;<span class="star">*</span></span></label>
-																<input type="text" class="phone" id="phone" required="" name="telephone"  aria-required="true"> </div>
+																<input type="text" class="phone" id="phone" required name="telephone"  aria-required="true"> </div>
 																<div class="form-control">
 																	<label><span>Город&nbsp;<span class="star">*</span></span></label>
-																	<input type="text" class="inputtext city " id="city" required="" name="form_text_12"  aria-required="true" > </div>
+																	<input type="text" class="inputtext city " id="city" required="" name="city"  aria-required="true" > </div>
 															<div class="form-control">
 															<label><span>Адрес доставки&nbsp;<span class="star">*</span></span></label>
-															<textarea class="ship" required="" name="form_textarea_15" cols="40" rows="5" aria-required="true" id="ship-adress"></textarea> </div>
+															<textarea class="ship" required="" name="shiping-adress" cols="40" rows="5" aria-required="true" id="ship-adress"></textarea> </div>
 														<div class="shop-block__map">
 															<iframe
 															src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2504.2768467437095!2d71.41989711582264!3d51.12180127957355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x42458424eb5f5a91%3A0xb7f6b32c369bb0cf!2z0KHRgtGA0L7QuNGC0LXQu9GM0L3Ri9C5INCi0KYgItCa0L7QvNGE0L7RgNGCIiAo0KLQntCeICJFdXJhc2lhbiB0cmFkaW5nIGdyb3VwIik!5e0!3m2!1sru!2skz!4v1647371345338!5m2!1sru!2skz"

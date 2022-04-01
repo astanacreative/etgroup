@@ -1,6 +1,9 @@
 $(document).ready(function() {
 	$("#phone").mask("+7 (999) 999-99-99");
+	
 });
+
+
 
 const scrollButton = document.querySelector(".scroll__button");
 window.addEventListener("scroll", function(e) {
@@ -248,7 +251,7 @@ buyJsBtn.forEach((elem) => {
 
 const urFace= document.getElementById('ur-face');
 let formSNP=document.getElementById('form-snp');
-let urAdress=document.querySelector('.ur-adress');
+const physFace= document.getElementById('phys-face');
 let CouPaym=document.getElementById('courer-payment');
 
 
@@ -257,12 +260,32 @@ function validate(e) {
 	let urAdress = document.forms["order-form"]["ur-adress"].value;
 	let email = document.forms["order-form"]["email"].value;
 	let telephone = document.forms["order-form"]["telephone"].value;
-  if (snp == "") {
+	let city= document.forms["order-form"]["city"].value;
+	let shipingAdress= document.forms["order-form"]["shiping-adress"].value;
+	let iinBin= document.forms["order-form"]["iin-bin"].value;
+	if (physFace.checked){
+	if (snp == "") {
 	alert("Укажите ваше Ф.И.О");
 	e.parentElement.parentElement.parentElement.parentElement.classList.remove('active');
 	e.parentElement.parentElement.parentElement.parentElement.nextElementSibling.classList.remove('open');
   }
-  else if (email == "") {
+	
+} else if (snp== "") {
+	alert("Укажите название компании");
+	e.parentElement.parentElement.parentElement.parentElement.classList.remove('active');
+	e.parentElement.parentElement.parentElement.parentElement.nextElementSibling.classList.remove('open');
+	}
+	else if (urAdress == "") {
+	alert("Укажите юридический адрес");
+	e.parentElement.parentElement.parentElement.parentElement.classList.remove('active');
+	e.parentElement.parentElement.parentElement.parentElement.nextElementSibling.classList.remove('open');
+  }
+  else if (iinBin == "") {
+	alert("Укажите ИНН/БИН");
+	e.parentElement.parentElement.parentElement.parentElement.classList.remove('active');
+	e.parentElement.parentElement.parentElement.parentElement.nextElementSibling.classList.remove('open');
+  }
+  if (email == "" ) {
 	alert("Укажите ваш Е-майл");
 	e.parentElement.parentElement.parentElement.parentElement.classList.remove('active');
 	e.parentElement.parentElement.parentElement.parentElement.nextElementSibling.classList.remove('open');
@@ -270,18 +293,23 @@ function validate(e) {
 	alert("Укажите ваш телефон");
 	e.parentElement.parentElement.parentElement.parentElement.classList.remove('active');
 	e.parentElement.parentElement.parentElement.parentElement.nextElementSibling.classList.remove('open');
-  }
-  if (urAdress == "" && urFace.checked) {
-	alert("Укажите юридический адрес");
+  }else if (city == "") {
+	alert("Укажите ваш город");
+	e.parentElement.parentElement.parentElement.parentElement.classList.remove('active');
+	e.parentElement.parentElement.parentElement.parentElement.nextElementSibling.classList.remove('open');
+  }else if (shipingAdress == "") {
+	alert("Укажите ваш адрес доставки");
 	e.parentElement.parentElement.parentElement.parentElement.classList.remove('active');
 	e.parentElement.parentElement.parentElement.parentElement.nextElementSibling.classList.remove('open');
   }
   }
+  
 
+let urAdreses=document.querySelector('.ur-adresses');
 urFace.addEventListener('change', function(){
 	if (this.checked){
 		formSNP.innerHTML="Название компании";
-		urAdress.style.display="block";
+		urAdreses.style.display="block";
 		CouPaym.style.display="none";
 	}
 });
