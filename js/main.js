@@ -195,7 +195,7 @@ changeBtn.forEach((elem) => {
 });
 });
 
-let orBuyBlock= document.querySelectorAll('.order-buy-block:last-child');
+const orBuyBlock= document.querySelectorAll('.order-buy-block');
 const buyJsBtn = document.querySelectorAll('.next-js-btn');
 let hiddenAreaIn = document.querySelector('.type-of-ship');
 let hiddenAreaPayment=document.querySelector('.type-of-payment');
@@ -208,6 +208,7 @@ let OrderBtnSave=document.querySelector('.btn-order-save');
 let OrderBtnSavePrice=document.querySelector('.order-btn-save-block');
 buyJsBtn.forEach((elem) => {
 	elem.addEventListener('click', function () {
+		if (orBuyBlock[0] || orBuyBlock[1] || orBuyBlock[2]){
 		elem.parentElement.parentElement.parentElement.parentElement.classList.add('active');
 		elem.parentElement.parentElement.parentElement.parentElement.nextElementSibling.classList.add('open')
 		hiddenAreaIn.textContent= elem.closest('.order-buy-block').querySelector('.js-input:checked').value;
@@ -216,28 +217,57 @@ buyJsBtn.forEach((elem) => {
 		// hiddenPhone.textContent= elem.closest('.order-buy-block').getElementById('phone').value;
 		// hiddenCity.textContent= elem.closest('.order-buy-block').getElementById('city').value;
 		// hiddenAdress.textContent= elem.closest('.order-buy-block').getElementById('ship-adress').value;
+		}
+
 	}),
 	elem.addEventListener('click', function(){
+		if (orBuyBlock[3].classList.contains('open')){
 		hiddenSNP.textContent = document.querySelector('.inputtext').value;
 		hiddenEmail.textContent = document.querySelector('.email').value;
 		hiddenPhone.textContent = document.querySelector('.phone').value;
 		hiddenCity.textContent = document.querySelector('.city').value;
 		hiddenAdress.textContent= document.querySelector('.ship').value;
+		validate();
+	}
 	}),
 	elem.addEventListener('click', function(){
-		if (orBuyBlock){
-		elem=OrderBtnSave;
-		elem.classList.add('open');
-		}
-	})
-	elem.addEventListener('click', function(){
-		if (orBuyBlock){
-		elem=OrderBtnSavePrice;
-		elem.classList.add('open');
+		if (orBuyBlock[4].classList.contains('open')){
+			elem=OrderBtnSave;
+			elem.classList.add('open');
+			elem=OrderBtnSavePrice;
+			elem.classList.add('open');	
 		}
 	})
 
 });
+// buyJsBtn.addEventListener('click', function(){
+// 	if (orBuyBlock){
+// 		OrderBtnSave.classList.add('open');
+// 		OrderBtnSavePrice.classList.add('open');
+// 	}
+// });
+function validate() {
+	let snp = document.forms["order-form"]["form_name"].value;
+  if (snp == "") {
+	alert("Укажите ваше Ф.И.О");
+	return false;
+  }
+  let urAdress = document.forms["order-form"]["ur-adress"].value;
+  if (urAdress == "") {
+	alert("Укажите вашу фамилию");
+	return false;
+  }
+  let email = document.forms["order-form"]["email"].value;
+  if (email == "") {
+	alert("Укажите ваш Е-майл");
+	return false;
+  }
+  let telephone = document.forms["order-form"]["telephone"].value;
+  if (telephone == "") {
+	alert("Укажите ваш телефон");
+	return false;
+  }
+  }
 
 const urFace= document.getElementById('ur-face');
 let formSNP=document.getElementById('form-snp');
