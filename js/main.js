@@ -208,7 +208,7 @@ let OrderBtnSave=document.querySelector('.btn-order-save');
 let OrderBtnSavePrice=document.querySelector('.order-btn-save-block');
 buyJsBtn.forEach((elem) => {
 	elem.addEventListener('click', function () {
-		if (orBuyBlock[0] || orBuyBlock[1] || orBuyBlock[2]){
+		if (orBuyBlock[0] && orBuyBlock[1] && orBuyBlock[2]){
 		elem.parentElement.parentElement.parentElement.parentElement.classList.add('active');
 		elem.parentElement.parentElement.parentElement.parentElement.nextElementSibling.classList.add('open')
 		hiddenAreaIn.textContent= elem.closest('.order-buy-block').querySelector('.js-input:checked').value;
@@ -218,16 +218,15 @@ buyJsBtn.forEach((elem) => {
 		// hiddenCity.textContent= elem.closest('.order-buy-block').getElementById('city').value;
 		// hiddenAdress.textContent= elem.closest('.order-buy-block').getElementById('ship-adress').value;
 		}
-
 	}),
 	elem.addEventListener('click', function(){
-		if (orBuyBlock[3].classList.contains('open')){
-		hiddenSNP.textContent = document.querySelector('.inputtext').value;
-		hiddenEmail.textContent = document.querySelector('.email').value;
-		hiddenPhone.textContent = document.querySelector('.phone').value;
-		hiddenCity.textContent = document.querySelector('.city').value;
-		hiddenAdress.textContent= document.querySelector('.ship').value;
-		validate();
+		if (orBuyBlock[3].classList.contains('active')){
+			validate(elem);
+			hiddenSNP.textContent = document.querySelector('.inputtext').value;
+			hiddenEmail.textContent = document.querySelector('.email').value;
+			hiddenPhone.textContent = document.querySelector('.phone').value;
+			hiddenCity.textContent = document.querySelector('.city').value;
+			hiddenAdress.textContent= document.querySelector('.ship').value;
 	}
 	}),
 	elem.addEventListener('click', function(){
@@ -246,40 +245,45 @@ buyJsBtn.forEach((elem) => {
 // 		OrderBtnSavePrice.classList.add('open');
 // 	}
 // });
-function validate() {
-	let snp = document.forms["order-form"]["form_name"].value;
-  if (snp == "") {
-	alert("Укажите ваше Ф.И.О");
-	return false;
-  }
-  let urAdress = document.forms["order-form"]["ur-adress"].value;
-  if (urAdress == "") {
-	alert("Укажите вашу фамилию");
-	return false;
-  }
-  let email = document.forms["order-form"]["email"].value;
-  if (email == "") {
-	alert("Укажите ваш Е-майл");
-	return false;
-  }
-  let telephone = document.forms["order-form"]["telephone"].value;
-  if (telephone == "") {
-	alert("Укажите ваш телефон");
-	return false;
-  }
-  }
 
 const urFace= document.getElementById('ur-face');
 let formSNP=document.getElementById('form-snp');
 let urAdress=document.querySelector('.ur-adress');
-let CouPaym=document.getElementById('courer-payment')
+let CouPaym=document.getElementById('courer-payment');
+
+
+function validate(e) {
+	let snp = document.forms["order-form"]["form_name"].value;
+	let urAdress = document.forms["order-form"]["ur-adress"].value;
+	let email = document.forms["order-form"]["email"].value;
+	let telephone = document.forms["order-form"]["telephone"].value;
+  if (snp == "") {
+	alert("Укажите ваше Ф.И.О");
+	e.parentElement.parentElement.parentElement.parentElement.classList.remove('active');
+	e.parentElement.parentElement.parentElement.parentElement.nextElementSibling.classList.remove('open');
+  }
+  else if (email == "") {
+	alert("Укажите ваш Е-майл");
+	e.parentElement.parentElement.parentElement.parentElement.classList.remove('active');
+	e.parentElement.parentElement.parentElement.parentElement.nextElementSibling.classList.remove('open');
+  }else if (telephone == "") {
+	alert("Укажите ваш телефон");
+	e.parentElement.parentElement.parentElement.parentElement.classList.remove('active');
+	e.parentElement.parentElement.parentElement.parentElement.nextElementSibling.classList.remove('open');
+  }
+  if (urAdress == "" && urFace.checked) {
+	alert("Укажите юридический адрес");
+	e.parentElement.parentElement.parentElement.parentElement.classList.remove('active');
+	e.parentElement.parentElement.parentElement.parentElement.nextElementSibling.classList.remove('open');
+  }
+  }
+
 urFace.addEventListener('change', function(){
 	if (this.checked){
 		formSNP.innerHTML="Название компании";
 		urAdress.style.display="block";
 		CouPaym.style.display="none";
 	}
-
 });
 
 const backBtnJs = document.querySelectorAll('.order-back-btn-a');
