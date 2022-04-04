@@ -2273,7 +2273,7 @@ a:hover {
 	width: 80px;
 	height: 25px;
 }
-.catalog-section__submit a {
+.catalog-section__submit button {
 	color: #FFF;
    width: 100%;
    height: 100%;
@@ -2837,19 +2837,6 @@ a:hover {
 /*------------------.section------------------------------------*/
 .section {
 	display: flex;
-}
-.section__body {
-	width: 0;
-	opacity: 0;
-	visibility: hidden;
-	background: #FFF;
-	transition: ease-out 0.2s;
-}
-.section.active .section-body {
-	width: 750px;
-	opacity: 1;
-	transition: ease-out 0.2s;
-	visibility: visible;
 }
 .section-body {
 	padding: 20px 0;
@@ -3546,6 +3533,85 @@ a:hover {
 .articles-five__main ol {
 	padding-left: 1rem;
 }
+table {
+	width: 100%;
+}
+/* .basket__block {
+}
+.basket__title {
+	font-size: 26px;
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+	font-weight: 600;
+	margin-bottom: 15px;
+	border-bottom: 1px solid #f7f7f7;
+	padding: 25px 10px;
+} */
+.basket-null {
+	display: flex;
+	align-items: center;
+	padding: 25px 20px;
+}
+.basket-null__img {
+	margin-right: 20px;
+}
+.basket-null__img img{
+	width:150px;
+	height:150px;
+}
+.basket-null__title {
+	font-size: 22px;
+	line-height: 24px;
+	font-weight: 400;
+	margin-bottom: 20px;
+}
+.basket-null__text {
+	margin-bottom: 40px;
+}
+.basket-null__text p {
+	font-size: 14px;
+	line-height:15px;
+	font-weight: 400;
+	color: #888;
+}
+.basket-null__button {
+	width: 75px;
+	height:35px;
+}
+.basket-null__button a{
+	width: 100%;
+	height:100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #FFF;
+	background: #d9002a;
+	font-size: 14px;
+}
+.section__link {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.section__body.section-body {
+	display: none;
+}
+.section__body.section-body.active {
+	width: 730px;
+	background-color: #FFF;
+	position: relative;
+	z-index: 10;
+	display: block;
+	min-height: 300px;
+}
+.catalog-section__submit.active {
+	width: 100%;
+}
+.catalog-section__submit.active .js-buy {
+	background-color: #4fad00;
+}
 /*------------------adaptive------------------------------------*/
 
 @media (max-width: 1399.98px) {
@@ -3715,7 +3781,7 @@ a:hover {
 	.section-body {
 		display: none;
 	}
-	.section.active .section-body {
+	.section__body.section-body.active {
 		display: none;
 	}
 	.block-about__text p {

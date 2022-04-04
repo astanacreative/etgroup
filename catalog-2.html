@@ -69,30 +69,149 @@
 				<section class="section">
 					<div class="section__block">
 						<div class="section__button">
-							<a class="section__link">
+							<a href="javascript:;" class="section__link" id="checkout" data-basket="#basket-1">
 								<img src="img/section-1.png" alt="">
 							</a>
 						</div>
 						<div class="section__button">
-							<a class="section__link">
+							<a class="section__link" data-basket="#basket-2">
 								<img src="img/section-2.png" alt="">
 							</a>
 						</div>	
-						<div class="section__button">
+						<!-- <div class="section__button">
 							<a class="section__link">
 								<img src="img/section-3.png" alt="">
 							</a>
-						</div>	
+						</div>	 -->
 						<div class="section__button">
 							<a class="section__link">
 								<img src="img/section-4.png" alt="">
 							</a>
 						</div>		
 					</div>
-					<div class="section__body">
+					<div class="section-basket__row">
+						<div class="section__body section-body" id="basket-1">
+							<div class="section-body__top">
+								<div class="section-body__title">
+									Корзина заказа
+								</div>
+								<div class="section-body__row">
+									<div class="section-body__tab">
+										Готовые к заказу  (<span class="section-body__nomer"></span>)
+									</div>
+								</div>
+								<div class="section-body__button remove-button">
+									<a href="javascript:;">Очистить</a>
+								</div>
+							</div>
+							<div class="section-body__item section-item" id="basket">
+								<div class="section-bottom__block" id="cart-content">
+									<div class="section-item__top section-top">
+										<div class="section-top__one">
+											Наименование
+										</div>
+										<div class="section-top__two">
+											Скидка
+										</div>
+										<div class="section-top__three">
+											Цена
+										</div>
+										<div class="section-top__four">
+											Количество
+										</div>
+										<div class="section-top__five">
+											Сумма
+										</div>
+										<div class="section-top__six">
+										</div>
+									</div>
+									<!-- <div class="section-item__bottom section-bottom item-price js-cart">
+										<div class="section-bottom__one">
+											<div class="section-bottom__image">
+												<img src="" alt="">
+											</div>
+											<div class="section-bottom__link">
+												<a href="">Кафельная плитка 300*750 мм, артикул 7506 С (светлый) А (тёмный)</a>
+											</div>
+										</div>
+										<div class="section-bottom__two">
+											<div class="section-bottom__subtitle discount">
+												0%
+											</div>
+										</div>
+										<div class="section-bottom__three">
+											<div class="section-bottom__text">Розничная цена</div>
+											<div class="section-bottom__title price">4 000 тг</div>
+										</div>
+										<div class="section-bottom__four">
+											<div class="section-bottom__range">
+												<form action="">
+													<div class="counter_block big_basket" >
+														<input type="button"  value="-" class="counter__btn btn-minus">
+														<input value="1" type="text" data-price="4000" class="input">
+														<input type="button" value="+" class="counter__btn btn-plus">
+													</div>
+												</form>
+											</div>
+											<div class="section-bottom__text">Данного количества нет на складе</div>
+										</div>
+										<div class="section-bottom__five">
+											<div class="section-bottom__title all-price">4 000 тг</div>
+										</div>
+										<div class="section-bottom__six">
+											<div class="section-bottom__icon">
+												<a href=""><img src="img/like-icon.png" alt=""></a>
+											</div>
+										</div>
+										<div class="section-bottom__remove">
+											<a href=""></a>
+										</div>
+									</div> -->
+								</div>
+								<div class="section-bottom__summa section-summa">
+									<div class="section-summa__text">
+										Итого:
+									</div>
+									<div class="section-summa__title">
+										<span id="total-price"></span> тг.
+									</div>
+								</div>
+								<div class="section-bottom__buttons">
+									<div class="section-bottom__click one-click">
+										<a href="">Продолжить покупки</a>
+										<div class="section-bottom__text">Вернуться к выбору товаров</div>
+									</div>
+									<div class="section-bottom__click two-click">
+										<a href="">Перейти в корзину</a>
+										<div class="section-bottom__text">Полноценное оформление заказа</div>
+									</div>
+									<div class="section-bottom__click three-click">
+										<a href="">Быстрый заказ</a>
+										<div class="section-bottom__text">Вам потребуется указать только имя и номер</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="section__body section-body" id="basket-2">
+							<div class="section-body__top">
+								<div class="section-body__title">
+									Корзина заказа
+								</div>
+								<div class="section-body__row">
+									<div class="section-body__tab">
+										Готовые к заказу  (1)
+									</div>
+								</div>
+								<div class="section-body__button remove-button">
+									<a href="javascript:;">Очистить</a>
+								</div>
+							</div>
+						</div>
 					</div>
 				</section>
 			<!-- 	</section> -->
+
+			<!-- new menu -->
 				<section class="new__menu main">
 					<div class="new-menu__container">
 						<div class="new-menu__block">
@@ -152,6 +271,7 @@
 						</div>
 					</div>
 				</section>
+			<!-- new menu -->
 
 				<main class="main catalog-main">
 					<div class="main__sidebar_one">						  
@@ -1163,24 +1283,15 @@
 									</div>
 									<div class="catalog-menu__section catalog-section">
 										<div class="catalog-section__row">
-											<div class="catalog-section__column">
+											<div class="catalog-section__column js-product" id="1ТУ-1005Е" data-id="1ТУ-1005Е" data-product-title="Унитаз подвесной ТУ-1005Е" data-product-price="74800" data-product-basket="0" data-product-img="img/tab-1.jpeg">
 												<div class="catalog-section__item">
-													<div class="catalog-section__image">
-														<img src="img/catalog-1.jpg" alt="">
-													</div>
+													<a class="catalog-section__image card__link-img">
+														<img class="card-img" src="img/tab-1.jpeg" alt="">
+													</a>
 													<div class="catalog-section__text">
-														<a href="">Унитаз подвесной ТУ-1005Е</a>
+														<a href="" class="card__link">Унитаз подвесной ТУ-1005Е</a>
 													</div>
-													<div class="catalog-section__nav">
-														<ul class="tab-item__menu">
-															<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
-															<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
-															<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
-															<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
-															<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
-														</ul>
-													</div>
-													<div class="catalog-section__subtitle">
+													<div class="catalog-section__subtitle card__price">
 														74 800 тг./шт
 													</div>
 													<div class="catalog-section__button">
@@ -1194,29 +1305,20 @@
 															</form>
 														</div>
 														<div class="catalog-section__submit">
-															<a href="">В корзину</a>
+															<button type="submit" class="js-buy">В корзину</button>
 														</div>
 													</div>
 												</div>
 											</div>
-											<div class="catalog-section__column">
+											<div class="catalog-section__column js-product" id="2ТУ-1005Е" data-id="2ТУ-1005Е" data-product-title="Унитаз подвесной ТУ-1005Е" data-product-price="74800" data-product-basket="0" data-product-img="img/tab-1.jpeg">
 												<div class="catalog-section__item">
-													<div class="catalog-section__image">
-														<img src="img/catalog-1.jpg" alt="">
-													</div>
+													<a class="catalog-section__image card__link-img">
+														<img class="card-img" src="img/tab-2.jpeg" alt="">
+													</a>
 													<div class="catalog-section__text">
-														<a href="">Унитаз подвесной ТУ-1005Е</a>
+														<a href="" class="card__link">Унитаз подвесной ТУ-1005Е</a>
 													</div>
-													<div class="catalog-section__nav">
-														<ul class="tab-item__menu">
-															<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
-															<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
-															<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
-															<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
-															<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
-														</ul>
-													</div>
-													<div class="catalog-section__subtitle">
+													<div class="catalog-section__subtitle card__price">
 														74 800 тг./шт
 													</div>
 													<div class="catalog-section__button">
@@ -1230,187 +1332,7 @@
 															</form>
 														</div>
 														<div class="catalog-section__submit">
-															<a href="">В корзину</a>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="catalog-section__column">
-												<div class="catalog-section__item">
-													<div class="catalog-section__image">
-														<img src="img/catalog-1.jpg" alt="">
-													</div>
-													<div class="catalog-section__text">
-														<a href="">Унитаз подвесной ТУ-1005Е</a>
-													</div>
-													<div class="catalog-section__nav">
-														<ul class="tab-item__menu">
-															<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
-															<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
-															<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
-															<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
-															<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
-														</ul>
-													</div>
-													<div class="catalog-section__subtitle">
-														74 800 тг./шт
-													</div>
-													<div class="catalog-section__button">
-														<div class="catalog-section__range">
-															<form action="">
-																<div class="counter_block big_basket" >
-																	<input type="button"  value="-" data-direction="minus" class="counter__btn">
-																	<input value="1" type="text" class="counter__value">
-																	<input type="button" value="+" data-direction="plus" class="counter__btn">
-																</div>
-															</form>
-														</div>
-														<div class="catalog-section__submit">
-															<a href="">В корзину</a>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="catalog-section__column">
-												<div class="catalog-section__item">
-													<div class="catalog-section__image">
-														<img src="img/catalog-1.jpg" alt="">
-													</div>
-													<div class="catalog-section__text">
-														<a href="">Унитаз подвесной ТУ-1005Е</a>
-													</div>
-													<div class="catalog-section__nav">
-														<ul class="tab-item__menu">
-															<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
-															<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
-															<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
-															<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
-															<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
-														</ul>
-													</div>
-													<div class="catalog-section__subtitle">
-														74 800 тг./шт
-													</div>
-													<div class="catalog-section__button">
-														<div class="catalog-section__range">
-															<form action="">
-																<div class="counter_block big_basket" >
-																	<input type="button"  value="-" data-direction="minus" class="counter__btn">
-																	<input value="1" type="text" class="counter__value">
-																	<input type="button" value="+" data-direction="plus" class="counter__btn">
-																</div>
-															</form>
-														</div>
-														<div class="catalog-section__submit">
-															<a href="">В корзину</a>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="catalog-section__column">
-												<div class="catalog-section__item">
-													<div class="catalog-section__image">
-														<img src="img/catalog-1.jpg" alt="">
-													</div>
-													<div class="catalog-section__text">
-														<a href="">Унитаз подвесной ТУ-1005Е</a>
-													</div>
-													<div class="catalog-section__nav">
-														<ul class="tab-item__menu">
-															<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
-															<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
-															<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
-															<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
-															<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
-														</ul>
-													</div>
-													<div class="catalog-section__subtitle">
-														74 800 тг./шт
-													</div>
-													<div class="catalog-section__button">
-														<div class="catalog-section__range">
-															<form action="">
-																<div class="counter_block big_basket" >
-																	<input type="button"  value="-" data-direction="minus" class="counter__btn">
-																	<input value="1" type="text" class="counter__value">
-																	<input type="button" value="+" data-direction="plus" class="counter__btn">
-																</div>
-															</form>
-														</div>
-														<div class="catalog-section__submit">
-															<a href="">В корзину</a>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="catalog-section__column">
-												<div class="catalog-section__item">
-													<div class="catalog-section__image">
-														<img src="img/catalog-1.jpg" alt="">
-													</div>
-													<div class="catalog-section__text">
-														<a href="">Унитаз подвесной ТУ-1005Е</a>
-													</div>
-													<div class="catalog-section__nav">
-														<ul class="tab-item__menu">
-															<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
-															<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
-															<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
-															<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
-															<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
-														</ul>
-													</div>
-													<div class="catalog-section__subtitle">
-														74 800 тг./шт
-													</div>
-													<div class="catalog-section__button">
-														<div class="catalog-section__range">
-															<form action="">
-																<div class="counter_block big_basket" >
-																	<input type="button"  value="-" data-direction="minus" class="counter__btn">
-																	<input value="1" type="text" class="counter__value">
-																	<input type="button" value="+" data-direction="plus" class="counter__btn">
-																</div>
-															</form>
-														</div>
-														<div class="catalog-section__submit">
-															<a href="">В корзину</a>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="catalog-section__column">
-												<div class="catalog-section__item">
-													<div class="catalog-section__image">
-														<img src="img/catalog-1.jpg" alt="">
-													</div>
-													<div class="catalog-section__text">
-														<a href="">Унитаз подвесной ТУ-1005Е</a>
-													</div>
-													<div class="catalog-section__nav">
-														<ul class="tab-item__menu">
-															<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
-															<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
-															<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
-															<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
-															<li><a class="tab-item__link"href=""><img src="img/star.png" alt="star"></a></li>
-														</ul>
-													</div>
-													<div class="catalog-section__subtitle">
-														74 800 тг./шт
-													</div>
-													<div class="catalog-section__button">
-														<div class="catalog-section__range">
-															<form action="">
-																<div class="counter_block big_basket" >
-																	<input type="button"  value="-" data-direction="minus" class="counter__btn">
-																	<input value="1" type="text" class="counter__value">
-																	<input type="button" value="+" data-direction="plus" class="counter__btn">
-																</div>
-															</form>
-														</div>
-														<div class="catalog-section__submit">
-															<a href="">В корзину</a>
+															<button type="submit" class="js-buy">В корзину</button>
 														</div>
 													</div>
 												</div>
