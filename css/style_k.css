@@ -1307,6 +1307,9 @@ table.sale_order_full_table a{
 
 }
 @media (max-width: 767.98px) {
+    .question_block{
+        flex-direction: column;
+    }
     .recomend-slider-block{
         max-width: 550px;
     }
