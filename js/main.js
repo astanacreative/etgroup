@@ -305,13 +305,15 @@ function validate(e) {
 }
 
 let urAdreses=document.querySelector('.ur-adresses');
-urFace.addEventListener('change', function(){
-	if (this.checked){
-		formSNP.innerHTML="Название компании";
-		urAdreses.style.display="block";
-		CouPaym.style.display="none";
-	}
-});
+if (urAdreses) {
+	urFace.addEventListener('change', function(){
+		if (this.checked){
+			formSNP.innerHTML="Название компании";
+			urAdreses.style.display="block";
+			CouPaym.style.display="none";
+		}
+	});
+}
 
 const backBtnJs = document.querySelectorAll('.order-back-btn-a');
 backBtnJs.forEach((elem) => {
@@ -599,8 +601,6 @@ function setCartData(o) {
 	return false;
 }
 
-
-
 function addToCart(e) {
 	e.querySelector('.js-buy').disabled = true;
 	e.querySelector('.catalog-section__submit').classList.add('active');
@@ -614,7 +614,7 @@ function addToCart(e) {
 		itemTitle = e.closest('.js-product').getAttribute('data-product-title'), // название товара
 		itemPrice = e.closest('.js-product').getAttribute('data-product-price'), // стоимость товара
 		itemOne = Number(e.closest('.js-product').querySelector('.counter__value').value),
-		itemTotal = totalPriceWrapper.textContent;
+		itemTotal = totalPriceWrapper.dataset.value;
 		// itemTitle = parentBox.getAttribute('card__link'), // название товара
       // itemPrice = parentBox.getAttribute('.card__price'); // стоимость товара
 	if (cartData.hasOwnProperty(itemId)) { // если такой товар уже в корзине, то добавляем +1 к его количеству
@@ -626,7 +626,10 @@ function addToCart(e) {
 		cartData[itemId] = [itemSrc, itemTitle, itemBasket, itemPrice, itemOne, itemTotal];
 	}
 	if (!setCartData(cartData)) { // Обновляем данные в LocalStorage
-		this.disabled = false; // разблокируем кнопку после обновления LS
+		this.disabled = true; // разблокируем кнопку после обновления LS
+		e.querySelector('.catalog-section__submit').classList.add('active');
+		e.querySelector('.catalog-section__range').style.display = 'none';
+		e.querySelector('.js-buy').innerHTML = 'В корзине';
 	}
 	console.log(e.closest('.js-product').querySelector('.card-img'))
 	return false;
@@ -640,20 +643,13 @@ function openCart(e){
 		document.querySelector('.section-body__nomer').innerHTML = Object.keys(cartData).length; // 3
 		totalItems = '<div class="basket-product__body" id="basket"><div class="basket-product__top product-top"><div class="product-top__one">Товары</div><div class="product-top__block"><div class="product-top__two">Скидка</div><div class="product-top__three">Цена</div><div class="product-top__four">Количество</div><div class="product-top__five">Сумма</div><div class="product-top__six"></div></div></div>';
 		for(var items in cartData){
-			console.log(cartData[items][3]);
 			totalItems += '<div class="basket-product__bottom product-bottom item-price">';
 			for(var i = 0; i < 1; i++){
-				// totalItems += '<div class="section-bottom__image"><img src="' + cartData[items][0] + '" alt=""></div>';
-				// totalItems += '<div class="section-bottom__two"><div class="section-bottom__subtitle discount">' + cartData[items][1] + '</div></div>';
-				// totalItems += '<div class="section-bottom__link"><a href="">' + cartData[items][2] + '</a></div>';
-				// totalItems += '<div class="section-bottom__three"><div class="section-bottom__text">Розничная цена</div>' + cartData[items][3] + '</div>';
 				totalItems += '<div class="product-bottom__one"><div class="product-bottom__image"><img src="' + cartData[items][0] + '"alt=""></div><div class="product-bottom__title"><p>' + cartData[items][1] + '</p></div></div>';
-				// totalItems += '<td>' + cartData[items][1] + '</td>';
 				totalItems += '<div class="product-bottom__block"><div class="product-bottom__two"><div class="product-bottom__text">Скидка:</div><div class="product-bottom__subtitle">' + cartData[items][2] + '%</div></div>';
 				totalItems += '<div class="product-bottom__three"><div class="product-bottom__title price">' + cartData[items][3] + 'тг</div><div class="product-bottom__text">Розничная цена</div></div>';
 				totalItems += '<div class="product-bottom__four"><div class="catalog-section__range"><form action=""><div class="counter_block big_basket" ><input type="button"  value="-" class="counter__btn btn-minus"><input value="' + cartData[items][4] + '" type="text" data-price="' + cartData[items][3]  + '" class="input"><input type="button" value="+" class="counter__btn btn-plus"></div></form><div class="product-bottom__text">шт</div></div></div>';
-				totalItems += '<div class="product-bottom__five"><div class="product-bottom__text">Сумма:</div><div class="product-bottom__title all-price">' + cartData[items][4] * cartData[items][3] + '</div></div>';
-				totalItems += '<div class="product-bottom__six"><div class="product-bottom__icon"><a href=""><img src="img/like-icon.png" alt=""></a></div></div><div class="product-bottom__remove"><a href=""></a></div>';
+				totalItems += '<div class="product-bottom__five"><div class="product-bottom__text">Сумма:</div><div class="product-bottom__title all-price">' + cartData[items][4] * cartData[items][3] + ' тг </div></div>';
 			}
 			totalItems += '</div></div>';
 		}
@@ -672,6 +668,7 @@ function openCart(e){
 	}
 	return false;
 }
+
 openCart();
 
 const openBasket = document.getElementById('checkout');
@@ -695,11 +692,11 @@ sectionBtn.forEach((elem) => {
 	});
 });
 
-const formatNumber = (x) => x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 
+
+const formatNumber = (x) => x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 const totalPriceWrapper = document.getElementById('total-price');
 // const subPriceWrapper = document.getElementById('sub-price');
-
 const getSubTotalPrice = (input) => Number(input.value) * Number(input.dataset.price);
 
 const ACTION = {
@@ -708,7 +705,7 @@ const ACTION = {
 }
 
 const allprice = () => {
-	const discountProduct = document.querySelector('.discount')
+	// const discountProduct = document.querySelector('.discount');
 	let totalCost = 0;
 	[...document.querySelectorAll('.item-price')].forEach((basketItem) => {
 		totalCost += getSubTotalPrice(basketItem.querySelector('.input'));
@@ -742,7 +739,6 @@ const calculateSeparateItem = (basketItem, action) => {
 	}
 	basketItem.querySelector('.all-price').textContent = `${formatNumber(getSubTotalPrice(input))} тг`;
 };
-
 document.getElementById('basket').addEventListener('click', (event) => {
 	if (event.target.classList.contains('btn-minus')) {
 		console.log('minus');
@@ -761,6 +757,9 @@ document.getElementById('basket').addEventListener('click', (event) => {
 });
 
 allprice();
+
+
+
 
 const tabsBasket = document.querySelectorAll('.section__link');
 const tabBasketItem = document.querySelectorAll('.section__body');
