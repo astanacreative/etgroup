@@ -595,6 +595,7 @@ textarea{
 .prod_in_image img{
     width: 100%;
     height: 340px;
+    object-fit: cover;
 }
 .single-prod-slider{
     max-width: 270px;
