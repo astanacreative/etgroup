@@ -1,6 +1,9 @@
 $(document).ready(function () {
 	$("#phone").mask("+7 (999) 999-99-99");
+	
 });
+
+
 
 const scrollButton = document.querySelector(".scroll__button");
 window.addEventListener("scroll", function (e) {
@@ -195,17 +198,20 @@ changeBtn.forEach((elem) => {
 	});
 });
 
-let orBuyBlock = document.querySelectorAll('.order-buy-block');
+const orBuyBlock= document.querySelectorAll('.order-buy-block');
 const buyJsBtn = document.querySelectorAll('.next-js-btn');
 let hiddenAreaIn = document.querySelector('.type-of-ship');
-let hiddenAreaPayment = document.querySelector('.type-of-payment');
-let hiddenSNP = document.querySelector('.type-of-snp');
-let hiddenEmail = document.querySelector('.type-of-email');
-let hiddenPhone = document.querySelector('.type-of-phone');
-let hiddenCity = document.querySelector('.type-of-city');
-let hiddenAdress = document.querySelector('.type-of-adress');
+let hiddenAreaPayment=document.querySelector('.type-of-payment');
+let hiddenSNP=document.querySelector('.type-of-snp');
+let hiddenEmail=document.querySelector('.type-of-email');
+let hiddenPhone=document.querySelector('.type-of-phone');
+let hiddenCity=document.querySelector('.type-of-city');
+let hiddenAdress=document.querySelector('.type-of-adress');
+let OrderBtnSave=document.querySelector('.btn-order-save');
+let OrderBtnSavePrice=document.querySelector('.order-btn-save-block');
 buyJsBtn.forEach((elem) => {
 	elem.addEventListener('click', function () {
+		if (orBuyBlock[0] && orBuyBlock[1] && orBuyBlock[2]){
 		elem.parentElement.parentElement.parentElement.parentElement.classList.add('active');
 		elem.parentElement.parentElement.parentElement.parentElement.nextElementSibling.classList.add('open')
 		hiddenAreaIn.textContent = elem.closest('.order-buy-block').querySelector('.js-input:checked').value;
@@ -214,14 +220,97 @@ buyJsBtn.forEach((elem) => {
 		// hiddenPhone.textContent= elem.closest('.order-buy-block').getElementById('phone').value;
 		// hiddenCity.textContent= elem.closest('.order-buy-block').getElementById('city').value;
 		// hiddenAdress.textContent= elem.closest('.order-buy-block').getElementById('ship-adress').value;
+		}
 	}),
-		elem.addEventListener('click', function () {
+	elem.addEventListener('click', function(){
+		if (orBuyBlock[3].classList.contains('active')){
+			validate(elem);
 			hiddenSNP.textContent = document.querySelector('.inputtext').value;
 			hiddenEmail.textContent = document.querySelector('.email').value;
 			hiddenPhone.textContent = document.querySelector('.phone').value;
 			hiddenCity.textContent = document.querySelector('.city').value;
-			hiddenAdress.textContent = document.querySelector('.ship').value;
-		})
+			hiddenAdress.textContent= document.querySelector('.ship').value;
+	}
+	}),
+	elem.addEventListener('click', function(){
+		if (orBuyBlock[4].classList.contains('open')){
+			elem=OrderBtnSave;
+			elem.classList.add('open');
+			elem=OrderBtnSavePrice;
+			elem.classList.add('open');	
+		}
+	})
+
+});
+// buyJsBtn.addEventListener('click', function(){
+// 	if (orBuyBlock){
+// 		OrderBtnSave.classList.add('open');
+// 		OrderBtnSavePrice.classList.add('open');
+// 	}
+// });
+
+const urFace= document.getElementById('ur-face');
+let formSNP=document.getElementById('form-snp');
+const physFace= document.getElementById('phys-face');
+let CouPaym=document.getElementById('courer-payment');
+
+
+function validate(e) {
+	let snp = document.forms["order-form"]["form_name"].value;
+	let urAdress = document.forms["order-form"]["ur-adress"].value;
+	let email = document.forms["order-form"]["email"].value;
+	let telephone = document.forms["order-form"]["telephone"].value;
+	let city= document.forms["order-form"]["city"].value;
+	let shipingAdress= document.forms["order-form"]["shiping-adress"].value;
+	let iinBin= document.forms["order-form"]["iin-bin"].value;
+	if (physFace.checked){
+	if (snp == "") {
+	alert("Укажите ваше Ф.И.О");
+	e.parentElement.parentElement.parentElement.parentElement.classList.remove('active');
+	e.parentElement.parentElement.parentElement.parentElement.nextElementSibling.classList.remove('open');
+}
+	
+} else if (snp== "") {
+	alert("Укажите название компании");
+	e.parentElement.parentElement.parentElement.parentElement.classList.remove('active');
+	e.parentElement.parentElement.parentElement.parentElement.nextElementSibling.classList.remove('open');
+	}
+	else if (urAdress == "") {
+	alert("Укажите юридический адрес");
+	e.parentElement.parentElement.parentElement.parentElement.classList.remove('active');
+	e.parentElement.parentElement.parentElement.parentElement.nextElementSibling.classList.remove('open');
+}
+	else if (iinBin == "") {
+	alert("Укажите ИНН/БИН");
+	e.parentElement.parentElement.parentElement.parentElement.classList.remove('active');
+	e.parentElement.parentElement.parentElement.parentElement.nextElementSibling.classList.remove('open');
+}
+	if (email == "" ) {
+	alert("Укажите ваш Е-майл");
+	e.parentElement.parentElement.parentElement.parentElement.classList.remove('active');
+	e.parentElement.parentElement.parentElement.parentElement.nextElementSibling.classList.remove('open');
+	}else if (telephone == "") {
+	alert("Укажите ваш телефон");
+	e.parentElement.parentElement.parentElement.parentElement.classList.remove('active');
+	e.parentElement.parentElement.parentElement.parentElement.nextElementSibling.classList.remove('open');
+	}else if (city == "") {
+	alert("Укажите ваш город");
+	e.parentElement.parentElement.parentElement.parentElement.classList.remove('active');
+	e.parentElement.parentElement.parentElement.parentElement.nextElementSibling.classList.remove('open');
+	}else if (shipingAdress == "") {
+	alert("Укажите ваш адрес доставки");
+	e.parentElement.parentElement.parentElement.parentElement.classList.remove('active');
+	e.parentElement.parentElement.parentElement.parentElement.nextElementSibling.classList.remove('open');
+	}
+}
+
+let urAdreses=document.querySelector('.ur-adresses');
+urFace.addEventListener('change', function(){
+	if (this.checked){
+		formSNP.innerHTML="Название компании";
+		urAdreses.style.display="block";
+		CouPaym.style.display="none";
+	}
 });
 
 const backBtnJs = document.querySelectorAll('.order-back-btn-a');
