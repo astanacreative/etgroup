@@ -303,6 +303,7 @@ else if ((physFace.checked || urFace.checked) && email == "" ) {
 }
 
 let urAdreses=document.querySelector('.ur-adresses');
+if (urFace){
 urFace.addEventListener('change', function(){
 	if (this.checked){
 		formSNP.innerHTML="Название компании";
@@ -310,6 +311,7 @@ urFace.addEventListener('change', function(){
 		CouPaym.style.display="none";
 	}
 });
+}
 
 const backBtnJs = document.querySelectorAll('.order-back-btn-a');
 backBtnJs.forEach((elem) => {
