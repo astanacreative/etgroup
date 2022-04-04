@@ -263,29 +263,27 @@ function validate(e) {
 	let city= document.forms["order-form"]["city"].value;
 	let shipingAdress= document.forms["order-form"]["shiping-adress"].value;
 	let iinBin= document.forms["order-form"]["iin-bin"].value;
-	if (physFace.checked){
-	if (snp == "") {
+	if (physFace.checked && snp == ""){
 	alert("Укажите ваше Ф.И.О");
 	e.parentElement.parentElement.parentElement.parentElement.classList.remove('active');
 	e.parentElement.parentElement.parentElement.parentElement.nextElementSibling.classList.remove('open');
-}
 	
-} else if (snp== "") {
+} else if (urFace.checked && snp== ""){
 	alert("Укажите название компании");
 	e.parentElement.parentElement.parentElement.parentElement.classList.remove('active');
 	e.parentElement.parentElement.parentElement.parentElement.nextElementSibling.classList.remove('open');
 	}
-	else if (urAdress == "") {
+	else if (urFace.checked && urAdress == "") {
 	alert("Укажите юридический адрес");
 	e.parentElement.parentElement.parentElement.parentElement.classList.remove('active');
 	e.parentElement.parentElement.parentElement.parentElement.nextElementSibling.classList.remove('open');
 }
-	else if (iinBin == "") {
+	else if (urFace.checked && iinBin == "") {
 	alert("Укажите ИНН/БИН");
 	e.parentElement.parentElement.parentElement.parentElement.classList.remove('active');
 	e.parentElement.parentElement.parentElement.parentElement.nextElementSibling.classList.remove('open');
 }
-	if (email == "" ) {
+else if ((physFace.checked || urFace.checked) && email == "" ) {
 	alert("Укажите ваш Е-майл");
 	e.parentElement.parentElement.parentElement.parentElement.classList.remove('active');
 	e.parentElement.parentElement.parentElement.parentElement.nextElementSibling.classList.remove('open');
