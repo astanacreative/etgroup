@@ -579,8 +579,8 @@ if (slider) {
 
 const formatNumber = (x) => x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 const totalPriceWrapper = document.getElementById('total-price');
-// const subPriceWrapper = document.getElementById('sub-price');
-const getSubTotalPrice = (input) => Number(input.value) * Number(input.dataset.price);
+const subScale = document.getElementById('sub-price');
+const getSubTotalPrice = (input) => Number(input.value) * (Number(input.dataset.price) - ((Number(input.dataset.price) * Number(input.dataset.scale))/100));
 
 // const ACTION = {
 // 	MINUS: 'minus',
@@ -601,9 +601,8 @@ const allprice = () => {
 
 const counter = function () {
 	const btns = document.querySelectorAll('.counter__btn');
-	btns.forEach(btn => {
+	btns.forEach((btn) => {
 		btn.addEventListener('click', function () {
-			allprice();
 			const direction = this.dataset.direction;
 			const input = this.parentElement.querySelector('.counter__value');
 			const currentValue = +input.value;
@@ -613,11 +612,19 @@ const counter = function () {
 				totalPriceWrapper.textContent = formatNumber(Number(totalPriceWrapper.dataset.value) + Number(input.dataset.price));
 				totalPriceWrapper.dataset.value = Number(totalPriceWrapper.dataset.value) + Number(input.dataset.price);
 			} else {
-				newValue = currentValue - 1 > 0 ? currentValue - 1 : 1;
-				totalPriceWrapper.textContent = formatNumber(Number(totalPriceWrapper.dataset.value) - Number(input.dataset.price));
-				totalPriceWrapper.dataset.value = Number(totalPriceWrapper.dataset.value) - Number(input.dataset.price);
+				if (currentValue - 1 > 0) {
+					newValue = currentValue - 1;
+					totalPriceWrapper.textContent = formatNumber(Number(totalPriceWrapper.dataset.value) - Number(input.dataset.price));
+					totalPriceWrapper.dataset.value = Number(totalPriceWrapper.dataset.value) - Number(input.dataset.price);
+				} else {
+					newValue = 1;
+				}
+
+				// newValue = currentValue - 1 > 0 ? currentValue - 1 : 1;
 			}
 			input.value = newValue;
+			const itemMain = btn.closest('.item-price');
+			itemMain.querySelector('.all-price').textContent = `${formatNumber(getSubTotalPrice(input))} тг`;
 		})
 	});
 }
@@ -665,16 +672,18 @@ function addToCart(e) {
 		itemPrice = Number(e.closest('.js-product').getAttribute('data-product-price')), // стоимость товара
 		// itemOne = Number(e.closest('.js-product').querySelector('.counter__value').value);
 		itemCount = Number(e.closest('.js-product').getAttribute('data-product-count')),
-		itemSumma = itemCount * itemPrice;
+		itemSummaSale = itemPrice - ((itemSale * itemPrice) / 100),
+		itemSumma = itemSummaSale * itemCount;
 		// itemTotal = totalPriceWrapper.dataset.value;
 		// itemTitle = parentBox.getAttribute('card__link'), // название товара
       // itemPrice = parentBox.getAttribute('.card__price'); // стоимость товара
+		cartData[itemDataId]
 	if (cartData.hasOwnProperty(itemDataId)) { // если такой товар уже в корзине, то добавляем +1 к его количеству
 		e.querySelector('.js-buy').disabled = true;
 		e.querySelector('.catalog-section__submit').classList.add('active');
 		e.querySelector('.js-buy').innerHTML = 'В корзине';
 	} else { // если товара в корзине еще нет, то добавляем в объект
-		cartData[itemDataId] = {itemId, itemSrc, itemTitle, itemSale, itemPrice, itemCount, itemSumma};
+		cartData[itemDataId] = {itemId, itemSrc, itemTitle, itemSale, itemPrice, itemCount, itemSumma, itemSummaSale};
 	}
 	if (!setCartData(cartData)) { // Обновляем данные в LocalStorage
 		e.querySelector('.js-buy').disabled = true; // разблокируем кнопку после обновления LS
@@ -698,10 +707,10 @@ function openCart(e){
 				totalItems += '<div class="product-bottom__one"><div class="product-bottom__image"><img src="' + cartData[items].itemSrc + '"alt=""></div><div class="product-bottom__title"><p>' + cartData[items].itemTitle + '</p></div></div>';
 				totalItems += '<div class="product-bottom__block"><div class="product-bottom__two"><div class="product-bottom__text">Скидка:</div><div class="product-bottom__subtitle">' + cartData[items].itemSale + '%</div></div>';
 				totalItems += '<div class="product-bottom__three"><div class="product-bottom__title price">' + cartData[items].itemPrice + ' тг/шт</div><div class="product-bottom__text">Розничная цена</div></div>';
-				totalItems += '<div class="product-bottom__four"><div class="catalog-section__range"><form action=""><div class="counter_block big_basket" ><input type="button"  value="-" data-direction="minus" class="counter__btn counter__minus"><input value="' + cartData[items].itemCount + '" type="text" data-price="' + cartData[items].itemPrice + '" class="counter__value"><input type="button" value="+" data-direction="plus" class="counter__btn counter__plus"></div></form></div></div>';
+				totalItems += '<div class="product-bottom__four"><div class="catalog-section__range"><form action=""><div class="counter_block big_basket" ><input type="button"  value="-" data-direction="minus" class="counter__btn counter__minus"><input value="' + cartData[items].itemCount + '" type="text" data-price="' + cartData[items].itemPrice + '" data-scale="' + cartData[items].itemSale + '" class="counter__value"><input type="button" value="+" data-direction="plus" class="counter__btn counter__plus"></div></form></div></div>';
 				// totalItems += '<div class="product-bottom__four"><div class="section-bottom__range"><form action=""><div class="counter_block big_basket" ><input type="button"  value="-" class="counter__btn btn-minus"><input value="' + cartData[items].itemCount +'" type="text" data-price="' + cartData[items][3] + '" class="input"><input type="button" value="+" class="counter__btn btn-plus"></div></form></div></div>';
 				totalItems += '<div class="product-bottom__five"><div class="product-bottom__text">Сумма:</div><div class="product-bottom__title all-price">' + cartData[items].itemSumma + ' тг </div></div>';
-				totalItems += '<div class="product-bottom__remove"><a href=""></a></div>';
+				totalItems += '<div class="product-bottom__remove"><a href="javascript:;"></a></div>';
 			}
 			totalItems += '</div></div>'
 		}
@@ -751,30 +760,34 @@ function openCart(e){
 		// 		}
 		// 	})
 		// });
-		const updateQuantityTotalPrice = (id, quantity, summa) => {
+		const updateQuantityTotalPrice = (id, quantity) => {
 			cartData[id].itemCount = quantity;
-			cartData[id].itemSumma = summa;
+			cartData[id].itemSummaSale = cartData[id].itemPrice - ((cartData[id].itemSale * cartData[id].itemPrice) / 100);
+			cartData[id].itemSumma = cartData[id].itemSummaSale * cartData[id].itemCount;
 			setCartData(cartData);
 		}
 		const increaseQuantity = (id) => {
 			const newQuantity = cartData[id].itemCount + 1;
-			const newSumma = cartData[id].itemCount * cartData[id].itemPrice;
-			updateQuantityTotalPrice(id, newQuantity, newSumma);
+			updateQuantityTotalPrice(id, newQuantity);
 		}
 		const decreaseQuantity = (id) => {
 			const newQuantity = cartData[id].itemCount - 1;
-			const newSumma = cartData[id].itemCount * cartData[id].itemPrice;
 			if (newQuantity >= 1) {
-				updateQuantityTotalPrice(id, newQuantity, newSumma);
+				updateQuantityTotalPrice(id, newQuantity);
 			}
 		}
 
-	// 	const deleteCartItem = (id) => {
-	// 		const cartItemDOMElement = cartDOMElement.querySelector(`[data-id="${id}"]`);
-	// 		// const tableElement = tableDOMElement.querySelector(`[data-product-articul="${articul}"]`);
-	// 		cartDOMElement.removeChild(cartItemDOMElement);
-	// 		setCartData(cartData);
-	//   }
+		const deleteCartItem = (id) => {	
+			// const cartItemDOMElement = cartDOMElement.querySelector(`[data-id="${id}"]`);
+			// cartDOMElement.removeChild(cartItemDOMElement);
+			
+			delete cartData[id];
+			setCartData(cartData);
+			// if(cartData[id] == undefined) {
+			// 	localStorage.clear();
+			// 	openCart();
+			// }
+		}
 
 		const btns = document.querySelectorAll('.counter__btn');
 		btns.forEach(btn => {
@@ -787,17 +800,22 @@ function openCart(e){
 				} else {
 					decreaseQuantity(productID);
 				}
-			})
+			});
 		});
-
-		// const removeOneElement = document.querySelectorAll('.product-bottom__remove');
-		// removeOneElement.forEach((elem) => {
-		// 	elem.addEventListener('click', function {
-		// 		const productID = cartDOMElement.getAttribute('data-id');
-		// 		deleteCartItem(productID);
-		// 	});
-		// });
+		const removeOneElement = document.querySelectorAll('.product-bottom__remove');
+		removeOneElement.forEach((elem) => {
+			elem.addEventListener('click', function (event) {
+				const cartDOMElement = event.target.closest('.item-price');
+				console.log(cartDOMElement);
+				cartDOMElement.style.display = 'none';
+				setCartData(cartData);
+				const productID = cartDOMElement.getAttribute('data-id');
+				deleteCartItem(productID);
+			});
+		});
+	allprice();
 	counter();
+	setCartData(cartData);
 	return false;
 }
 
@@ -816,57 +834,9 @@ removeBasket.addEventListener('click', function () {
 	sectionButtons.style.display='none';
 });
 
-const calculateSeparateItem = (basketItem, action) => {
-	const input = basketItem.querySelector('.input');
-	switch (action) {
-		case ACTION.PLUS:
-			input.value++;
-			totalPriceWrapper.textContent = formatNumber(Number(totalPriceWrapper.dataset.value) + Number(input.dataset.price));
-			totalPriceWrapper.dataset.value = Number(totalPriceWrapper.dataset.value) + Number(input.dataset.price);
-			// subPriceWrapper.textContent = formatNumber(Number(totalPriceWrapper.dataset.value) + Number(input.dataset.price));
-			// subPriceWrapper.dataset.value = Number.parseInt(totalPriceWrapper.dataset.value) + Number(input.dataset.price);
-			break;
-		case ACTION.MINUS:
-			// input.value = input.value - 1 > 0 ? input.value - 1 : 1
-			if (input.value - 1 > 0) {
-				input.value--;
-				totalPriceWrapper.textContent = formatNumber(Number(totalPriceWrapper.dataset.value) - Number(input.dataset.price));
-				totalPriceWrapper.dataset.value = Number(totalPriceWrapper.dataset.value) - Number(input.dataset.price);
-			}
-			// input.value--;
-			// subPriceWrapper.textContent = formatNumber(Number.parseInt(totalPriceWrapper.dataset.value) - Number(input.dataset.price));
-			// subPriceWrapper.dataset.value = Number(totalPriceWrapper.dataset.value) - Number(input.dataset.price);
-			break;
-	}
-	basketItem.querySelector('.all-price').textContent = `${formatNumber(getSubTotalPrice(input))} тг`;
-};
 
-document.getElementById('basket').addEventListener('click', (event) => {
-	if (event.target.classList.contains('btn-minus')) {
-		console.log('minus');
-		calculateSeparateItem(
-			event.target.closest('.item-price'),
-			ACTION.MINUS
-		);
-	}
-	if (event.target.classList.contains('btn-plus')) {
-		console.log('plus');
-		calculateSeparateItem(
-			event.target.closest('.item-price'),
-			ACTION.PLUS
-		);
-	}
-});
+// 
 
-
-
-const sectionBtn = document.querySelectorAll('.section__button');
-const section = document.querySelector('.section');
-sectionBtn.forEach((elem) => {
-	elem.addEventListener('click', function () {
-		section.classList.toggle('active');
-	});
-});
 
 const tabsBasket = document.querySelectorAll('.section__link');
 const tabBasketItem = document.querySelectorAll('.section__body');
@@ -894,53 +864,17 @@ tabsBasket.forEach(function (item) {
 			tabBasketItem.forEach(function (item) {
 				item.classList.remove('active');
 			});
-			closeBasket.addEventListener('click', function (event) {
-				event.target.closest('.section__body').classList.toggle('active');
-			});
 		}
 	});
 });
 
 
-// function sayHi() {
-// 	// counter();
-// 	const ACTION = {
-// 		MINUS: 'minus',
-// 		PLUS: 'plus',
-// 	}
-// 	const calculateSeparateItem = (basketItem, action) => {
-// 		const input = basketItem.querySelector('.input');
-// 		switch (action) {
-// 			case ACTION.PLUS:
-// 				cartData[items][4] += 1
-// 				setCartData(cartData);
-// 				break;
-// 			case ACTION.MINUS:
-// 				// input.value = input.value - 1 > 0 ? input.value - 1 : 1
-// 				if (cartData[items][4] - 1 > 0) {
-// 					cartData[items][4] -= 1
-// 					console.log(cartData[items][4]);
-// 					setCartData(cartData);
-// 					console.log(cartData[items]);
-// 				}
-// 				break;
-// 		}
-// 		// basketItem.querySelector('.all-price').textContent = `${formatNumber(getSubTotalPrice(input))} тг`;
-// 	};
-// 	document.getElementById('basket').addEventListener('click', (event) => {
-// 		if (event.target.classList.contains('btn-minus')) {
-// 			console.log('minus');
-// 			calculateSeparateItem(
-// 				event.target.closest('.item-price'),
-// 				ACTION.MINUS
-// 			);
-// 		}
-// 		if (event.target.classList.contains('btn-plus')) {
-// 			console.log('plus');
-// 			calculateSeparateItem(
-// 				event.target.closest('.item-price'),
-// 				ACTION.PLUS
-// 			);
-// 		}
-// 	});
-// }
+const closeSection = document.querySelector('.basket-null__button');
+if(closeSection) {
+	closeSection.addEventListener('click', function (event) {
+		console.log(event.target.closest('.section-body'));
+		event.target.closest('.section-body').classList.remove('active');
+	});
+}
+
+
