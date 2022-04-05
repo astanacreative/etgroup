@@ -815,7 +815,7 @@ a:hover {
 }
 .sidebar-item__low a {
 	color: #1d2029;
-	line-height: 14px;
+	line-height: 20px;
 	font-size: 14px; 
 }
 .sidebar-item__text a:hover {
@@ -2214,13 +2214,13 @@ a:hover {
 	padding: 0 5px;
 	margin-bottom: 20px;
 	display: flex;
-	flex-direction: column;
 }
 .catalog-section__item {
 	padding: 20px;
 	border: 1px solid #eaebec;
 	background: #fff;
 	display: flex;
+	width: 100%;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
@@ -2248,7 +2248,8 @@ a:hover {
 }
 .catalog-section__text {
 	margin-bottom: 20px;
-	flex: 0 1 auto;
+	display: flex;
+	flex: 1 1 auto;
 }
 .catalog-section__text a {
 	display: flex;
@@ -3623,9 +3624,11 @@ table {
 }
 .catalog-section__submit.active {
 	width: 100%;
+}
+.catalog-section__submit.active button {
 	position: relative;
 }
-.catalog-section__submit.active::before {
+.catalog-section__submit.active button::before {
 	content: '';
 	position: absolute;
 	width: 11px;
@@ -3635,7 +3638,7 @@ table {
 	background-position: center center;
 	background-size: 100%;
 	top: 6px;
-	left: 30%;
+	margin-right: 90px;
 }
 .catalog-section__submit.active .js-buy {
 	background-color: #4fad00;
@@ -4007,6 +4010,7 @@ table {
 		display: block;
 		width: 100%;
 		top: 30px;
+		z-index: 4;
 	}
 	.product-top {
 		display: none;
