@@ -664,6 +664,96 @@ textarea{
     border-right: 15px solid transparent;
     border-left: 20px solid #4fad00;
 }
+.sticker_blue{
+    background-color: #2992d9;
+    width: auto;
+    height: 24px;
+    margin: 0px 0px 2px;
+    position: relative;
+    display: inline-block;
+    color: #fff;
+    font-size: 12px;
+    line-height: 12px;
+    padding: 6px 10px 0px;
+    box-sizing: border-box;
+    position: absolute;
+    z-index: 2;
+}
+.sticker_blue::before{
+    content: ''; 
+    position: absolute;
+    width: 0;
+    height: 0;
+    bottom: 0;
+    top: 0;
+    left: 70%;
+    z-index: -1;
+    border: 2px solid transparent;
+    border-top: 12px solid #2992d9;
+    border-bottom: 12px solid #2992d9;
+    border-right: 15px solid transparent;
+    border-left: 20px solid #2992d9;
+}
+.sticker_yellow{
+    background-color: #ffc438;
+    color: #333;
+    width: auto;
+    height: 24px;
+    margin: 0px 0px 2px;
+    position: relative;
+    display: inline-block;
+    font-size: 12px;
+    line-height: 12px;
+    padding: 6px 10px 0px;
+    box-sizing: border-box;
+    position: absolute;
+    z-index: 2;
+}
+.sticker_yellow::before{
+    content: ''; 
+    position: absolute;
+    width: 0;
+    height: 0;
+    bottom: 0;
+    top: 0;
+    left: 70%;
+    z-index: -1;
+    border: 2px solid transparent;
+    border-top: 12px solid #ffc438;
+    border-bottom: 12px solid #ffc438;
+    border-right: 15px solid transparent;
+    border-left: 20px solid #ffc438;
+}
+.sticker_purple{
+    background-color: #893ca9;
+    width: auto;
+    height: 24px;
+    margin: 0px 0px 2px;
+    position: relative;
+    display: inline-block;
+    color: #fff;
+    font-size: 12px;
+    line-height: 12px;
+    padding: 6px 10px 0px;
+    box-sizing: border-box;
+    position: absolute;
+    z-index: 2;
+}
+.sticker_purple::before{
+    content: ''; 
+    position: absolute;
+    width: 0;
+    height: 0;
+    bottom: 0;
+    top: 0;
+    left: 70%;
+    z-index: -1;
+    border: 2px solid transparent;
+    border-top: 12px solid #893ca9;
+    border-bottom: 12px solid #893ca9;
+    border-right: 15px solid transparent;
+    border-left: 20px solid #893ca9;
+}
 .tab-item__block_rec{
     display: flex;
     flex-wrap: wrap;
