@@ -68,15 +68,15 @@
 				<section class="section">
 					<div class="section__block">
 						<div class="section__button">
-							<a href="javascript:;" class="section__link">
+							<a href="javascript:;" class="section__link" id="checkout" data-basket="#basket-1">
 								<img src="img/section-1.png" alt="">
 							</a>
 						</div>
-						<div class="section__button">
-							<a class="section__link">
+						<!-- <div class="section__button">
+							<a class="section__link" data-basket="#basket-2">
 								<img src="img/section-2.png" alt="">
 							</a>
-						</div>	
+						</div>	 -->
 						<!-- <div class="section__button">
 							<a class="section__link">
 								<img src="img/section-3.png" alt="">
@@ -88,107 +88,124 @@
 							</a>
 						</div>		
 					</div>
-					<div class="section__body section-body">
-						<div class="section-body__top">
-							<div class="section-body__title">
-								Корзина заказа
-							</div>
-							<div class="section-body__row">
-								<div class="section-body__tab">
-									Готовые к заказу  (1)
+					<div class="section-basket__row">
+						<div class="section__body section-body" id="basket-1">
+							<div class="section-body__top">
+								<div class="section-body__title">
+									Корзина заказа
+								</div>
+								<div class="section-body__row">
+									<div class="section-body__tab">
+										Готовые к заказу  (<span class="section-body__nomer"></span>)
+									</div>
+								</div>
+								<div class="section-body__button remove-button">
+									<a href="javascript:;">Очистить</a>
 								</div>
 							</div>
-							<div class="section-body__button remove-button">
-								<a href="javascript:;">Очистить</a>
+							<div class="section-body__item section-item" id="basket">
+								<div class="section-bottom__block" id="cart-content">
+									<div class="section-item__top section-top">
+										<div class="section-top__one">
+											Наименование
+										</div>
+										<div class="section-top__two">
+											Скидка
+										</div>
+										<div class="section-top__three">
+											Цена
+										</div>
+										<div class="section-top__four">
+											Количество
+										</div>
+										<div class="section-top__five">
+											Сумма
+										</div>
+										<div class="section-top__six">
+										</div>
+									</div>
+									<!-- <div class="section-item__bottom section-bottom item-price js-cart">
+										<div class="section-bottom__one">
+											<div class="section-bottom__image">
+												<img src="" alt="">
+											</div>
+											<div class="section-bottom__link">
+												<a href="">Кафельная плитка 300*750 мм, артикул 7506 С (светлый) А (тёмный)</a>
+											</div>
+										</div>
+										<div class="section-bottom__two">
+											<div class="section-bottom__subtitle discount">
+												0%
+											</div>
+										</div>
+										<div class="section-bottom__three">
+											<div class="section-bottom__text">Розничная цена</div>
+											<div class="section-bottom__title price">4 000 тг</div>
+										</div>
+										<div class="section-bottom__four">
+											<div class="section-bottom__range">
+												<form action="">
+													<div class="counter_block big_basket" >
+														<input type="button"  value="-" class="counter__btn btn-minus">
+														<input value="1" type="text" data-price="4000" class="input">
+														<input type="button" value="+" class="counter__btn btn-plus">
+													</div>
+												</form>
+											</div>
+											<div class="section-bottom__text">Данного количества нет на складе</div>
+										</div>
+										<div class="section-bottom__five">
+											<div class="section-bottom__title all-price">4 000 тг</div>
+										</div>
+										<div class="section-bottom__six">
+											<div class="section-bottom__icon">
+												<a href=""><img src="img/like-icon.png" alt=""></a>
+											</div>
+										</div>
+										<div class="section-bottom__remove">
+											<a href=""></a>
+										</div>
+									</div> -->
+								</div>
+								<div class="section-bottom__summa section-summa">
+									<div class="section-summa__text">
+										Итого:
+									</div>
+									<div class="section-summa__title">
+										<span id="total-price"></span> тг.
+									</div>
+								</div>
+								<div class="section-bottom__buttons">
+									<div class="section-bottom__click one-click">
+										<a href="">Продолжить покупки</a>
+										<div class="section-bottom__text">Вернуться к выбору товаров</div>
+									</div>
+									<div class="section-bottom__click two-click">
+										<a href="">Перейти в корзину</a>
+										<div class="section-bottom__text">Полноценное оформление заказа</div>
+									</div>
+									<div class="section-bottom__click three-click">
+										<a href="">Быстрый заказ</a>
+										<div class="section-bottom__text">Вам потребуется указать только имя и номер</div>
+									</div>
+								</div>
 							</div>
 						</div>
-						<div class="section-body__item section-item" id="basket">
-							<div class="section-bottom__block">
-								<div class="section-item__top section-top">
-									<div class="section-top__one">
-										Наименование
-									</div>
-									<div class="section-top__two">
-										Скидка
-									</div>
-									<div class="section-top__three">
-										Цена
-									</div>
-									<div class="section-top__four">
-										Количество
-									</div>
-									<div class="section-top__five">
-										Сумма
-									</div>
-									<div class="section-top__six">
+						<!-- <div class="section__body section-body" id="basket-2">
+							<div class="section-body__top">
+								<div class="section-body__title">
+									Корзина заказа
+								</div>
+								<div class="section-body__row">
+									<div class="section-body__tab">
+										Готовые к заказу  (1)
 									</div>
 								</div>
-								<div class="section-item__bottom section-bottom item-price">
-									<div class="section-bottom__one">
-										<div class="section-bottom__image">
-											<img src="" alt="">
-										</div>
-										<div class="section-bottom__link">
-											<a href="">Кафельная плитка 300*750 мм, артикул 7506 С (светлый) А (тёмный)</a>
-										</div>
-									</div>
-									<div class="section-bottom__two">
-										<div class="section-bottom__subtitle discount">
-											0%
-										</div>
-									</div>
-									<div class="section-bottom__three">
-										<div class="section-bottom__text">Розничная цена</div>
-										<div class="section-bottom__title price">4 000 тг</div>
-									</div>
-									<div class="section-bottom__four">
-										<div class="section-bottom__range">
-											<form action="">
-												<div class="counter_block big_basket" >
-													<input type="button"  value="-" class="counter__btn btn-minus">
-													<input value="1" type="text" data-price="4000" class="input">
-													<input type="button" value="+" class="counter__btn btn-plus">
-												</div>
-											</form>
-										</div>
-										<div class="section-bottom__text">Данного количества нет на складе</div>
-									</div>
-									<div class="section-bottom__five">
-										<div class="section-bottom__title all-price">4 000 тг</div>
-									</div>
-									<div class="section-bottom__six">
-										<div class="section-bottom__icon">
-											<a href=""><img src="img/like-icon.png" alt=""></a>
-										</div>
-									</div>
-									<div class="section-bottom__remove">
-										<a href=""></a>
-									</div>
+								<div class="section-body__button remove-button">
+									<a href="javascript:;">Очистить</a>
 								</div>
 							</div>
-							<div class="section-bottom__summa section-summa">
-								<div class="section-summa__text">
-									Итого:
-								</div>
-								<div class="section-summa__title">
-									<span id="total-price"></span> тг.
-								</div>
-							</div>
-							<div class="section-bottom__buttons">
-								<div class="section-bottom__click one-click">
-									<a href="">Продолжить покупки</a>
-									<div class="section-bottom__text">Вернуться к выбору товаров</div>
-								</div>
-								<div class="section-bottom__click two-click">
-									<a href="">Перейти в корзину</a>
-									<div class="section-bottom__text">Полноценное оформление заказа</div>
-								</div>
-								<div class="section-bottom__click three-click">
-									<a href="">Быстрый заказ</a>
-									<div class="section-bottom__text">Вам потребуется указать только имя и номер</div>
-								</div>
-							</div>
-						</div>
+						</div> -->
 					</div>
 				</section>
 
@@ -1130,70 +1147,70 @@
 							</div>
 							<div class="main-block__catalog main-catalog">
 								<div class="main-catalog__row">
-									<div class="main-catalog__column">
+									<a href="" class="main-catalog__column">
 										<div class="main-catalog__item" >
 											<img src="img/catalog-1.jpg" alt="">
 											<div class="main-catalog__text">
 												<p>Керамогранит<br>полированный</p>
 											</div>
 										</div>
-									</div>
-									<div class="main-catalog__column">
+									</a>
+									<a href="" class="main-catalog__column">
 										<div class="main-catalog__item ">
 											<img src="img/catalog-2.jpg" alt="">
 											<div class="main-catalog__text">
 												<p>Керамогранит<br>матовый</p>
 											</div>
 										</div>
-									</div>
-									<div class="main-catalog__column">
+									</a>
+									<a href="" class="main-catalog__column">
 										<div class="main-catalog__item ">
 											<img src="img/catalog-3.jpg" alt="">
 											<div class="main-catalog__text">
 												<p>Гранит</p>
 											</div>
 										</div>
-									</div>
-									<div class="main-catalog__column">
+									</a>
+									<a href="" class="main-catalog__column">
 										<div class="main-catalog__item">
 											<img src="img/catalog-4.jpg" alt="">
 											<div class="main-catalog__text">
 												<p>Травертин</p>
 											</div>
 										</div>
-									</div>
-									<div class="main-catalog__column">
+									</a>
+									<a href="" class="main-catalog__column">
 										<div class="main-catalog__item">
 											<img src="img/catalog-5.png" alt="">
 											<div class="main-catalog__text">
 												<p>Сантехника для<br>ванной комнаты</p>
 											</div>
 										</div>
-									</div>
-									<div class="main-catalog__column">
+									</a>
+									<a href="" class="main-catalog__column">
 										<div class="main-catalog__item">
 											<img src="img/catalog-6.jpg" alt="">
 											<div class="main-catalog__text">
 												<p>Кафель бесшовный</p>
 											</div>
 										</div>
-									</div>
-									<div class="main-catalog__column">
+									</a>
+									<a href="" class="main-catalog__column">
 										<div class="main-catalog__item">
 											<img src="img/catalog-7.jpg" alt="">
 											<div class="main-catalog__text">
 												<p>Раковины</p>
 											</div>
 										</div>
-									</div>
-									<div class="main-catalog__column">
+									</a>
+									<a href="" class="main-catalog__column">
 										<div class="main-catalog__item">
 											<img src="img/catalog-8.jpg" alt="">
 											<div class="main-catalog__text">
 												<p>Акриловые ванны</p>
 											</div>
 										</div>
-									</div>
+									</a>
 								</div>
 							</div>
 						</div>
@@ -1213,10 +1230,10 @@
 													<div class="tab-item__row">
 														<div class="tab-item__body">
 															<div class="tab-item__image">
-																<div class="tab-item__icon">
+																<!-- <div class="tab-item__icon">
 																	<a href="" class="tab-item__like"></a>
 																	<a href="" class="tab-item__graf"></a>
-																</div>
+																</div> -->
 																<img src="img/tab-1.jpeg" alt="">
 															</div>
 															<div class="tabs-item__text">
@@ -1244,10 +1261,10 @@
 													<div class="tab-item__row">
 														<div class="tab-item__body">
 															<div class="tab-item__image">
-																<div class="tab-item__icon">
+																<!-- <div class="tab-item__icon">
 																	<a href="" class="tab-item__like"></a>
 																	<a href="" class="tab-item__graf"></a>
-																</div>
+																</div> -->
 																<img src="img/tab-2.jpeg" alt="">
 															</div>
 															<div class="tabs-item__text">
@@ -1275,10 +1292,10 @@
 													<div class="tab-item__row">
 														<div class="tab-item__body">
 															<div class="tab-item__image">
-																<div class="tab-item__icon">
+																<!-- <div class="tab-item__icon">
 																	<a href="" class="tab-item__like"></a>
 																	<a href="" class="tab-item__graf"></a>
-																</div>
+																</div> -->
 																<img src="img/tab-3.jpeg" alt="">
 															</div>
 															<div class="tabs-item__text">
@@ -1306,10 +1323,10 @@
 													<div class="tab-item__row">
 														<div class="tab-item__body">
 															<div class="tab-item__image">
-																<div class="tab-item__icon">
+																<!-- <div class="tab-item__icon">
 																	<a href="" class="tab-item__like"></a>
 																	<a href="" class="tab-item__graf"></a>
-																</div>
+																</div> -->
 																<img src="img/tab-4.jpeg" alt="">
 															</div>
 															<div class="tabs-item__text">
@@ -1337,10 +1354,10 @@
 													<div class="tab-item__row">
 														<div class="tab-item__body">
 															<div class="tab-item__image">
-																<div class="tab-item__icon">
+																<!-- <div class="tab-item__icon">
 																	<a href="" class="tab-item__like"></a>
 																	<a href="" class="tab-item__graf"></a>
-																</div>
+																</div> -->
 																<img src="img/tab-5.jpeg" alt="">
 															</div>
 															<div class="tabs-item__text">
@@ -1368,10 +1385,10 @@
 													<div class="tab-item__row">
 														<div class="tab-item__body">
 															<div class="tab-item__image">
-																<div class="tab-item__icon">
+																<!-- <div class="tab-item__icon">
 																	<a href="" class="tab-item__like"></a>
 																	<a href="" class="tab-item__graf"></a>
-																</div>
+																</div> -->
 																<img src="img/tab-6.jpeg" alt="">
 															</div>
 															<div class="tabs-item__text">
@@ -1399,10 +1416,10 @@
 													<div class="tab-item__row">
 														<div class="tab-item__body">
 															<div class="tab-item__image">
-																<div class="tab-item__icon">
+																<!-- <div class="tab-item__icon">
 																	<a href="" class="tab-item__like"></a>
 																	<a href="" class="tab-item__graf"></a>
-																</div>
+																</div> -->
 																<img src="img/tab-7.jpeg" alt="">
 															</div>
 															<div class="tabs-item__text">
@@ -1430,10 +1447,10 @@
 													<div class="tab-item__row">
 														<div class="tab-item__body">
 															<div class="tab-item__image">
-																<div class="tab-item__icon">
+																<!-- <div class="tab-item__icon">
 																	<a href="" class="tab-item__like"></a>
 																	<a href="" class="tab-item__graf"></a>
-																</div>
+																</div> -->
 																<img src="img/tab-8.jpeg" alt="">
 															</div>
 															<div class="tabs-item__text">
@@ -1465,10 +1482,10 @@
 													<div class="tab-item__row">
 														<div class="tab-item__body">
 															<div class="tab-item__image">
-																<div class="tab-item__icon">
+																<!-- <div class="tab-item__icon">
 																	<a href="" class="tab-item__like"></a>
 																	<a href="" class="tab-item__graf"></a>
-																</div>
+																</div> -->
 																<img src="img/tab-1.jpeg" alt="">
 															</div>
 															<div class="tabs-item__text">
@@ -1496,10 +1513,10 @@
 													<div class="tab-item__row">
 														<div class="tab-item__body">
 															<div class="tab-item__image">
-																<div class="tab-item__icon">
+																<!-- <div class="tab-item__icon">
 																	<a href="" class="tab-item__like"></a>
 																	<a href="" class="tab-item__graf"></a>
-																</div>
+																</div> -->
 																<img src="img/tab2-1.jpeg" alt="">
 															</div>
 															<div class="tabs-item__text">
@@ -1527,10 +1544,10 @@
 													<div class="tab-item__row">
 														<div class="tab-item__body">
 															<div class="tab-item__image">
-																<div class="tab-item__icon">
+																<!-- <div class="tab-item__icon">
 																	<a href="" class="tab-item__like"></a>
 																	<a href="" class="tab-item__graf"></a>
-																</div>
+																</div> -->
 																<img src="img/tab2-2.jpeg" alt="">
 															</div>
 															<div class="tabs-item__text">
@@ -1558,10 +1575,10 @@
 													<div class="tab-item__row">
 														<div class="tab-item__body">
 															<div class="tab-item__image">
-																<div class="tab-item__icon">
+																<!-- <div class="tab-item__icon">
 																	<a href="" class="tab-item__like"></a>
 																	<a href="" class="tab-item__graf"></a>
-																</div>
+																</div> -->
 																<img src="img/tab2-3.jpeg" alt="">
 															</div>
 															<div class="tabs-item__text">
@@ -1589,10 +1606,10 @@
 													<div class="tab-item__row">
 														<div class="tab-item__body">
 															<div class="tab-item__image">
-																<div class="tab-item__icon">
+																<!-- <div class="tab-item__icon">
 																	<a href="" class="tab-item__like"></a>
 																	<a href="" class="tab-item__graf"></a>
-																</div>
+																</div> -->
 																<img src="img/tab-8.jpeg" alt="">
 															</div>
 															<div class="tabs-item__text">
@@ -1620,10 +1637,10 @@
 													<div class="tab-item__row">
 														<div class="tab-item__body">
 															<div class="tab-item__image">
-																<div class="tab-item__icon">
+																<!-- <div class="tab-item__icon">
 																	<a href="" class="tab-item__like"></a>
 																	<a href="" class="tab-item__graf"></a>
-																</div>
+																</div> -->
 																<img src="img/tab2-5.jpeg" alt="">
 															</div>
 															<div class="tabs-item__text">
@@ -1651,10 +1668,10 @@
 													<div class="tab-item__row">
 														<div class="tab-item__body">
 															<div class="tab-item__image">
-																<div class="tab-item__icon">
+																<!-- <div class="tab-item__icon">
 																	<a href="" class="tab-item__like"></a>
 																	<a href="" class="tab-item__graf"></a>
-																</div>
+																</div> -->
 																<img src="img/tab2-6.jpeg" alt="">
 															</div>
 															<div class="tabs-item__text">
@@ -1682,10 +1699,10 @@
 													<div class="tab-item__row">
 														<div class="tab-item__body">
 															<div class="tab-item__image">
-																<div class="tab-item__icon">
+																<!-- <div class="tab-item__icon">
 																	<a href="" class="tab-item__like"></a>
 																	<a href="" class="tab-item__graf"></a>
-																</div>
+																</div> -->
 																<img src="img/tab2-7.jpeg" alt="">
 															</div>
 															<div class="tabs-item__text">
@@ -1717,10 +1734,10 @@
 													<div class="tab-item__row">
 														<div class="tab-item__body">
 															<div class="tab-item__image">
-																<div class="tab-item__icon">
+																<!-- <div class="tab-item__icon">
 																	<a href="" class="tab-item__like"></a>
 																	<a href="" class="tab-item__graf"></a>
-																</div>
+																</div> -->
 																<img src="img/tab3-1.jpeg" alt="">
 															</div>
 															<div class="tabs-item__text">
@@ -1748,10 +1765,10 @@
 													<div class="tab-item__row">
 														<div class="tab-item__body">
 															<div class="tab-item__image">
-																<div class="tab-item__icon">
+																<!-- <div class="tab-item__icon">
 																	<a href="" class="tab-item__like"></a>
 																	<a href="" class="tab-item__graf"></a>
-																</div>
+																</div> -->
 																<img src="img/tab3-2.jpeg" alt="">
 															</div>
 															<div class="tabs-item__text">
@@ -1779,10 +1796,10 @@
 													<div class="tab-item__row">
 														<div class="tab-item__body">
 															<div class="tab-item__image">
-																<div class="tab-item__icon">
+																<!-- <div class="tab-item__icon">
 																	<a href="" class="tab-item__like"></a>
 																	<a href="" class="tab-item__graf"></a>
-																</div>
+																</div> -->
 																<img src="img/tab3-3.jpeg" alt="">
 															</div>
 															<div class="tabs-item__text">
@@ -1810,10 +1827,10 @@
 													<div class="tab-item__row">
 														<div class="tab-item__body">
 															<div class="tab-item__image">
-																<div class="tab-item__icon">
+																<!-- <div class="tab-item__icon">
 																	<a href="" class="tab-item__like"></a>
 																	<a href="" class="tab-item__graf"></a>
-																</div>
+																</div> -->
 																<img src="img/tab3-4.jpeg" alt="">
 															</div>
 															<div class="tabs-item__text">
@@ -1841,10 +1858,10 @@
 													<div class="tab-item__row">
 														<div class="tab-item__body">
 															<div class="tab-item__image">
-																<div class="tab-item__icon">
+																<!-- <div class="tab-item__icon">
 																	<a href="" class="tab-item__like"></a>
 																	<a href="" class="tab-item__graf"></a>
-																</div>
+																</div> -->
 																<img src="img/tab3-5.jpeg" alt="">
 															</div>
 															<div class="tabs-item__text">
@@ -1872,10 +1889,10 @@
 													<div class="tab-item__row">
 														<div class="tab-item__body">
 															<div class="tab-item__image">
-																<div class="tab-item__icon">
+																<!-- <div class="tab-item__icon">
 																	<a href="" class="tab-item__like"></a>
 																	<a href="" class="tab-item__graf"></a>
-																</div>
+																</div> -->
 																<img src="img/tab3-6.jpeg" alt="">
 															</div>
 															<div class="tabs-item__text">
@@ -1903,10 +1920,10 @@
 													<div class="tab-item__row">
 														<div class="tab-item__body">
 															<div class="tab-item__image">
-																<div class="tab-item__icon">
+																<!-- <div class="tab-item__icon">
 																	<a href="" class="tab-item__like"></a>
 																	<a href="" class="tab-item__graf"></a>
-																</div>
+																</div> -->
 																<img src="img/tab3-7.jpeg" alt="">
 															</div>
 															<div class="tabs-item__text">
@@ -1934,10 +1951,10 @@
 													<div class="tab-item__row">
 														<div class="tab-item__body">
 															<div class="tab-item__image">
-																<div class="tab-item__icon">
+																<!-- <div class="tab-item__icon">
 																	<a href="" class="tab-item__like"></a>
 																	<a href="" class="tab-item__graf"></a>
-																</div>
+																</div> -->
 																<img src="img/tab3-8.jpeg" alt="">
 															</div>
 															<div class="tabs-item__text">
@@ -1969,10 +1986,10 @@
 													<div class="tab-item__row">
 														<div class="tab-item__body">
 															<div class="tab-item__image">
-																<div class="tab-item__icon">
+																<!-- <div class="tab-item__icon">
 																	<a href="" class="tab-item__like"></a>
 																	<a href="" class="tab-item__graf"></a>
-																</div>
+																</div> -->
 																<img src="img/tab4-1.jpeg" alt="">
 															</div>
 															<div class="tabs-item__text">
@@ -2000,10 +2017,10 @@
 													<div class="tab-item__row">
 														<div class="tab-item__body">
 															<div class="tab-item__image">
-																<div class="tab-item__icon">
+																<!-- <div class="tab-item__icon">
 																	<a href="" class="tab-item__like"></a>
 																	<a href="" class="tab-item__graf"></a>
-																</div>
+																</div> -->
 																<img src="img/tab4-2.jpeg" alt="">
 															</div>
 															<div class="tabs-item__text">
@@ -2031,10 +2048,10 @@
 													<div class="tab-item__row">
 														<div class="tab-item__body">
 															<div class="tab-item__image">
-																<div class="tab-item__icon">
+																<!-- <div class="tab-item__icon">
 																	<a href="" class="tab-item__like"></a>
 																	<a href="" class="tab-item__graf"></a>
-																</div>
+																</div> -->
 																<img src="img/tab4-3.jpeg" alt="">
 															</div>
 															<div class="tabs-item__text">
@@ -2062,10 +2079,10 @@
 													<div class="tab-item__row">
 														<div class="tab-item__body">
 															<div class="tab-item__image">
-																<div class="tab-item__icon">
+																<!-- <div class="tab-item__icon">
 																	<a href="" class="tab-item__like"></a>
 																	<a href="" class="tab-item__graf"></a>
-																</div>
+																</div> -->
 																<img src="img/tab4-4.jpeg" alt="">
 															</div>
 															<div class="tabs-item__text">
@@ -2093,10 +2110,10 @@
 													<div class="tab-item__row">
 														<div class="tab-item__body">
 															<div class="tab-item__image">
-																<div class="tab-item__icon">
+																<!-- <div class="tab-item__icon">
 																	<a href="" class="tab-item__like"></a>
 																	<a href="" class="tab-item__graf"></a>
-																</div>
+																</div> -->
 																<img src="img/tab4-5.jpeg" alt="">
 															</div>
 															<div class="tabs-item__text">
@@ -2124,10 +2141,10 @@
 													<div class="tab-item__row">
 														<div class="tab-item__body">
 															<div class="tab-item__image">
-																<div class="tab-item__icon">
+																<!-- <div class="tab-item__icon">
 																	<a href="" class="tab-item__like"></a>
 																	<a href="" class="tab-item__graf"></a>
-																</div>
+																</div> -->
 																<img src="img/tab4-6.jpeg" alt="">
 															</div>
 															<div class="tabs-item__text">
@@ -2155,10 +2172,10 @@
 													<div class="tab-item__row">
 														<div class="tab-item__body">
 															<div class="tab-item__image">
-																<div class="tab-item__icon">
+																<!-- <div class="tab-item__icon">
 																	<a href="" class="tab-item__like"></a>
 																	<a href="" class="tab-item__graf"></a>
-																</div>
+																</div> -->
 																<img src="img/tab4-7.jpeg" alt="">
 															</div>
 															<div class="tabs-item__text">
@@ -2186,10 +2203,10 @@
 													<div class="tab-item__row">
 														<div class="tab-item__body">
 															<div class="tab-item__image">
-																<div class="tab-item__icon">
+																<!-- <div class="tab-item__icon">
 																	<a href="" class="tab-item__like"></a>
 																	<a href="" class="tab-item__graf"></a>
-																</div>
+																</div> -->
 																<img src="img/tab4-8.jpeg" alt="">
 															</div>
 															<div class="tabs-item__text">

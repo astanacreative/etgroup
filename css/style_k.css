@@ -9,6 +9,9 @@
     margin-left: 3%;
 }
 
+.order-block__top {
+    padding: 5px;
+}
 .date_small{
     color: #1d2029;
     font-size: 12px;
@@ -178,7 +181,7 @@
 .form textarea {
     min-height: 193px;
 }
-input[type="text"], input[type="password"], input[type="email"], select, textarea {
+/* input[type="text"], input[type="password"], input[type="email"], select, textarea {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -o-box-sizing: border-box;
@@ -192,7 +195,7 @@ input[type="text"], input[type="password"], input[type="email"], select, textare
     font-size: 13px;
     padding: 8px 13px 7px;
     width: 100%;
-}
+} */
 .star{
     font-size: 12px;
     font-weight: normal;
@@ -330,7 +333,7 @@ input[type="text"], input[type="password"], input[type="email"], select, textare
 .counter_wrapp >div {
     margin-bottom: 22px !important;
 }
-.counter_block.big_basket > input {
+/* .counter_block.big_basket > input {
     height: 34px;
     width: 35px;
     display: inline-block;
@@ -361,10 +364,9 @@ input[type="text"], input[type="password"], input[type="email"], select, textare
     text-align: center;
     height: auto;
     border: 1px solid #e5e5e5;
-}
+} */
 .prod_in_buy {
     display: flex;
-    align-items: center;
     flex-wrap: wrap;
 }
 .prod_in_send_btn a, .prod_in_send_btn button{
@@ -376,15 +378,14 @@ input[type="text"], input[type="password"], input[type="email"], select, textare
 }
 .prod_in_send_btn:not(:last-child){
     width: 30%;
-    margin-left: 12px;
     margin-right: 12px;
 }
 .prod_in_send_btn:last-child{
     width: 30%;
 }
-.counter_block{
+/* .counter_block{
     margin-right: 12px;
-}
+} */
 .prod-share {
     font-size: 13px;
     border-color: #888;
@@ -1393,6 +1394,9 @@ table.sale_order_full_table a{
     }
     .change_basket{
         justify-content: space-between;
+    }
+    .main-block.prod-in-block {
+        margin-left: 0;
     }
 
 
