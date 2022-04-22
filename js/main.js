@@ -37,8 +37,8 @@ $(document).ready(function () {
 		dots: false,
 		arrows: false,
 		adaptiveHeight: true,
-		slidesToShow: 8,
 		slidesToScroll: 2,
+		slidesToShow: 8,
 		speed: 800,
 		autoplay: false,
 		autoplaySpeed: 800,
@@ -76,34 +76,40 @@ $(document).ready(function () {
 		]
 	});
 });
-$('.single-prod-slider').slick();
+$('.single-prod-slider').slick({
+	dots: false,	
+});
 
 $('.recomend-slider-block').slick({
 	infinite: true,
+	dots: false,
 	slidesToShow: 4,
 	slidesToScroll: 4,
-	mobileFirst: true,
+	mobileFirst: false,
+        appendArrows: $(".recomend-slider__right"),
 	responsive: [
 		{
-			breakpoint: 1024,
+			breakpoint: 1124,
 			settings: {
 				slidesToShow: 3,
 				slidesToScroll: 3,
 				infinite: true,
-				dots: true
+				dots: false
 			}
 		},
 		{
-			breakpoint: 600,
+			breakpoint: 760,
 			settings: {
 				slidesToShow: 2,
+				arrows: false,
 				slidesToScroll: 2
 			}
 		},
 		{
-			breakpoint: 480,
+			breakpoint: 560,
 			settings: {
 				slidesToShow: 1,
+				arrows: false,
 				slidesToScroll: 1
 			}
 		},
@@ -111,6 +117,7 @@ $('.recomend-slider-block').slick({
 			breakpoint: 380,
 			settings: {
 				slidesToShow: 1,
+				arrows: false,
 				slidesToScroll: 1
 			}
 		}
@@ -214,8 +221,6 @@ buyJsBtn.forEach((elem) => {
 		if (orBuyBlock[0] && orBuyBlock[1] && orBuyBlock[2]){
 		elem.parentElement.parentElement.parentElement.parentElement.classList.add('active');
 		elem.parentElement.parentElement.parentElement.parentElement.nextElementSibling.classList.add('open')
-		hiddenAreaIn.textContent = elem.closest('.order-buy-block').querySelector('.js-input:checked').value;
-		hiddenAreaPayment.textContent = elem.closest('.order-buy-block').querySelector('.js-input:checked').value;
 		// hiddenEmail.textContent= elem.closest('.order-buy-block').getElementById('email').value;
 		// hiddenPhone.textContent= elem.closest('.order-buy-block').getElementById('phone').value;
 		// hiddenCity.textContent= elem.closest('.order-buy-block').getElementById('city').value;
@@ -256,14 +261,21 @@ let CouPaym=document.getElementById('courer-payment');
 
 
 function validate(e) {
-	let snp = document.forms["order-form"]["form_name"].value;
-	let urAdress = document.forms["order-form"]["ur-adress"].value;
-	let email = document.forms["order-form"]["email"].value;
-	let telephone = document.forms["order-form"]["telephone"].value;
-	let city= document.forms["order-form"]["city"].value;
-	let shipingAdress= document.forms["order-form"]["shiping-adress"].value;
-	let iinBin= document.forms["order-form"]["iin-bin"].value;
-	if (physFace.checked){
+	// let snp = document.forms["order-form"]["form_name"].value;
+	// let urAdress = document.forms["order-form"]["ur-adress"].value;
+	// let email = document.forms["order-form"]["email"].value;
+	// let telephone = document.forms["order-form"]["telephone"].value;
+	// let city= document.forms["order-form"]["city"].value;
+	// let shipingAdress= document.forms["order-form"]["shiping-adress"].value;
+	// let iinBin= document.forms["order-form"]["iin-bin"].value;
+	let snp = document.getElementById('phone').value;
+	let urAdress = document.getElementById('ur-adress').value;
+	let email = document.getElementById('email').value;
+	let telephone = document.getElementById('phone').value;
+	let city= document.getElementById('city').value;
+	let shipingAdress= document.getElementById('ship-adress').value;
+	let iinBin= document.getElementById("iin-bin").value;
+if (physFace.checked){
 	if (snp == "") {
 	alert("Укажите ваше Ф.И.О");
 	e.parentElement.parentElement.parentElement.parentElement.classList.remove('active');
@@ -315,6 +327,16 @@ if (urAdreses) {
 	});
 }
 
+
+let customerType = document.getElementById('phys-face');
+const inputText = document.getElementById('ur-adress');
+const inputIin = document.getElementById('iin-bin');
+if(customerType) {
+	if (customerType.checked == true) {
+		inputText.removeAttribute('required');
+		inputIin.removeAttribute('required');
+	}
+}
 const backBtnJs = document.querySelectorAll('.order-back-btn-a');
 backBtnJs.forEach((elem) => {
 	elem.addEventListener('click', function () {
@@ -605,7 +627,7 @@ const formatNumber = (x) => x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 const totalPriceWrapper = document.getElementById('total-price');
 const subScale = document.getElementById('sub-price');
 const getSubTotalPrice = (input) => Number(input.value) * (Number(input.dataset.price) - ((Number(input.dataset.price) * Number(input.dataset.scale))/100));
-
+const totalPriceOrders = document.getElementById('total-price-orders');
 // const ACTION = {
 // 	MINUS: 'minus',
 // 	PLUS: 'plus',
@@ -617,8 +639,13 @@ const allprice = () => {
 	[...document.querySelectorAll('.item-price')].forEach((basketItem) => {
 		totalCost += getSubTotalPrice(basketItem.querySelector('.counter__value'));
 	});
-	totalPriceWrapper.textContent = formatNumber(totalCost);
-	totalPriceWrapper.dataset.value = totalCost;
+	if (totalPriceWrapper) {
+		totalPriceWrapper.textContent = formatNumber(totalCost);
+		totalPriceWrapper.dataset.value = totalCost;
+	}
+	if (totalPriceOrders) {
+		totalPriceOrders.textContent = formatNumber(totalCost) + ' тг'
+	}
 	// subPriceWrapper.textContent = formatNumber(totalCost);
 	// subPriceWrapper.dataset.value = totalCost;
 }
@@ -657,6 +684,10 @@ const cardCatalog = document.querySelectorAll('.js-product');
 const cardBasket = document.getElementById('cart-content');
 const button = document.querySelector('.js-buy');
 const removeBasket = document.querySelector('.remove-button');
+const sectionButtonCount = document.querySelector('.section__button__count') 
+if (sectionButtonCount) {
+	sectionButtonCount.style.display = 'none';
+}
 let cartData = JSON.parse(localStorage.getItem('cart')) || {};
 function basketButton() {
 	cardCatalog.forEach((elem) => {
@@ -682,6 +713,12 @@ function setCartData(o) {
 }
 // let cart = localStorage.getItem('cart');
 
+
+const sectionSumma = document.querySelector('.section-summa');
+const sectionButtons = document.querySelector('.section-bottom__buttons');
+const sectionBodyRow = document.querySelector('.section-body__row');
+
+
 function addToCart(e) {
 	e.querySelector('.js-buy').disabled = true;
 	e.querySelector('.catalog-section__submit').classList.add('active');
@@ -700,14 +737,27 @@ function addToCart(e) {
 		itemSumma = itemSummaSale * itemCount;
 		// itemTotal = totalPriceWrapper.dataset.value;
 		// itemTitle = parentBox.getAttribute('card__link'), // название товара
-      // itemPrice = parentBox.getAttribute('.card__price'); // стоимость товара
-		cartData[itemDataId]
+		// itemPrice = parentBox.getAttribute('.card__price'); // стоимость товара
+		cartData[itemDataId];
+		sectionSumma.style.display='none';
+		sectionButtons.style.display='none';
+		if (sectionButtonCount) {
+			sectionButtonCount.style.display = 'none';
+		}	
 	if (cartData.hasOwnProperty(itemDataId)) { // если такой товар уже в корзине, то добавляем +1 к его количеству
 		e.querySelector('.js-buy').disabled = true;
 		e.querySelector('.catalog-section__submit').classList.add('active');
 		e.querySelector('.js-buy').innerHTML = 'В корзине';
 	} else { // если товара в корзине еще нет, то добавляем в объект
 		cartData[itemDataId] = {itemId, itemSrc, itemTitle, itemSale, itemPrice, itemCount, itemSumma, itemSummaSale};
+		sectionBodyRow.style.display="block";
+		removeBasket.style.display='block';
+		sectionSumma.style.display='flex';
+		sectionButtons.style.display='flex';
+		if (sectionButtonCount) {
+			sectionButtonCount.style.display = 'flex';
+			sectionButtonCount.innerHTML = Object.keys(cartData).length;
+		}
 	}
 	if (!setCartData(cartData)) { // Обновляем данные в LocalStorage
 		e.querySelector('.js-buy').disabled = true; // разблокируем кнопку после обновления LS
@@ -718,12 +768,19 @@ function addToCart(e) {
 }
 
 openCart();
+
 function openCart(e){
 	var cartData = getCartData(), // вытаскиваем все данные корзины
 		totalItems = '';
 	// если что-то в корзине уже есть, начинаем формировать данные для вывода
 	if(cartData !== null){
-		document.querySelector('.section-body__nomer').innerHTML = Object.keys(cartData).length; // 3
+		if(document.querySelector('.section-body__nomer')) {
+			document.querySelector('.section-body__nomer').innerHTML = Object.keys(cartData).length; // 3
+		}
+		if (sectionButtonCount) {
+			sectionButtonCount.style.display = 'flex';
+			sectionButtonCount.innerHTML = Object.keys(cartData).length;
+		}
 		totalItems = '<div class="basket-product__body" id="basket"><div class="basket-product__top product-top"><div class="product-top__one">Товары</div><div class="product-top__block"><div class="product-top__two">Скидка</div><div class="product-top__three">Цена</div><div class="product-top__four">Количество</div><div class="product-top__five">Сумма</div></div></div>';
 		for(var items in cartData){
 			totalItems += '<div class="basket-product__bottom product-bottom item-price" data-id="' + cartData[items].itemId + '">';
@@ -740,17 +797,24 @@ function openCart(e){
 		}
 
 		totalItems += '</div>';
-		cardBasket.innerHTML = totalItems;
+		if(cardBasket) {
+			cardBasket.innerHTML = totalItems;
+		}
 		} else {
 		// если в корзине пусто, то сигнализируем об этом
-		cardBasket.innerHTML = '<div class="basket__block"><div class="basket-null"><div class="basket-null__img"><img src="img/basket-cart.png" alt=""></div><div class="basket-null__content"><div class="basket-null__title">К сожалению, ваша корзина пуста</div><div class="basket-null__text"><p>Исправить это недоразумение очень просто: выберите в каталоге<br>интересующий товар<br>и нажмите кнопку «В корзину».</p></div><div class="basket-null__button"><a href="javascript:;">Закрыть</a></div></div></div></div>';
-		const sectionSumma = document.querySelector('.section-summa');
-		const sectionButtons = document.querySelector('.section-bottom__buttons');
-		const sectionBodyRow = document.querySelector('.section-body__row');
-		sectionBodyRow.style.display="none";
-		removeBasket.style.display='none';
-		sectionSumma.style.display='none';
-		sectionButtons.style.display='none';
+			cardBasket.innerHTML = '<div class="basket__block"><div class="basket-null"><div class="basket-null__img"><img src="/img/basket-cart.png" alt=""></div><div class="basket-null__content"><div class="basket-null__title">К сожалению, ваша корзина пуста</div><div class="basket-null__text"><p>Исправить это недоразумение очень просто: выберите в каталоге<br>интересующий товар<br>и нажмите кнопку «В корзину».</p></div><div class="basket-null__button"><a href="javascript:;">Закрыть</a></div></div></div></div>';
+			if (sectionBodyRow) {
+				sectionBodyRow.style.display="none";
+			}
+			if (removeBasket) {
+				removeBasket.style.display='none';
+			}
+			if (sectionSumma) {
+			 	sectionSumma.style.display='none';
+			}
+			if (sectionButtons) {
+				sectionButtons.style.display='none';
+			}
 		}
 		// document.querySelectorAll('.item-price').forEach((elem) => {
 		// 	elem.addEventListener('click', function (event) {
@@ -810,6 +874,7 @@ function openCart(e){
 			setCartData(cartData)
 			allprice();
 			openCart();
+			console.log(cartData);
 			// if(cartData[id] == undefined) {
 			// 	localStorage.clear();
 				// openCart();
@@ -852,21 +917,29 @@ function openCart(e){
 	return false;
 }
 
-openCart();
+// openCart();
 
 const openBasket = document.getElementById('checkout');
 if (openBasket) {
 	openBasket.addEventListener('click', openCart);
 }
-const sectionSumma = document.querySelector('.section-summa');
-const sectionButtons = document.querySelector('.section-bottom__buttons');
+
+
+if(removeBasket) {
 removeBasket.addEventListener('click', function () {
 	localStorage.removeItem('cart');
-	cardBasket.style.display='none';
+	cardCatalog.forEach((event) => {
+			event.querySelector('.catalog-section__submit').classList.remove('active');
+			event.querySelector('.js-buy').disabled = false;
+			event.querySelector('.js-buy').innerHTML = 'В корзину';
+	});
 	sectionSumma.style.display='none';
 	sectionButtons.style.display='none';
+	if (sectionButtonCount) {
+		sectionButtonCount.style.display = 'none';
+	}
 });
-
+}
 
 
 
@@ -903,9 +976,11 @@ removeBasket.addEventListener('click', function () {
 
 
 const btnSection = document.querySelector('.section__button');
+if (btnSection) {
 btnSection.addEventListener('click', function (event) {
 	event.target.closest('.section').classList.toggle('active')
 });
+}
 
 
 // const newsPagination = document.querySelectorAll('.prop');
@@ -914,3 +989,22 @@ btnSection.addEventListener('click', function (event) {
 // 		this.classList.toggle('active');
 // 	});
 // });
+
+
+const catalogMenuButton = document.querySelectorAll('.catalog-menu__button');
+if (catalogMenuButton) {
+	catalogMenuButton.forEach((elem) => {
+		elem.addEventListener('click', function (){
+			elem.classList.toggle('active');
+		});	
+	});
+}
+
+const btnCloseBasket = document.querySelector('.section-basket__remove');
+	if(btnCloseBasket) {
+		btnCloseBasket.addEventListener('click', function () {
+			btnCloseBasket.closest('.section').classList.remove('active');
+	});
+}
+
+

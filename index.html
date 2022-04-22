@@ -104,9 +104,24 @@
 									<a href="javascript:;">Очистить</a>
 								</div>
 							</div>
+							<div class="basket__block">
+								<div class="basket-null">
+									<div class="basket-null__img">
+										<img src="img/basket-cart.png" alt="">
+									</div>
+									<div class="basket-null__content">
+										<div class="basket-null__title">К сожалению, ваша корзина пуста</div>
+										<div class="basket-null__text">
+											<p>Исправить это недоразумение очень просто: выберите в каталоге<br>интересующий товар<br>и нажмите кнопку «В корзину».</p>
+										</div><div class="basket-null__button">
+											<a href="javascript:;">Закрыть</a>
+										</div>
+									</div>
+								</div>
+							</div>
 							<div class="section-body__item section-item" id="basket">
 								<div class="section-bottom__block" id="cart-content">
-									<div class="section-item__top section-top">
+									<!-- <div class="section-item__top section-top">
 										<div class="section-top__one">
 											Наименование
 										</div>
@@ -124,7 +139,7 @@
 										</div>
 										<div class="section-top__six">
 										</div>
-									</div>
+									</div> -->
 									<!-- <div class="section-item__bottom section-bottom item-price js-cart">
 										<div class="section-bottom__one">
 											<div class="section-bottom__image">
@@ -186,7 +201,7 @@
 										<div class="section-bottom__text">Полноценное оформление заказа</div>
 									</div>
 									<div class="section-bottom__click three-click">
-										<a href="">Быстрый заказ</a>
+										<a href="javascript:;" data-bs-toggle="modal" data-bs-target="#exampleModalTwo">Быстрый заказ</a>
 										<div class="section-bottom__text">Вам потребуется указать только имя и номер</div>
 									</div>
 								</div>
@@ -2455,6 +2470,7 @@
 					</div>
 				</footer>
 			<!-- 	</footer> -->
+			<!-- modal-1 -->
 			<div class="modal fade show" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" style="display: none;" aria-modal="true" role="dialog">
 				<div class="modal-dialog modal-dialog-centered">
 					<div class="modal-content">
@@ -2481,8 +2497,38 @@
 					</div>
 				</div>
 			</div>
+			<!-- modal-2 -->
+			<div class="modal fade show" id="exampleModalTwo" tabindex="-1" aria-labelledby="exampleModalLabel" style="display: none;" aria-modal="true" role="dialog">
+				<div class="modal-dialog modal-dialog-centered">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="exampleModalLabel">Заказать звонок</h5>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<form action="/r.php" method="POST">
+						<div class="modal-body">
+							<div class="form-group">
+								<label>Ваше имя<span>*</span></label>
+								<input type="text" class="form-control item">
+							</div>
+							<div class="form-group">
+								<label>Телефон<span>*</span></label>
+								<input type="text" class="form-control item" id="phone">
+							</div>
+							<div class="form-group">
+								<textarea rows="5"></textarea>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="submit" class="button-one">Отправить</button>
+							<button type="button" class="button-two" data-bs-dismiss="modal" aria-label="Close">Закрыть</button>
+						</div>
+						</form>
+					</div>
+				</div>
 			</div>
 		</div>
+		
 
 		<!-- <script src="js/popper.min.js"></script> -->
 		<script src="js/jquery-3.6.0.min.js"></script>
